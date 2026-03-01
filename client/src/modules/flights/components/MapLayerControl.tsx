@@ -23,7 +23,7 @@ export const MapLayerControl: React.FC = () => {
         };
     }, [isOpen]);
 
-    const mapTypes: { id: MapLayer; label: string; bgClass: string; imgPath?: string }[] = [
+    const mapTypes: { id: MapLayer; label: string; bgClass: string }[] = [
         {
             id: 'street',
             label: 'Default',
@@ -43,7 +43,7 @@ export const MapLayerControl: React.FC = () => {
             id: 'dark',
             label: 'Dark',
             bgClass: 'bg-[#2E3136]',
-        }
+        },
     ];
 
     return (
@@ -107,6 +107,7 @@ export const MapLayerControl: React.FC = () => {
                                                             <div className="absolute bottom-2 right-1 w-6 h-1 bg-white transform -rotate-45" />
                                                         </>
                                                     )}
+
                                                 </div>
                                             </div>
                                             <span className={`text-[11px] font-medium transition-colors ${isSelected ? 'text-[#1A73E8]' : 'text-[#70757A]'
