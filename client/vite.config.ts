@@ -29,6 +29,9 @@ export default defineConfig({
           'page-maritime': [
             './src/modules/maritime/MaritimePage',
           ],
+          'page-cyber': [
+            './src/modules/cyber/CyberPage',
+          ],
         }
       }
     }

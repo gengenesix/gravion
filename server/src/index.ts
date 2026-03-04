@@ -5,6 +5,7 @@ import flightsRouter from './routes/flights';
 import maritimeRouter from './routes/maritime';
 import geoRouter from './routes/geo';
 import monitorRouter from './routes/monitor';
+import cyberRouter from './routes/cyber';
 import { aircraftDb } from './core/aircraft_db';
 
 const app = express();
@@ -17,6 +18,7 @@ app.use('/api/flights', flightsRouter);
 app.use('/api/maritime', maritimeRouter);
 app.use('/api/geo', geoRouter);
 app.use('/api/monitor', monitorRouter);
+app.use('/api/cyber', cyberRouter);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 

@@ -25,8 +25,8 @@ export const TopNav: React.FC = () => {
                     <button
                         onClick={() => setActiveModule('flights')}
                         className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${activeModule === 'flights'
-                                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
+                            ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
+                            : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
                             }`}
                     >
                         Flights
@@ -34,8 +34,8 @@ export const TopNav: React.FC = () => {
                     <button
                         onClick={() => setActiveModule('maritime')}
                         className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${activeModule === 'maritime'
-                                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
+                            ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
+                            : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
                             }`}
                     >
                         Maritime
@@ -43,11 +43,20 @@ export const TopNav: React.FC = () => {
                     <button
                         onClick={() => setActiveModule('monitor')}
                         className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${activeModule === 'monitor'
-                                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
+                            ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
+                            : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
                             }`}
                     >
                         Monitor
+                    </button>
+                    <button
+                        onClick={() => setActiveModule('cyber')}
+                        className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${activeModule === 'cyber'
+                            ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
+                            : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
+                            }`}
+                    >
+                        Cyber
                     </button>
                 </nav>
             </div>
@@ -71,8 +80,8 @@ export const TopNav: React.FC = () => {
                             key={m}
                             onClick={() => setMode(m)}
                             className={`px-3 py-1 transition-all uppercase border ${mode === m
-                                    ? 'border-intel-accent bg-intel-accent/10 text-intel-accent shadow-[0_0_8px_rgba(0,229,255,0.4)]'
-                                    : 'border-intel-panel bg-intel-bg hover:border-intel-accent/50 text-intel-text'
+                                ? 'border-intel-accent bg-intel-accent/10 text-intel-accent shadow-[0_0_8px_rgba(0,229,255,0.4)]'
+                                : 'border-intel-panel bg-intel-bg hover:border-intel-accent/50 text-intel-text'
                                 }`}
                         >
                             {m}
