@@ -190,7 +190,7 @@ router.post('/intel-brief', async (req: Request, res: Response) => {
       .map((n: any) => `- [${n.source}] ${n.title}`)
       .join('\n');
 
-    const prompt = `You are an AI intelligence analyst for a geospatial defense dashboard called INTELMAP. 
+    const prompt = `You are an AI intelligence analyst for a geospatial defense dashboard called Radar. 
 Generate a concise, clinical intelligence briefing (max 3 short paragraphs) summarizing the geopolitical situation in region ${region} based ONLY on the following intercepted headlines. 
 Keep the tone professional, objective, and military-styled.
 
@@ -203,7 +203,7 @@ ${headlines}`;
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'http://localhost:5173',
-        'X-Title': 'INTELMAP',
+        'X-Title': 'Radar',
       },
       body: JSON.stringify({
         model: 'google/gemini-2.5-flash-lite-preview', // Fast, cheap model

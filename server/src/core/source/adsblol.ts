@@ -16,7 +16,7 @@ export async function fetchStates(): Promise<AircraftState[]> {
   const url = `https://api.adsb.lol/v2/point/${lat}/${lon}/${radius}`;
 
   const headers: Record<string, string> = {
-    'User-Agent': 'IntelMap-Dev/1.0',
+    'User-Agent': 'Radar-Dev/1.0',
   };
 
   try {
@@ -122,7 +122,7 @@ export async function fetchStates(): Promise<AircraftState[]> {
 export async function fetchTrack(icao24: string): Promise<any> {
   const url = `https://api.adsb.lol/v2/icao/${icao24}`;
   const headers: Record<string, string> = {
-    'User-Agent': 'IntelMap-Dev/1.0',
+    'User-Agent': 'Radar-Dev/1.0',
   };
 
   const response = await fetch(url, { headers });
@@ -147,7 +147,7 @@ export async function fetchTrack(icao24: string): Promise<any> {
       const callsign = s.flight.trim();
       const routeRes = await fetch('https://api.adsb.lol/api/0/routeset', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'User-Agent': 'IntelMap-Dev/1.0' },
+        headers: { 'Content-Type': 'application/json', 'User-Agent': 'Radar-Dev/1.0' },
         body: JSON.stringify({ planes: [{ callsign, lat: s.lat, lng: s.lon }] }),
       });
 

@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get INTELMAP running in 5 minutes!
+Get Radar running in 5 minutes!
 
 ## Prerequisites
 
@@ -11,8 +11,8 @@ Get INTELMAP running in 5 minutes!
 ## Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_ORG/INTELMAP.git
-cd INTELMAP
+git clone https://github.com/Syntax-Error-1337/Radar.git
+cd Radar
 ```
 
 ## Step 2: Install Dependencies
@@ -185,8 +185,8 @@ docker-compose up
 ## Getting Help
 
 - 📖 Read the [full README](README.md)
-- 🐛 Report bugs: [GitHub Issues](https://github.com/YOUR_ORG/INTELMAP/issues)
-- 💬 Ask questions: [GitHub Discussions](https://github.com/YOUR_ORG/INTELMAP/discussions)
+- 🐛 Report bugs: [GitHub Issues](https://github.com/Syntax-Error-1337/Radar/issues)
+- 💬 Ask questions: [GitHub Discussions](https://github.com/Syntax-Error-1337/Radar/discussions)
 - 🤝 Contribute: See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## What's Next?

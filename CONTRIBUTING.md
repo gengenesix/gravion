@@ -1,6 +1,6 @@
-# Contributing to INTELMAP
+# Contributing to Radar
 
-Thank you for your interest in contributing to INTELMAP! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Radar! This document provides guidelines and instructions for contributing.
 
 ## Table of Contents
 
@@ -22,12 +22,12 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/INTELMAP.git
-   cd INTELMAP
+   git clone https://github.com/YOUR_USERNAME/Radar.git
+   cd Radar
    ```
 3. **Add upstream remote**:
    ```bash
-   git remote add upstream https://github.com/ORIGINAL_OWNER/INTELMAP.git
+   git remote add upstream https://github.com/ORIGINAL_OWNER/Radar.git
    ```
 
 ## Development Setup
@@ -256,7 +256,7 @@ Update the README.md if you:
 
 ## Questions?
 
-- Open a [GitHub Discussion](https://github.com/YOUR_ORG/INTELMAP/discussions)
+- Open a [GitHub Discussion](https://github.com/Syntax-Error-1337/Radar/discussions)
 - Join our community chat (if available)
 - Email the maintainers
 

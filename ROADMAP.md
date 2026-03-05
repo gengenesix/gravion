@@ -1,6 +1,6 @@
-# INTELMAP Roadmap & Improvement Suggestions
+# Radar Roadmap & Improvement Suggestions
 
-This document outlines suggested improvements to make INTELMAP a production-ready, professional open source project.
+This document outlines suggested improvements to make Radar a production-ready, professional open source project.
 
 ## Completed ✅
 

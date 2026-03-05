@@ -17,7 +17,7 @@ export const TopNav: React.FC = () => {
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 bg-intel-accent animate-pulse shadow-[0_0_8px_var(--color-intel-accent)]"></div>
           <h1 className="text-intel-text-light font-mono font-bold text-2xl tracking-[0.2em] shrink-0 drop-shadow-[0_0_8px_rgba(224,242,254,0.5)]">
-            INTELMAP
+            RADAR
           </h1>
         </div>
 

@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  intelmap:
+  radar:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: intelmap
+    container_name: radar
     ports:
       - "3001:3001"
     environment:
@@ -48,7 +48,7 @@ services:
   # Optional: Add a reverse proxy (nginx)
   # nginx:
   #   image: nginx:alpine
-  #   container_name: intelmap-proxy
+  #   container_name: radar-proxy
   #   ports:
   #     - "80:80"
   #     - "443:443"
@@ -56,5 +56,5 @@ services:
   #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
   #     - ./ssl:/etc/nginx/ssl:ro
   #   depends_on:
-  #     - intelmap
+  #     - radar
   #   restart: unless-stopped

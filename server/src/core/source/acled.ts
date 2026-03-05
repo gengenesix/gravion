@@ -112,7 +112,7 @@ async function fetchAcledInternal(opts: FetchAcledOptions): Promise<AcledRawEven
       headers: {
         Accept: 'application/json',
         Authorization: `Bearer ${token}`,
-        'User-Agent': 'IntelMap-Dev/1.0',
+        'User-Agent': 'Radar-Dev/1.0',
       },
       signal: AbortSignal.timeout(ACLED_TIMEOUT_MS),
     });

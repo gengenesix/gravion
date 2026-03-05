@@ -1,4 +1,4 @@
-# Multi-stage build for INTELMAP
+# Multi-stage build for Radar
 
 # Stage 1: Build everything (using monorepo structure)
 FROM node:20-alpine AS builder

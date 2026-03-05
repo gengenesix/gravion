@@ -1,7 +1,7 @@
 {
-  "name": "intelmap-server",
+  "name": "radar-server",
   "version": "1.0.0",
-  "description": "IntelMap backend proxy",
+  "description": "Radar backend proxy",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",

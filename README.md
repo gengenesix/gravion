@@ -1,4 +1,4 @@
-# INTELMAP — Geospatial Intelligence Dashboard
+# Radar — Geospatial Intelligence Dashboard
 
 <div align="center">
 
@@ -62,7 +62,7 @@ Three visual themes selectable from the top navigation bar:
 ## 🏗️ Architecture
 
 ```
-intelligence-dashboard/
+radar/
 ├── client/          # React 19 + Vite frontend (port 5173)
 │   └── src/
 │       ├── modules/

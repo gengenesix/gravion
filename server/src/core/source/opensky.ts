@@ -59,7 +59,7 @@ export async function fetchStates(): Promise<AircraftState[]> {
   }
 
   const headers: Record<string, string> = {
-    'User-Agent': 'IntelMap-Dev/1.0',
+    'User-Agent': 'Radar-Dev/1.0',
   };
 
   const accessToken = await getAccessToken();
@@ -133,7 +133,7 @@ export async function fetchStates(): Promise<AircraftState[]> {
 export async function fetchTrack(icao24: string): Promise<any> {
   const url = `https://opensky-network.org/api/tracks/all?icao24=${icao24}&time=0`;
   const headers: Record<string, string> = {
-    'User-Agent': 'IntelMap-Dev/1.0',
+    'User-Agent': 'Radar-Dev/1.0',
   };
 
   const accessToken = await getAccessToken();

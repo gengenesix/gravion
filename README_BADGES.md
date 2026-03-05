@@ -5,34 +5,34 @@ Add these badges to the top of your README.md for a professional look:
 ## Build & CI Status
 
 ```markdown
-![CI](https://github.com/YOUR_ORG/INTELMAP/workflows/CI/badge.svg)
-![Docker](https://github.com/YOUR_ORG/INTELMAP/workflows/Docker%20Build/badge.svg)
+![CI](https://github.com/Syntax-Error-1337/Radar/workflows/CI/badge.svg)
+![Docker](https://github.com/Syntax-Error-1337/Radar/workflows/Docker%20Build/badge.svg)
 ```
 
 ## License & Version
 
 ```markdown
-![License](https://img.shields.io/github/license/YOUR_ORG/INTELMAP)
-![Version](https://img.shields.io/github/package-json/v/YOUR_ORG/INTELMAP)
-![Release](https://img.shields.io/github/v/release/YOUR_ORG/INTELMAP)
+![License](https://img.shields.io/github/license/Syntax-Error-1337/Radar)
+![Version](https://img.shields.io/github/package-json/v/Syntax-Error-1337/Radar)
+![Release](https://img.shields.io/github/v/release/Syntax-Error-1337/Radar)
 ```
 
 ## Community & Activity
 
 ```markdown
-![Stars](https://img.shields.io/github/stars/YOUR_ORG/INTELMAP?style=social)
-![Forks](https://img.shields.io/github/forks/YOUR_ORG/INTELMAP?style=social)
-![Contributors](https://img.shields.io/github/contributors/YOUR_ORG/INTELMAP)
-![Issues](https://img.shields.io/github/issues/YOUR_ORG/INTELMAP)
-![PRs](https://img.shields.io/github/issues-pr/YOUR_ORG/INTELMAP)
+![Stars](https://img.shields.io/github/stars/Syntax-Error-1337/Radar?style=social)
+![Forks](https://img.shields.io/github/forks/Syntax-Error-1337/Radar?style=social)
+![Contributors](https://img.shields.io/github/contributors/Syntax-Error-1337/Radar)
+![Issues](https://img.shields.io/github/issues/Syntax-Error-1337/Radar)
+![PRs](https://img.shields.io/github/issues-pr/Syntax-Error-1337/Radar)
 ```
 
 ## Code Quality
 
 ```markdown
-![Code Size](https://img.shields.io/github/languages/code-size/YOUR_ORG/INTELMAP)
-![Top Language](https://img.shields.io/github/languages/top/YOUR_ORG/INTELMAP)
-![Test Coverage](https://img.shields.io/codecov/c/github/YOUR_ORG/INTELMAP)
+![Code Size](https://img.shields.io/github/languages/code-size/Syntax-Error-1337/Radar)
+![Top Language](https://img.shields.io/github/languages/top/Syntax-Error-1337/Radar)
+![Test Coverage](https://img.shields.io/codecov/c/github/Syntax-Error-1337/Radar)
 ```
 
 ## Tech Stack
@@ -51,21 +51,21 @@ Here's how the badge section could look in your README.md:
 ```markdown
 <div align="center">
 
-# INTELMAP
+# Radar
 
 **Real-time Geospatial Intelligence Dashboard**
 
-![CI](https://github.com/YOUR_ORG/INTELMAP/workflows/CI/badge.svg)
-![Docker](https://github.com/YOUR_ORG/INTELMAP/workflows/Docker%20Build/badge.svg)
-![License](https://img.shields.io/github/license/YOUR_ORG/INTELMAP)
-![Stars](https://img.shields.io/github/stars/YOUR_ORG/INTELMAP?style=social)
+![CI](https://github.com/Syntax-Error-1337/Radar/workflows/CI/badge.svg)
+![Docker](https://github.com/Syntax-Error-1337/Radar/workflows/Docker%20Build/badge.svg)
+![License](https://img.shields.io/github/license/Syntax-Error-1337/Radar)
+![Stars](https://img.shields.io/github/stars/Syntax-Error-1337/Radar?style=social)
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs)
 ![MapLibre](https://img.shields.io/badge/MapLibre_GL_JS-5.x-396CB2?style=flat-square)
 
-[Demo](https://your-demo-site.com) • [Documentation](https://docs.your-site.com) • [Report Bug](https://github.com/YOUR_ORG/INTELMAP/issues) • [Request Feature](https://github.com/YOUR_ORG/INTELMAP/issues/new?template=feature_request.md)
+[Demo](https://your-demo-site.com) • [Documentation](https://docs.your-site.com) • [Report Bug](https://github.com/Syntax-Error-1337/Radar/issues) • [Request Feature](https://github.com/Syntax-Error-1337/Radar/issues/new?template=feature_request.md)
 
 </div>
 ```
@@ -84,21 +84,21 @@ Create custom badges at [shields.io](https://shields.io/):
 
 ```markdown
 ![Security](https://img.shields.io/badge/security-A+-brightgreen)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/YOUR_ORG/INTELMAP)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Syntax-Error-1337/Radar)
 ```
 
 ### Activity
 
 ```markdown
-![Last Commit](https://img.shields.io/github/last-commit/YOUR_ORG/INTELMAP)
-![Commit Activity](https://img.shields.io/github/commit-activity/m/YOUR_ORG/INTELMAP)
+![Last Commit](https://img.shields.io/github/last-commit/Syntax-Error-1337/Radar)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/Syntax-Error-1337/Radar)
 ```
 
 ### Downloads/Usage
 
 ```markdown
-![Docker Pulls](https://img.shields.io/docker/pulls/YOUR_ORG/intelmap)
-![GitHub downloads](https://img.shields.io/github/downloads/YOUR_ORG/INTELMAP/total)
+![Docker Pulls](https://img.shields.io/docker/pulls/Syntax-Error-1337/radar)
+![GitHub downloads](https://img.shields.io/github/downloads/Syntax-Error-1337/Radar/total)
 ```
 
 ## Alternative Styles
@@ -142,7 +142,7 @@ Add color parameter:
 Make badges clickable:
 
 ```markdown
-[![CI](https://github.com/YOUR_ORG/INTELMAP/workflows/CI/badge.svg)](https://github.com/YOUR_ORG/INTELMAP/actions)
+[![CI](https://github.com/Syntax-Error-1337/Radar/workflows/CI/badge.svg)](https://github.com/Syntax-Error-1337/Radar/actions)
 ```
 
 ## Dynamic Badges
@@ -150,8 +150,8 @@ Make badges clickable:
 For npm packages (if you publish):
 
 ```markdown
-![npm version](https://img.shields.io/npm/v/@YOUR_ORG/intelmap)
-![npm downloads](https://img.shields.io/npm/dm/@YOUR_ORG/intelmap)
+![npm version](https://img.shields.io/npm/v/@Syntax-Error-1337/radar)
+![npm downloads](https://img.shields.io/npm/dm/@Syntax-Error-1337/radar)
 ```
 
 ## Coverage Badge
@@ -159,16 +159,16 @@ For npm packages (if you publish):
 If using Codecov:
 
 ```markdown
-![Coverage](https://codecov.io/gh/YOUR_ORG/INTELMAP/branch/main/graph/badge.svg)
+![Coverage](https://codecov.io/gh/Syntax-Error-1337/Radar/branch/main/graph/badge.svg)
 ```
 
 ## Dependency Status
 
 ```markdown
-![Dependencies](https://img.shields.io/librariesio/github/YOUR_ORG/INTELMAP)
+![Dependencies](https://img.shields.io/librariesio/github/Syntax-Error-1337/Radar)
 ![Dependabot](https://img.shields.io/badge/dependabot-enabled-025e8c?logo=dependabot)
 ```
 
 ---
 
-**Remember:** Replace `YOUR_ORG` with your actual GitHub username or organization name!
+**Remember:** Replace `Syntax-Error-1337` with your actual GitHub username or organization name!
