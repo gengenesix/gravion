@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  intelmap:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: intelmap
+    ports:
+      - "3001:3001"
+    environment:
+      # Flight Data
+      - FLIGHT_DATA_SOURCE=${FLIGHT_DATA_SOURCE:-adsblol}
+      - ADSB_LOL_LAT=${ADSB_LOL_LAT:-0}
+      - ADSB_LOL_LON=${ADSB_LOL_LON:-0}
+      - ADSB_LOL_RADIUS=${ADSB_LOL_RADIUS:-25000}
+
+      # Maritime Data
+      - AISSTREAM_API_KEY=${AISSTREAM_API_KEY}
+
+      # OSINT / LLM
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+
+      # ACLED Conflict Data
+      - ACLED_USERNAME=${ACLED_USERNAME}
+      - ACLED_PASSWORD=${ACLED_PASSWORD}
+
+      # Cloudflare Radar
+      - CLOUDFLARE_RADAR_TOKEN=${CLOUDFLARE_RADAR_TOKEN}
+
+    # Mount .env file (alternative to environment variables)
+    env_file:
+      - ./server/.env
+
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # Optional: Mount data directory for aircraft database
+    # volumes:
+    #   - ./server/src/Data:/app/Data:ro
+
+  # Optional: Add a reverse proxy (nginx)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: intelmap-proxy
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #     - ./ssl:/etc/nginx/ssl:ro
+  #   depends_on:
+  #     - intelmap
+  #   restart: unless-stopped

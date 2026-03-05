@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (IMPORTANT: Never commit these!)
+.env
+.env.local
+.env.*.local
+**/.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,3 +32,23 @@ dist-ssr
 # Large data files
 aircraft-database-complete-2025-08.csv
 aircraft-database-complete-2025-08.csv.cache.json
+*.parquet
+*.parquet.cache.json
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Build artifacts
+build/
+out/
