@@ -17,14 +17,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_ORG/INTELMAP.git"
+    "url": "https://github.com/Syntax-Error-1337/INTELMAP.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_ORG/INTELMAP/issues"
+    "url": "https://github.com/Syntax-Error-1337/INTELMAP/issues"
   },
-  "homepage": "https://github.com/YOUR_ORG/INTELMAP#readme",
+  "homepage": "https://github.com/Syntax-Error-1337/INTELMAP#readme",
   "license": "MIT",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Himanshu Tiwari <nomails1337@gmail.com>",
   "workspaces": [
     "client",
     "server"
