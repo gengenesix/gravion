@@ -90,20 +90,27 @@ const newBody = `        const requestedCategory = req.query.category as string 
 // Replace imports
 let finalCode = original;
 if (!finalCode.includes("import wc from 'which-country'")) {
-    finalCode = finalCode.replace("import Parser from 'rss-parser';", "import Parser from 'rss-parser';\n" + importStatement);
+  finalCode = finalCode.replace(
+    "import Parser from 'rss-parser';",
+    "import Parser from 'rss-parser';\n" + importStatement,
+  );
 }
 
 // Replace body
 const lines = finalCode.split('\n');
-const startIndex = lines.findIndex(l => l.includes('const NEWS_SOURCES: Record<string, string[]> = {'));
-const endIndex = lines.findIndex(l => l.includes('const feedsToFetch = NEWS_SOURCES[detectedRegion] || NEWS_SOURCES["INTERNATIONAL"];'));
+const startIndex = lines.findIndex((l) =>
+  l.includes('const NEWS_SOURCES: Record<string, string[]> = {'),
+);
+const endIndex = lines.findIndex((l) =>
+  l.includes('const feedsToFetch = NEWS_SOURCES[detectedRegion] || NEWS_SOURCES["INTERNATIONAL"];'),
+);
 
 if (startIndex !== -1 && endIndex > startIndex) {
-    const before = lines.slice(0, startIndex);
-    const after = lines.slice(endIndex + 1);
-    finalCode = before.join('\n') + '\n' + newBody + '\n' + after.join('\n');
-    fs.writeFileSync('src/routes/geo.ts', finalCode);
-    console.log('Successfully patched geo.ts logic map!');
+  const before = lines.slice(0, startIndex);
+  const after = lines.slice(endIndex + 1);
+  finalCode = before.join('\n') + '\n' + newBody + '\n' + after.join('\n');
+  fs.writeFileSync('src/routes/geo.ts', finalCode);
+  console.log('Successfully patched geo.ts logic map!');
 } else {
-    console.log('Failed to find replacement range', startIndex, endIndex);
+  console.log('Failed to find replacement range', startIndex, endIndex);
 }

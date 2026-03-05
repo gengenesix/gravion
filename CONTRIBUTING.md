@@ -58,6 +58,7 @@ npm run dev
 ```
 
 This starts:
+
 - Frontend at http://localhost:5173
 - Backend at http://localhost:3001
 
@@ -66,6 +67,7 @@ This starts:
 ### Branch Naming
 
 Use descriptive branch names:
+
 - `feature/add-satellite-tracking` - New features
 - `fix/maritime-connection-timeout` - Bug fixes
 - `docs/update-api-reference` - Documentation
@@ -85,6 +87,7 @@ Follow conventional commits:
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -94,6 +97,7 @@ Follow conventional commits:
 - `chore`: Build process or auxiliary tool changes
 
 **Examples:**
+
 ```
 feat(flights): add aircraft altitude filtering
 
@@ -117,23 +121,27 @@ Fixes #456
 ### Pull Request Process
 
 1. **Update your fork** with upstream changes:
+
    ```bash
    git fetch upstream
    git rebase upstream/main
    ```
 
 2. **Run tests** locally:
+
    ```bash
    cd client && npm run test
    cd ../server && npm run test
    ```
 
 3. **Lint your code**:
+
    ```bash
    cd client && npm run lint
    ```
 
 4. **Push to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -240,6 +248,7 @@ describe('calculateDistance', () => {
 ### README Updates
 
 Update the README.md if you:
+
 - Add new features
 - Change installation steps
 - Add new dependencies

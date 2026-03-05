@@ -6,11 +6,11 @@ import { AppRoutes } from './routes';
 const queryClient = new QueryClient();
 
 export const App: React.FC = () => {
-    return (
-        <QueryClientProvider client={queryClient}>
-            <ShellLayout>
-                <AppRoutes />
-            </ShellLayout>
-        </QueryClientProvider>
-    );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ShellLayout>
+        <AppRoutes />
+      </ShellLayout>
+    </QueryClientProvider>
+  );
 };

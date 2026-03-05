@@ -9,9 +9,7 @@
       "https://questfinancial.af/feed/",
       "https://tazapharma.af/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://www.bna.af/rss/category/culture-fa"
-    ],
+    "Lifestyle & Culture": ["https://www.bna.af/rss/category/culture-fa"],
     "Local News": [
       "https://www.farhangpress.af/feed/",
       "https://www.bna.af/rss/category/education-fa",
@@ -21,9 +19,7 @@
       "https://poliofreeafghanistan.af/feed/",
       "https://asas.edu.af/feed/"
     ],
-    "Other": [
-      "https://amd.gov.af/feed/"
-    ],
+    "Other": ["https://amd.gov.af/feed/"],
     "Politics & Society": [
       "https://swn.af/feed/",
       "https://rta.af/feed/",
@@ -51,9 +47,7 @@
       "https://kateb.edu.af/feed/",
       "https://bjns.ba.edu.af/index.php/bjns/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://www.bna.af/rss/category/sport-fa"
-    ],
+    "Sports": ["https://www.bna.af/rss/category/sport-fa"],
     "World / International": [
       "https://scholarships.af/feed/",
       "https://www.ariananews.af/feed/",
@@ -294,9 +288,7 @@
       "https://usmedia.univ-saida.dz/rss",
       "https://www.infodz.dz/feed/"
     ],
-    "Other": [
-      "https://eljadidelyawmi.dz/feed/"
-    ],
+    "Other": ["https://eljadidelyawmi.dz/feed/"],
     "Politics & Society": [
       "https://coursupreme.dz/feed/",
       "https://www.cdn.sabqpress.dz/feed/",
@@ -400,22 +392,11 @@
       "https://www.bcool.as/feed/",
       "https://pumpeteknikk.as/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://read.write.as/feed/"
-    ],
-    "Local News": [
-      "https://dbas.as/feed/",
-      "https://www.rotary.as/blog-feed.xml"
-    ],
-    "Other": [
-      "https://darkmoney.as/forums/-/index.rss"
-    ],
-    "Politics & Society": [
-      "https://www.osas.as/blog-feed.xml"
-    ],
-    "World / International": [
-      "https://icma.as/feed/"
-    ]
+    "Lifestyle & Culture": ["https://read.write.as/feed/"],
+    "Local News": ["https://dbas.as/feed/", "https://www.rotary.as/blog-feed.xml"],
+    "Other": ["https://darkmoney.as/forums/-/index.rss"],
+    "Politics & Society": ["https://www.osas.as/blog-feed.xml"],
+    "World / International": ["https://icma.as/feed/"]
   },
   "ANDORRA": {
     "Lifestyle & Culture": [
@@ -440,9 +421,7 @@
       "https://apda.ad/feed",
       "https://forum.ad/feed/"
     ],
-    "Sports": [
-      "https://fam.ad/feed/"
-    ]
+    "Sports": ["https://fam.ad/feed/"]
   },
   "ANGOLA": {
     "Business & Economy": [
@@ -457,10 +436,7 @@
       "https://www.luele.co.ao/feed/",
       "https://anrm.gov.ao/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://muzangala.ao/feed/",
-      "https://hiper.ao/feed/"
-    ],
+    "Lifestyle & Culture": ["https://muzangala.ao/feed/", "https://hiper.ao/feed/"],
     "Local News": [
       "https://kilamba24horas.ao/feed/",
       "https://www.elisal.ao/feed/",
@@ -483,15 +459,9 @@
       "https://semcensura.ao/feed/",
       "https://4defevereiro.co.ao/feed/"
     ],
-    "Science & Technology": [
-      "https://pti.ao/feed/"
-    ],
-    "Sports": [
-      "https://bolaemcampo.ao/feed/"
-    ],
-    "World / International": [
-      "https://jornal24horas.ao/feed/"
-    ]
+    "Science & Technology": ["https://pti.ao/feed/"],
+    "Sports": ["https://bolaemcampo.ao/feed/"],
+    "World / International": ["https://jornal24horas.ao/feed/"]
   },
   "ANGUILLA": {
     "Business & Economy": [
@@ -506,13 +476,8 @@
       "https://app.newsworthy.ai/feeds/rss/latest.rss",
       "https://www.placer.ai/blog/rss.xml"
     ],
-    "Lifestyle & Culture": [
-      "https://bytefeed.ai/feed/",
-      "https://alquilo.ai/feed/"
-    ],
-    "Local News": [
-      "https://datasurfr.ai/feed/"
-    ],
+    "Lifestyle & Culture": ["https://bytefeed.ai/feed/", "https://alquilo.ai/feed/"],
+    "Local News": ["https://datasurfr.ai/feed/"],
     "Politics & Society": [
       "https://wp.oecd.ai/feed/",
       "https://www.uniwriter.ai/feed/",
@@ -542,9 +507,7 @@
       "https://poppop.ai/feed",
       "https://app.newsworthy.ai/feeds/beat/technology-news/full/newsworthy/latest.rss"
     ],
-    "Sports": [
-      "https://newsgpt.ai/feed/"
-    ],
+    "Sports": ["https://newsgpt.ai/feed/"],
     "World / International": [
       "https://sdgtalks.ai/rss/category/13-climate-action",
       "https://sdgtalks.ai/rss/category/17-partnerships-for-the-goals",
@@ -553,9 +516,7 @@
     ]
   },
   "ANTARCTICA": {
-    "Science & Technology": [
-      "https://www.biodiversity.aq//feed.xml"
-    ]
+    "Science & Technology": ["https://www.biodiversity.aq//feed.xml"]
   },
   "ANTIGUA_&_BARBUDA": {
     "Business & Economy": [
@@ -567,31 +528,21 @@
       "https://insights.ever.ag/category/the-grain-feed/feed/",
       "https://insights.ever.ag/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://chir.ag/rss.xml"
-    ],
-    "Local News": [
-      "https://indiana.ag/feed/",
-      "https://abstvradio.com/feed/"
-    ],
+    "Lifestyle & Culture": ["https://chir.ag/rss.xml"],
+    "Local News": ["https://indiana.ag/feed/", "https://abstvradio.com/feed/"],
     "Politics & Society": [
       "https://www.watermelon.ag/feed/",
       "https://embassy.ag/feed/",
       "https://dems.ag/feed/"
     ],
-    "Science & Technology": [
-      "https://myland.ag/feed/"
-    ],
+    "Science & Technology": ["https://myland.ag/feed/"],
     "Sports": [
       "https://bet105.ag/feed/",
       "https://www.busr.ag/feed",
       "https://abyma.ag/feed/",
       "https://allbet.ag/feed/"
     ],
-    "World / International": [
-      "https://health.gov.ag/feed/",
-      "https://abregistry.ag/feed/"
-    ]
+    "World / International": ["https://health.gov.ag/feed/", "https://abregistry.ag/feed/"]
   },
   "ARGENTINA": {
     "Business & Economy": [
@@ -1190,10 +1141,7 @@
       "https://radioimagen.ar/feed/",
       "https://fmpatagoniamadryn.com.ar/?feed=rss2"
     ],
-    "Opinion": [
-      "https://cdci-gchu.com.ar/feed/",
-      "https://revistazoom.com.ar/feed/"
-    ],
+    "Opinion": ["https://cdci-gchu.com.ar/feed/", "https://revistazoom.com.ar/feed/"],
     "Other": [
       "https://www.ucodigital.com.ar/feed/",
       "https://cronicadelnoa.com.ar/feed/",
@@ -1587,9 +1535,7 @@
       "https://sdif.am/feed/",
       "https://sp.nuaca.am/index.php/sp/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://www.armgeo.am/feed/"
-    ],
+    "Sports": ["https://www.armgeo.am/feed/"],
     "World / International": [
       "https://mediamax.am/en/index.rss",
       "https://mediamax.am/ru/index.rss",
@@ -1606,17 +1552,13 @@
       "https://realestatearuba.aw/feed/",
       "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=res&type=updated"
     ],
-    "Lifestyle & Culture": [
-      "https://focus.aw/index.php/feed/"
-    ],
+    "Lifestyle & Culture": ["https://focus.aw/index.php/feed/"],
     "Local News": [
       "https://respaldo.aw/feed/",
       "https://www.douane.aw/feed/",
       "https://repository.ua.aw/server/opensearch/search?format=atom&query=*"
     ],
-    "Politics & Society": [
-      "https://vda.aw/feed/"
-    ]
+    "Politics & Society": ["https://vda.aw/feed/"]
   },
   "AUSTRALIA": {
     "Business & Economy": [
@@ -1834,9 +1776,7 @@
       "http://feeds.nationalforum.com.au/onlineopinion/spirituality/",
       "https://clubtroppo.com.au/feed/"
     ],
-    "Other": [
-      "https://balticbusinessnews.com/feed/"
-    ],
+    "Other": ["https://balticbusinessnews.com/feed/"],
     "Politics & Society": [
       "https://smh.com.au/rss/feed.xml",
       "https://smh.com.au/rss/national.xml",
@@ -2178,9 +2118,7 @@
       "https://www.kriminalfall.at/feed/",
       "https://www.citycenter-wieselburg.at/feed/"
     ],
-    "Other": [
-      "https://kraft.dasmurtal.at/../rss/news.rss"
-    ],
+    "Other": ["https://kraft.dasmurtal.at/../rss/news.rss"],
     "Politics & Society": [
       "https://exxpress.at/feed/",
       "https://www.falter.at/rss",
@@ -2386,9 +2324,7 @@
       "https://oguzda.az/rss/latest-posts",
       "https://xdf.gdu.edu.az/?feed=rss2"
     ],
-    "Other": [
-      "https://muallim.edu.az/rss/category/qezetin-pdf-arxivi"
-    ],
+    "Other": ["https://muallim.edu.az/rss/category/qezetin-pdf-arxivi"],
     "Politics & Society": [
       "https://azertag.az/rss-official-chronicle.xml",
       "https://azertag.az/rss-politics.xml",
@@ -2614,17 +2550,13 @@
       "https://dg.bh/feed/",
       "https://www.ahlia.edu.bh/feed/"
     ],
-    "Other": [
-      "https://alshehab.bh/feed/"
-    ],
+    "Other": ["https://alshehab.bh/feed/"],
     "Politics & Society": [
       "https://www.derasat.org.bh/en/feed/",
       "https://almenber.bh/?feed=rss2",
       "https://housing.gov.bh/rss"
     ],
-    "Sports": [
-      "https://b-nado.bh/feed/"
-    ]
+    "Sports": ["https://b-nado.bh/feed/"]
   },
   "BANGLADESH": {
     "Business & Economy": [
@@ -2673,9 +2605,7 @@
       "https://kushtiazillaschool.edu.bd/feed/",
       "https://ramnagar.mfschoolaloha.edu.bd/promoted.rss"
     ],
-    "Other": [
-      "https://marinebiodiversity.org.bd/feed/"
-    ],
+    "Other": ["https://marinebiodiversity.org.bd/feed/"],
     "Politics & Society": [
       "https://www.ittefaq.com.bd/feed/",
       "https://www.dhakatribune.com/feed/",
@@ -2699,10 +2629,7 @@
       "https://www.dhakatv.net.bd/feed/",
       "https://btcnews.com.bd/feed/"
     ],
-    "Science & Technology": [
-      "https://rajukcollege.edu.bd/feed/",
-      "https://cmf.com.bd/feed/"
-    ],
+    "Science & Technology": ["https://rajukcollege.edu.bd/feed/", "https://cmf.com.bd/feed/"],
     "World / International": [
       "https://weeklyblitz.net/feed/",
       "https://businessinbangladesh.com.bd/feed/",
@@ -2711,9 +2638,7 @@
     ]
   },
   "BARBADOS": {
-    "Lifestyle & Culture": [
-      "https://ncf.bb/feed/"
-    ],
+    "Lifestyle & Culture": ["https://ncf.bb/feed/"],
     "Local News": [
       "https://barbadostoday.bb/feed/",
       "https://www.bamp.org.bb/feed/",
@@ -2723,13 +2648,8 @@
       "https://barbadosunderground.net/feed/",
       "https://governmentprintery.gov.bb/feed/"
     ],
-    "Science & Technology": [
-      "https://rcc.cimh.edu.bb/feed/"
-    ],
-    "World / International": [
-      "https://www.cbc.bb/feed/",
-      "https://www.foreign.gov.bb/feed/"
-    ]
+    "Science & Technology": ["https://rcc.cimh.edu.bb/feed/"],
+    "World / International": ["https://www.cbc.bb/feed/", "https://www.foreign.gov.bb/feed/"]
   },
   "BELARUS": {
     "Business & Economy": [
@@ -3915,12 +3835,8 @@
       "https://litchfield.bz/feed/",
       "https://nexgen.bz/feed/"
     ],
-    "Opinion": [
-      "https://www.kaa.bz/feed.xml"
-    ],
-    "Other": [
-      "https://www.supastash.bz/?feed=rss2"
-    ],
+    "Opinion": ["https://www.kaa.bz/feed.xml"],
+    "Other": ["https://www.supastash.bz/?feed=rss2"],
     "Politics & Society": [
       "https://scm.bz/feed/",
       "https://www.pressoffice.gov.bz/feed/",
@@ -3929,13 +3845,8 @@
       "https://baha.org.bz/feed/",
       "https://sarkariresult.com.bz/feed/"
     ],
-    "Science & Technology": [
-      "https://lama.bz/feed",
-      "https://southerncable.bz/feed/"
-    ],
-    "Sports": [
-      "https://www.sportnews.bz/feed"
-    ],
+    "Science & Technology": ["https://lama.bz/feed", "https://southerncable.bz/feed/"],
+    "Sports": ["https://www.sportnews.bz/feed"],
     "World / International": [
       "https://snn.bz/feed/",
       "https://mfa.gov.bz/feed/",
@@ -4026,10 +3937,7 @@
       "https://www.uac.bj/feed/",
       "https://brab.bj/index.php/brab/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://h2aafromedia.bj/feed/",
-      "https://newsafrika.bj/rss/category/sport"
-    ],
+    "Sports": ["https://h2aafromedia.bj/feed/", "https://newsafrika.bj/rss/category/sport"],
     "World / International": [
       "https://newsafrika.bj/rss/category/Diplomatie",
       "https://newsafrika.bj/rss/category/editorial"
@@ -4042,9 +3950,7 @@
       "https://bedc.bm/feed/",
       "https://www.nat.bm/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://nmb.bm/feed/"
-    ],
+    "Lifestyle & Culture": ["https://nmb.bm/feed/"],
     "Local News": [
       "https://bernews.com/feed/",
       "https://bernews.com/obituaries/feed/",
@@ -4061,9 +3967,7 @@
     ]
   },
   "BHUTAN": {
-    "Business & Economy": [
-      "https://www.sarpang.gov.bt/feed/"
-    ],
+    "Business & Economy": ["https://www.sarpang.gov.bt/feed/"],
     "Lifestyle & Culture": [
       "https://toweroftrongsa.gov.bt/index.php/feed/",
       "https://www.btcl.bt/feed/"
@@ -4089,12 +3993,8 @@
       "https://www.nrcrlf.gov.bt/feed/",
       "https://bsj.com.bt/index.php/bsj/gateway/plugin/WebFeedGatewayPlugin/rss2"
     ],
-    "Sports": [
-      "https://surfing-waves.com/newsrss.xml"
-    ],
-    "World / International": [
-      "https://www.mfa.gov.bt/feed/"
-    ]
+    "Sports": ["https://surfing-waves.com/newsrss.xml"],
+    "World / International": ["https://www.mfa.gov.bt/feed/"]
   },
   "BOLIVIA": {
     "Business & Economy": [
@@ -4604,25 +4504,15 @@
       "https://theautomag.co.bw/feed/",
       "https://www.dobusiness.co.bw/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://missbotswana.co.bw/feed/",
-      "https://grandpalm.bw/feed/"
-    ],
-    "Local News": [
-      "https://mvafund.bw/feed/",
-      "https://na.co.bw/feed/"
-    ],
+    "Lifestyle & Culture": ["https://missbotswana.co.bw/feed/", "https://grandpalm.bw/feed/"],
+    "Local News": ["https://mvafund.bw/feed/", "https://na.co.bw/feed/"],
     "Politics & Society": [
       "https://www.sundaystandard.info/feed/",
       "https://www.gabzfm.com/blog-feed.xml",
       "https://www.punchlinepod.co.bw/feed/"
     ],
-    "Science & Technology": [
-      "https://repository.biust.ac.bw/feed/atom_1.0/site"
-    ],
-    "World / International": [
-      "https://mir.magictowers.co.bw/en/news-in-brief/news-feed.xml"
-    ]
+    "Science & Technology": ["https://repository.biust.ac.bw/feed/atom_1.0/site"],
+    "World / International": ["https://mir.magictowers.co.bw/en/news-in-brief/news-feed.xml"]
   },
   "BRAZIL": {
     "Business & Economy": [
@@ -5703,37 +5593,22 @@
     ]
   },
   "BRITISH_INDIAN_OCEAN_TERRITORY": {
-    "Business & Economy": [
-      "https://avada.io/feed/"
-    ],
-    "Science & Technology": [
-      "https://www.screenly.io/rss.xml",
-      "https://currentaffairs.io/feed"
-    ]
+    "Business & Economy": ["https://avada.io/feed/"],
+    "Science & Technology": ["https://www.screenly.io/rss.xml", "https://currentaffairs.io/feed"]
   },
   "BRITISH_VIRGIN_ISLANDS": {
-    "Business & Economy": [
-      "https://bvirecovery.vg/feed/"
-    ],
-    "Local News": [
-      "https://www.bvihsa.vg/feed/"
-    ]
+    "Business & Economy": ["https://bvirecovery.vg/feed/"],
+    "Local News": ["https://www.bvihsa.vg/feed/"]
   },
   "BRUNEI": {
-    "Business & Economy": [
-      "https://www.bedb.gov.bn/blog-feed.xml"
-    ],
+    "Business & Economy": ["https://www.bedb.gov.bn/blog-feed.xml"],
     "Local News": [
       "https://imagine.com.bn/feed/",
       "https://www.isb.edu.bn/feed/",
       "https://badantanmiah.com.bn/feed/"
     ],
-    "Other": [
-      "https://digital.borneobulletin.com.bn/feed/"
-    ],
-    "Politics & Society": [
-      "https://ias.ubd.edu.bn/feed/"
-    ]
+    "Other": ["https://digital.borneobulletin.com.bn/feed/"],
+    "Politics & Society": ["https://ias.ubd.edu.bn/feed/"]
   },
   "BULGARIA": {
     "Business & Economy": [
@@ -5929,9 +5804,7 @@
       "https://obshtinata.bg/feed/",
       "https://varnadnes.bg/feed/"
     ],
-    "Other": [
-      "https://feed.offnews.bg/rss/Лица_18761"
-    ],
+    "Other": ["https://feed.offnews.bg/rss/Лица_18761"],
     "Politics & Society": [
       "https://nova.bg/rss/latest",
       "https://24chasa.bg/rss",
@@ -6143,12 +6016,8 @@
     ]
   },
   "BURUNDI": {
-    "Business & Economy": [
-      "https://www.greengold.bi/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://burunditravel.bi/feed/"
-    ],
+    "Business & Economy": ["https://www.greengold.bi/feed/"],
+    "Lifestyle & Culture": ["https://burunditravel.bi/feed/"],
     "Local News": [
       "https://www.ugl.bi/feed/",
       "https://croixrouge.bi/feed/",
@@ -6163,9 +6032,7 @@
       "https://repository.bernet.edu.bi/server/opensearch/search?format=atom&query=*",
       "https://ligue-iteka.bi/index.php/feed/"
     ],
-    "Science & Technology": [
-      "https://isabu.bi/feed/"
-    ]
+    "Science & Technology": ["https://isabu.bi/feed/"]
   },
   "CAMBODIA": {
     "Business & Economy": [
@@ -6243,10 +6110,7 @@
       "https://cadt.edu.kh/feed/",
       "https://www.nchads.gov.kh/km/feed/"
     ],
-    "Sports": [
-      "https://kohsantepheapdaily.com.kh/feed",
-      "https://sports.ams.com.kh/feed"
-    ],
+    "Sports": ["https://kohsantepheapdaily.com.kh/feed", "https://sports.ams.com.kh/feed"],
     "World / International": [
       "https://www.puc.edu.kh/feed/",
       "https://rgsu.gov.kh/feed/",
@@ -6351,14 +6215,8 @@
       "https://blog.glotelho.cm/feed/",
       "https://moz.com/feeds/blog.rss"
     ],
-    "Sports": [
-      "https://sports24.cm/feed/",
-      "https://www.jri.cm/feed/"
-    ],
-    "World / International": [
-      "https://diplocam.cm/feed/",
-      "https://mora.cm/feed/"
-    ]
+    "Sports": ["https://sports24.cm/feed/", "https://www.jri.cm/feed/"],
+    "World / International": ["https://diplocam.cm/feed/", "https://mora.cm/feed/"]
   },
   "CANADA": {
     "Business & Economy": [
@@ -7019,10 +6877,7 @@
       "https://allistonchamber.ca/feed/",
       "https://aylmerexpress.com/feed/"
     ],
-    "Opinion": [
-      "https://ottawasun.com/feed/atom",
-      "https://theafronews.com/feed/"
-    ],
+    "Opinion": ["https://ottawasun.com/feed/atom", "https://theafronews.com/feed/"],
     "Other": [
       "https://www.thenorwester.ca/feed/",
       "https://stfx.scholaris.ca/server/opensearch/search?format=atom&query=*",
@@ -7278,10 +7133,7 @@
     ]
   },
   "CAPE_VERDE": {
-    "Local News": [
-      "https://www.anacao.cv/feed/",
-      "https://opais.cv/feed/"
-    ],
+    "Local News": ["https://www.anacao.cv/feed/", "https://opais.cv/feed/"],
     "Politics & Society": [
       "https://tva.cv/index.php/feed/",
       "https://expressodasilhas.cv/rss",
@@ -7291,31 +7143,21 @@
       "https://tiver.cv/feed/",
       "https://presidencia.cv/feed/"
     ],
-    "Science & Technology": [
-      "https://terranova.cv/pt_PT/feed/"
-    ]
+    "Science & Technology": ["https://terranova.cv/pt_PT/feed/"]
   },
   "CAYMAN_ISLANDS": {
-    "Business & Economy": [
-      "https://cimpa.ky/feed/"
-    ],
+    "Business & Economy": ["https://cimpa.ky/feed/"],
     "Local News": [
       "https://www.ieyenews.com/feed/",
       "https://www.remax.ky/feed/",
       "https://doa.gov.ky/feed/",
       "https://caymannewsservice.com/feed/"
     ],
-    "Politics & Society": [
-      "https://onlys.ky/rss/"
-    ]
+    "Politics & Society": ["https://onlys.ky/rss/"]
   },
   "CENTRAL_AFRICAN_REPUBLIC": {
-    "Business & Economy": [
-      "https://www.marilia.cf/feeds/posts/default"
-    ],
-    "Lifestyle & Culture": [
-      "https://kverselibrary.cf/feed/page:feed.xml"
-    ],
+    "Business & Economy": ["https://www.marilia.cf/feeds/posts/default"],
+    "Lifestyle & Culture": ["https://kverselibrary.cf/feed/page:feed.xml"],
     "Politics & Society": [
       "https://lengosongo.cf/feed/",
       "https://primature.cf/feed/",
@@ -7332,18 +7174,9 @@
     ]
   },
   "CHAD": {
-    "Business & Economy": [
-      "https://pilier.td/feed/",
-      "https://arse.td/feed/"
-    ],
-    "Local News": [
-      "https://manara.td/feed/",
-      "https://aderm.td/feed/",
-      "https://unisaf.td/feed/"
-    ],
-    "Other": [
-      "https://apec-tchad.td/feed/"
-    ],
+    "Business & Economy": ["https://pilier.td/feed/", "https://arse.td/feed/"],
+    "Local News": ["https://manara.td/feed/", "https://aderm.td/feed/", "https://unisaf.td/feed/"],
+    "Other": ["https://apec-tchad.td/feed/"],
     "Politics & Society": [
       "https://portail.td/feed/",
       "https://atpe.td/feed/",
@@ -7372,13 +7205,8 @@
       "https://www.stallioninvestment.td/feed/",
       "https://www.enastic.td/?feed=rss2"
     ],
-    "Sports": [
-      "https://lesportif.td/feed/",
-      "https://ftfa.td/feed/"
-    ],
-    "World / International": [
-      "https://anie.td/feed/"
-    ]
+    "Sports": ["https://lesportif.td/feed/", "https://ftfa.td/feed/"],
+    "World / International": ["https://anie.td/feed/"]
   },
   "CHILE": {
     "Business & Economy": [
@@ -7690,12 +7518,8 @@
       "https://www.latribunadecolchagua.cl/feed/",
       "https://pacificotelevisionhd.cl/feed/"
     ],
-    "Opinion": [
-      "https://ipaulofreire.cl/feed/"
-    ],
-    "Other": [
-      "https://www.portal.ijuridica.cl/feed/"
-    ],
+    "Opinion": ["https://ipaulofreire.cl/feed/"],
+    "Other": ["https://www.portal.ijuridica.cl/feed/"],
     "Politics & Society": [
       "https://interferencia.cl/rss.xml",
       "https://www.elciudadano.com/feed/",
@@ -7871,20 +7695,14 @@
     ]
   },
   "CHRISTMAS_ISLAND": {
-    "Business & Economy": [
-      "https://www.resonate.cx/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://hoathinh3d.cx/feed/"
-    ],
+    "Business & Economy": ["https://www.resonate.cx/feed/"],
+    "Lifestyle & Culture": ["https://hoathinh3d.cx/feed/"],
     "Science & Technology": [
       "https://www.firewall.cx/index.php?option=com_jmap&view=sitemap&format=rss&xslt=1"
     ]
   },
   "COCOS_(KEELING)_ISLANDS": {
-    "Business & Economy": [
-      "https://free.cc/feed/"
-    ],
+    "Business & Economy": ["https://free.cc/feed/"],
     "Lifestyle & Culture": [
       "https://artdaily.cc/rss.asp",
       "https://taiwaneverything.cc/feed/",
@@ -7895,21 +7713,14 @@
       "https://www.wordoffaith.cc/blog-feed.xml",
       "https://journal.rouleur.cc/feed/"
     ],
-    "Local News": [
-      "https://shire.cc/latest-news.feed?type=rss",
-      "https://grownyc.org/rss.xml"
-    ],
+    "Local News": ["https://shire.cc/latest-news.feed?type=rss", "https://grownyc.org/rss.xml"],
     "Science & Technology": [
       "https://uxdesign.cc/feed",
       "https://datempl.cc/one-click-free-downloads-templates-in-pdf-doc-xls-psd/feed/",
       "https://chamsyslighting.com/feed/"
     ],
-    "Sports": [
-      "https://albaoptics.cc/feed/"
-    ],
-    "World / International": [
-      "https://jci.cc/feed/"
-    ]
+    "Sports": ["https://albaoptics.cc/feed/"],
+    "World / International": ["https://jci.cc/feed/"]
   },
   "COLOMBIA": {
     "Business & Economy": [
@@ -8031,9 +7842,7 @@
       "https://www.valle.veolia.co/rss-site-updates",
       "https://urabadigital.com.co/feed/"
     ],
-    "Other": [
-      "https://elperiodicodeportivo.com.co/feed/"
-    ],
+    "Other": ["https://elperiodicodeportivo.com.co/feed/"],
     "Politics & Society": [
       "https://www.pares.com.co/feed/",
       "https://voragine.co/feed/",
@@ -8148,9 +7957,7 @@
       "https://www.bch.cg/feed/",
       "https://banquepostale.cg/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://fespam.cg/feed/"
-    ],
+    "Lifestyle & Culture": ["https://fespam.cg/feed/"],
     "Local News": [
       "https://www.matinlibre.cg/feed/",
       "https://www.vox.cg/feed/",
@@ -8173,12 +7980,8 @@
       "https://cfi-ciras.cg/feed/",
       "https://indist.cg/feed/"
     ],
-    "Sports": [
-      "https://fecofoot.cg/feed/"
-    ],
-    "World / International": [
-      "https://anaccongo.cg/fr/feed/"
-    ]
+    "Sports": ["https://fecofoot.cg/feed/"],
+    "World / International": ["https://anaccongo.cg/fr/feed/"]
   },
   "CONGO_-_KINSHASA": {
     "Business & Economy": [
@@ -8231,9 +8034,7 @@
       "https://uom.cd/feed/",
       "https://csspevk.cd/feed/"
     ],
-    "Opinion": [
-      "https://www.une.cd/rss/category/tribune"
-    ],
+    "Opinion": ["https://www.une.cd/rss/category/tribune"],
     "Politics & Society": [
       "https://rtnc.cd/feed/",
       "https://www.congomonde.cd/feed/",
@@ -8328,10 +8129,7 @@
       "https://portefeuille.gouv.cd/feed/",
       "https://angazainstitute.ac.cd/feed/"
     ],
-    "Science & Technology": [
-      "https://numerico.cd/feed/",
-      "https://ucbukavu.ac.cd/feed/"
-    ],
+    "Science & Technology": ["https://numerico.cd/feed/", "https://ucbukavu.ac.cd/feed/"],
     "Sports": [
       "https://www.gosport.cd/feed/",
       "https://www.une.cd/rss/category/sports",
@@ -8357,10 +8155,7 @@
     ]
   },
   "COOK_ISLANDS": {
-    "Business & Economy": [
-      "https://stats.gov.ck/feed/",
-      "https://www.ciic.gov.ck/feed/"
-    ],
+    "Business & Economy": ["https://stats.gov.ck/feed/", "https://www.ciic.gov.ck/feed/"],
     "Local News": [
       "https://www.justice.gov.ck/?feed=rss2",
       "https://www.health.gov.ck/feed/",
@@ -8372,12 +8167,8 @@
       "https://www.pmoffice.gov.ck/feed/",
       "https://www.mfem.gov.ck/blog-feed.xml"
     ],
-    "Sports": [
-      "https://www.vakaeiva.co.ck/feed/"
-    ],
-    "World / International": [
-      "https://environment.gov.ck/feed/"
-    ]
+    "Sports": ["https://www.vakaeiva.co.ck/feed/"],
+    "World / International": ["https://environment.gov.ck/feed/"]
   },
   "COSTA_RICA": {
     "Business & Economy": [
@@ -8453,10 +8244,7 @@
       "https://repositorio.utn.ac.cr/server/opensearch/search?format=atom&query=*",
       "https://repositorio.binasss.sa.cr/server/opensearch/search?format=atom&query=*"
     ],
-    "Sports": [
-      "https://lavia.cr/f.atom",
-      "https://gammadigital.uia.ac.cr/feed/"
-    ]
+    "Sports": ["https://lavia.cr/f.atom", "https://gammadigital.uia.ac.cr/feed/"]
   },
   "CÔTE_D’IVOIRE": {
     "Business & Economy": [
@@ -8514,10 +8302,7 @@
       "https://radio.fondationmarieesther.ci/feed/",
       "https://agents.tresor.gouv.ci/v2/?feed=rss2"
     ],
-    "Science & Technology": [
-      "https://digitalmag.ci/feed/",
-      "https://w.univ-fhb.edu.ci/feed/"
-    ],
+    "Science & Technology": ["https://digitalmag.ci/feed/", "https://w.univ-fhb.edu.ci/feed/"],
     "Sports": [
       "https://liferadio.ci/feed/",
       "http://linfo.ci/feed",
@@ -8525,9 +8310,7 @@
       "https://lepatriote.ci/rss/category/SPORT",
       "https://mail.sport-ivoire.ci/rss.xml"
     ],
-    "World / International": [
-      "https://lepatriote.ci/rss/category/INTERNATIONAL"
-    ]
+    "World / International": ["https://lepatriote.ci/rss/category/INTERNATIONAL"]
   },
   "CROATIA": {
     "Business & Economy": [
@@ -8852,9 +8635,7 @@
       "https://dev3.index.hr/rss/vijesti-zagreb",
       "https://likaclub.net.hr/feed/"
     ],
-    "Other": [
-      "https://dubrava.com.hr/index.php/feed/"
-    ],
+    "Other": ["https://dubrava.com.hr/index.php/feed/"],
     "Politics & Society": [
       "https://index.hr/rss",
       "https://index.hr/rss/vijesti",
@@ -9016,9 +8797,7 @@
     ]
   },
   "CUBA": {
-    "Business & Economy": [
-      "https://soldecuba.tur.cu/feed/"
-    ],
+    "Business & Economy": ["https://soldecuba.tur.cu/feed/"],
     "Lifestyle & Culture": [
       "https://www.mybigfatcubanfamily.com/feed/",
       "https://ahora.cu/es/cultura/?format=feed&type=rss",
@@ -9065,9 +8844,7 @@
       "https://ediciones.inca.edu.cu/index.php/ediciones/gateway/plugin/WebFeedGatewayPlugin/atom",
       "https://conrado.ucf.edu.cu/index.php/conrado/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://ahora.cu/es/deportes/?format=feed&type=rss"
-    ],
+    "Sports": ["https://ahora.cu/es/deportes/?format=feed&type=rss"],
     "World / International": [
       "http://havanatimesenespanol.org/feed/",
       "http://www.trabajadores.cu/feed/",
@@ -9088,17 +8865,9 @@
     ]
   },
   "CURAÇAO": {
-    "Local News": [
-      "https://extra.cw/feed/",
-      "https://www.meteo.cw/rss/Forecast_Eng.xml"
-    ],
-    "Politics & Society": [
-      "https://ser.cw/feed/",
-      "https://soab.cw/feed/"
-    ],
-    "Sports": [
-      "https://www.sport.cw/feed/"
-    ]
+    "Local News": ["https://extra.cw/feed/", "https://www.meteo.cw/rss/Forecast_Eng.xml"],
+    "Politics & Society": ["https://ser.cw/feed/", "https://soab.cw/feed/"],
+    "Sports": ["https://www.sport.cw/feed/"]
   },
   "CYPRUS": {
     "Business & Economy": [
@@ -9650,9 +9419,7 @@
       "https://www.mapzabreh.cz/feed/",
       "https://rss.pozary.cz/jhm/"
     ],
-    "Opinion": [
-      "https://www.krajskelisty.cz/rss-ustecky-kraj.xml"
-    ],
+    "Opinion": ["https://www.krajskelisty.cz/rss-ustecky-kraj.xml"],
     "Other": [
       "http://www.bohumin.cz/rss/fotogalerie/osobnosti/",
       "https://www.khszlin.cz/feed/",
@@ -10296,15 +10063,10 @@
       "https://avisendanmark.dk/feed/sport",
       "https://www.vbfodbold.dk/feed/"
     ],
-    "World / International": [
-      "https://borsen.dk/rss/udland",
-      "https://borsen.dk/rss/virksomheder"
-    ]
+    "World / International": ["https://borsen.dk/rss/udland", "https://borsen.dk/rss/virksomheder"]
   },
   "DJIBOUTI": {
-    "Business & Economy": [
-      "https://ccd.dj/feed/"
-    ],
+    "Business & Economy": ["https://ccd.dj/feed/"],
     "Local News": [
       "https://www.adds.dj/feed/",
       "http://www.prefecture-dikhil.dj/_frame/feed.xml",
@@ -10318,9 +10080,7 @@
       "https://douanes.gouv.dj/feed/",
       "https://communication.gouv.dj/feed/"
     ],
-    "Sports": [
-      "https://fdf.dj/?feed=rss2"
-    ]
+    "Sports": ["https://fdf.dj/?feed=rss2"]
   },
   "DOMINICA": {
     "Local News": [
@@ -10631,9 +10391,7 @@
       "https://www.elheraldo.com.ec/feed/",
       "https://pruebas.elmercurio.com.ec/feed/"
     ],
-    "World / International": [
-      "https://ocaru.org.ec/feed/"
-    ]
+    "World / International": ["https://ocaru.org.ec/feed/"]
   },
   "EGYPT": {
     "Business & Economy": [
@@ -10674,10 +10432,7 @@
       "https://www.elle.eg/feed/",
       "https://journal.esg.net.eg/index.php/EJGC/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://alahalygate.com/feed",
-      "https://emedia.org.eg/rss/category/youth-sports-4"
-    ],
+    "Sports": ["https://alahalygate.com/feed", "https://emedia.org.eg/rss/category/youth-sports-4"],
     "World / International": [
       "https://ecss.com.eg/feed/",
       "https://nile.eg/feed",
@@ -10687,14 +10442,8 @@
     ]
   },
   "EL_SALVADOR": {
-    "Business & Economy": [
-      "https://dinero.com.sv/feed/",
-      "https://elindustrial.com.sv/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://www.contrapunto.com.sv/feed/",
-      "https://heraldos.sv/feed/"
-    ],
+    "Business & Economy": ["https://dinero.com.sv/feed/", "https://elindustrial.com.sv/feed/"],
+    "Lifestyle & Culture": ["https://www.contrapunto.com.sv/feed/", "https://heraldos.sv/feed/"],
     "Local News": [
       "https://lapagina.com.sv/feed/",
       "https://ugb.edu.sv/feed/",
@@ -10727,18 +10476,11 @@
       "https://unes.org.sv/feed/",
       "https://rd.udb.edu.sv/server/opensearch/search?format=atom&query=*"
     ],
-    "Sports": [
-      "https://laprimera.com.sv/feed/"
-    ],
-    "World / International": [
-      "https://tvm.com.sv/feed/",
-      "https://publimetro.sv/feed/"
-    ]
+    "Sports": ["https://laprimera.com.sv/feed/"],
+    "World / International": ["https://tvm.com.sv/feed/", "https://publimetro.sv/feed/"]
   },
   "EQUATORIAL_GUINEA": {
-    "Business & Economy": [
-      "https://www.cajautonoma.gq/feed/"
-    ],
+    "Business & Economy": ["https://www.cajautonoma.gq/feed/"],
     "Science & Technology": [
       "https://cosmin.gq/feed/",
       "https://cosmin.us/feed/",
@@ -10749,14 +10491,10 @@
       "https://www.icqmedia.gq/feeds/posts/default",
       "https://www.bridgetmoynahan.gq/feeds/posts/default"
     ],
-    "World / International": [
-      "https://aacapital.gq/feed/"
-    ]
+    "World / International": ["https://aacapital.gq/feed/"]
   },
   "ERITREA": {
-    "Politics & Society": [
-      "https://awate.com/feed/"
-    ]
+    "Politics & Society": ["https://awate.com/feed/"]
   },
   "ESTONIA": {
     "Business & Economy": [
@@ -10995,10 +10733,7 @@
       "https://loksakool.ee/feed/",
       "https://nommehuvikool.ee/feed/"
     ],
-    "Other": [
-      "https://www.kehrajaam.ee/feed/",
-      "https://torikultuur.ee/feed/"
-    ],
+    "Other": ["https://www.kehrajaam.ee/feed/", "https://torikultuur.ee/feed/"],
     "Politics & Society": [
       "https://kaitseliit.ee/feed/",
       "https://kliimaministeerium.ee/rss-feeds/rss.xml",
@@ -11091,9 +10826,7 @@
       "https://www.separc.co.sz/feed/",
       "https://www.southernafricalitigationcentre.org/feed/"
     ],
-    "Sports": [
-      "https://nfas.org.sz/feed/"
-    ]
+    "Sports": ["https://nfas.org.sz/feed/"]
   },
   "ETHIOPIA": {
     "Business & Economy": [
@@ -11116,9 +10849,7 @@
       "https://eih.et/feed/",
       "https://eca.et/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://mot.gov.et/feed/"
-    ],
+    "Lifestyle & Culture": ["https://mot.gov.et/feed/"],
     "Local News": [
       "https://wu.edu.et/feed/",
       "https://obn.com.et/feed/",
@@ -11171,10 +10902,7 @@
       "https://ejssd.astu.edu.et/index.php/EJSSD/gateway/plugin/WebFeedGatewayPlugin/atom",
       "https://etd.aau.edu.et/server/opensearch/search?format=atom&query=*"
     ],
-    "Sports": [
-      "https://eaf.org.et/feed",
-      "https://soccer.et/feed/"
-    ],
+    "Sports": ["https://eaf.org.et/feed", "https://soccer.et/feed/"],
     "World / International": [
       "https://www.edmap.et/feed/",
       "https://rrs.et/feed/",
@@ -11182,17 +10910,11 @@
     ]
   },
   "FALKLAND_ISLANDS": {
-    "Business & Economy": [
-      "https://fidc.co.fk/feed/"
-    ],
-    "Science & Technology": [
-      "https://openfalklands.org.fk/feed/"
-    ]
+    "Business & Economy": ["https://fidc.co.fk/feed/"],
+    "Science & Technology": ["https://openfalklands.org.fk/feed/"]
   },
   "FAROE_ISLANDS": {
-    "Business & Economy": [
-      "https://fmf.fo/feed/"
-    ],
+    "Business & Economy": ["https://fmf.fo/feed/"],
     "Lifestyle & Culture": [
       "https://kvf.fo/rss/mentan",
       "https://evr.fo/feed/",
@@ -11239,10 +10961,7 @@
       "https://www.justice.gov.fj/feed/",
       "https://www.parliament.gov.fj/feed/"
     ],
-    "Science & Technology": [
-      "https://pina.com.fj/feed/",
-      "https://www.usp.ac.fj/feed/"
-    ],
+    "Science & Technology": ["https://pina.com.fj/feed/", "https://www.usp.ac.fj/feed/"],
     "World / International": [
       "https://www.fbcnews.com.fj/feed/",
       "https://www.foreignaffairs.gov.fj/feed/"
@@ -11631,14 +11350,8 @@
       "https://uuraistenseurakunta.fi/o/news-portlet/feed/parishtags/?parishTags=&plid=7473892&instanceId=o4eQ2yWdnBWZ",
       "https://suonenjoenseurakunta.fi/o/news-portlet/feed/parishtags/?parishTags=&plid=43225208&instanceId=o4eQ2yWdnBWZ"
     ],
-    "Opinion": [
-      "https://yle.fi/rss/t/18-215844/fi",
-      "https://migranttales.net/feed/"
-    ],
-    "Other": [
-      "https://feeds.feedburner.com/sanakirja",
-      "https://www.tapanilanterveys.fi/feed/"
-    ],
+    "Opinion": ["https://yle.fi/rss/t/18-215844/fi", "https://migranttales.net/feed/"],
+    "Other": ["https://feeds.feedburner.com/sanakirja", "https://www.tapanilanterveys.fi/feed/"],
     "Politics & Society": [
       "https://www.maaseuduntulevaisuus.fi/feeds/maaseuduntulevaisuus",
       "https://dvv.fi/henkiloasiakkaat/-/asset_publisher/5dOSMg53qh7v/rss",
@@ -12638,9 +12351,7 @@
       "https://college-pablo-neruda-wattrelos.59.ac-lille.fr/feed/",
       "https://www.hautsdefrance-mobilites.fr/feed/"
     ],
-    "Opinion": [
-      "https://www.voltairenet.org/spip.php?page=backend&id_secteur=1110&lang=ar"
-    ],
+    "Opinion": ["https://www.voltairenet.org/spip.php?page=backend&id_secteur=1110&lang=ar"],
     "Politics & Society": [
       "https://www.lemonde.fr/actualite-medias/rss_full.xml",
       "https://www.lemonde.fr/afrique/rss_full.xml",
@@ -13151,18 +12862,10 @@
     ]
   },
   "FRENCH_GUIANA": {
-    "Business & Economy": [
-      "https://pneuscash.gf/feed/"
-    ],
-    "Local News": [
-      "https://la1ere.francetvinfo.fr/economie/rss?r=guyane"
-    ],
-    "Politics & Society": [
-      "https://syndicat-utg.gf/feed/"
-    ],
-    "World / International": [
-      "https://www.franceguyane.fr/rss/lea_actualite_economie.xml"
-    ]
+    "Business & Economy": ["https://pneuscash.gf/feed/"],
+    "Local News": ["https://la1ere.francetvinfo.fr/economie/rss?r=guyane"],
+    "Politics & Society": ["https://syndicat-utg.gf/feed/"],
+    "World / International": ["https://www.franceguyane.fr/rss/lea_actualite_economie.xml"]
   },
   "FRENCH_POLYNESIA": {
     "Business & Economy": [
@@ -13186,28 +12889,18 @@
       "https://lyceeprofessionnelmahina.pf/feed/",
       "https://collegedemahina.pf/feed/"
     ],
-    "Other": [
-      "https://www.poecharter.pf/rss/blog"
-    ],
-    "Politics & Society": [
-      "https://www.presidence.pf/feed/"
-    ],
-    "Science & Technology": [
-      "https://smashballoon.com/feed/"
-    ]
+    "Other": ["https://www.poecharter.pf/rss/blog"],
+    "Politics & Society": ["https://www.presidence.pf/feed/"],
+    "Science & Technology": ["https://smashballoon.com/feed/"]
   },
   "GABON": {
-    "Business & Economy": [
-      "https://www.voitures.ga/fr/last_ad"
-    ],
+    "Business & Economy": ["https://www.voitures.ga/fr/last_ad"],
     "Lifestyle & Culture": [
       "https://dengui.ga/feed/",
       "https://news.moodmusic.ga/feed/",
       "https://leseditionsntsame.ga/feed/"
     ],
-    "Local News": [
-      "https://lejournaldeslycees.ga/feed/"
-    ],
+    "Local News": ["https://lejournaldeslycees.ga/feed/"],
     "Politics & Society": [
       "http://gouvernement.ga/feed/",
       "https://agpgabon.ga/feed/",
@@ -13222,17 +12915,9 @@
       "https://www.apdpvp.ga/feed/",
       "https://cnamgs.ga/feed/"
     ],
-    "Science & Technology": [
-      "http://aninf.ga/feed/",
-      "https://spin.ga/feed/"
-    ],
-    "Sports": [
-      "https://cafesportplus.ga/feed/",
-      "https://www.gabonews.ga/feed/"
-    ],
-    "World / International": [
-      "https://presidence.ga/feed/"
-    ]
+    "Science & Technology": ["http://aninf.ga/feed/", "https://spin.ga/feed/"],
+    "Sports": ["https://cafesportplus.ga/feed/", "https://www.gabonews.ga/feed/"],
+    "World / International": ["https://presidence.ga/feed/"]
   },
   "GAMBIA": {
     "Business & Economy": [
@@ -13263,14 +12948,8 @@
       "https://iec.gm/feed/",
       "https://majac.gm/feed/"
     ],
-    "Science & Technology": [
-      "https://kanyi.gm/feed/",
-      "https://sinahs.gm/feed/"
-    ],
-    "World / International": [
-      "https://gambiaembassydc.gm/feed/",
-      "https://ovp.gov.gm/feed/"
-    ]
+    "Science & Technology": ["https://kanyi.gm/feed/", "https://sinahs.gm/feed/"],
+    "World / International": ["https://gambiaembassydc.gm/feed/", "https://ovp.gov.gm/feed/"]
   },
   "GEORGIA": {
     "Business & Economy": [
@@ -14856,13 +14535,8 @@
     ]
   },
   "GIBRALTAR": {
-    "Business & Economy": [
-      "https://gfsb.gi/feed/"
-    ],
-    "Local News": [
-      "https://www.mayor.gi/feed/",
-      "https://snag.gi/feed/"
-    ]
+    "Business & Economy": ["https://gfsb.gi/feed/"],
+    "Local News": ["https://www.mayor.gi/feed/", "https://snag.gi/feed/"]
   },
   "GREECE": {
     "Business & Economy": [
@@ -15233,10 +14907,7 @@
       "https://anonymoi-yperfagoi.org.gr/feed/",
       "https://esepimbe.gr/feed/"
     ],
-    "Other": [
-      "https://www.offlinepost.gr/feed/",
-      "https://deps.panteion.gr/?feed=rss2"
-    ],
+    "Other": ["https://www.offlinepost.gr/feed/", "https://deps.panteion.gr/?feed=rss2"],
     "Politics & Society": [
       "https://www.skai.gr/feed.xml",
       "https://feeds.feedburner.com/dikaiologitika/ZteV",
@@ -15496,19 +15167,13 @@
     ]
   },
   "GREENLAND": {
-    "Business & Economy": [
-      "https://www.ral.gl/feed/",
-      "https://workingreenland.gl/feed/"
-    ],
+    "Business & Economy": ["https://www.ral.gl/feed/", "https://workingreenland.gl/feed/"],
     "Lifestyle & Culture": [
       "https://inuktravel.gl/feed/",
       "https://oqaasileriffik.gl/feed/",
       "https://napa.gl/feed/"
     ],
-    "Local News": [
-      "https://isg.gl/feed/",
-      "https://sermersooq.gl/kl/feed/"
-    ],
+    "Local News": ["https://isg.gl/feed/", "https://sermersooq.gl/kl/feed/"],
     "Politics & Society": [
       "https://naalakkersuisut.gl/rss/rsskl-GL.xml",
       "https://gfjk.gl/feed/",
@@ -15519,43 +15184,20 @@
       "https://joe.gl/ombek/blog/rss",
       "https://arctichub.gl/feed/"
     ],
-    "World / International": [
-      "https://media.gl/feed/"
-    ]
+    "World / International": ["https://media.gl/feed/"]
   },
   "GRENADA": {
-    "Business & Economy": [
-      "http://caribjournal.com/feed"
-    ],
-    "Local News": [
-      "https://nowgrenada.com/feed/"
-    ],
-    "Politics & Society": [
-      "https://ntrc.gd/feed/"
-    ],
-    "World / International": [
-      "https://gndembassyprc.mofa.gov.gd/feed/"
-    ]
+    "Business & Economy": ["http://caribjournal.com/feed"],
+    "Local News": ["https://nowgrenada.com/feed/"],
+    "Politics & Society": ["https://ntrc.gd/feed/"],
+    "World / International": ["https://gndembassyprc.mofa.gov.gd/feed/"]
   },
   "GUADELOUPE": {
-    "Business & Economy": [
-      "https://www.carglass.gp/feed/",
-      "https://uneentreprise.ude.gp/feed/"
-    ],
-    "Local News": [
-      "https://smt.gp/feed/"
-    ],
-    "Politics & Society": [
-      "https://www.guadeloupe-energie.gp/feed/"
-    ],
-    "Science & Technology": [
-      "https://www.gis-971.gp/feed/"
-    ],
-    "Sports": [
-      "https://anasa.gp/feed/",
-      "https://labanane.gp/feed/",
-      "https://geen.gp/feed/"
-    ]
+    "Business & Economy": ["https://www.carglass.gp/feed/", "https://uneentreprise.ude.gp/feed/"],
+    "Local News": ["https://smt.gp/feed/"],
+    "Politics & Society": ["https://www.guadeloupe-energie.gp/feed/"],
+    "Science & Technology": ["https://www.gis-971.gp/feed/"],
+    "Sports": ["https://anasa.gp/feed/", "https://labanane.gp/feed/", "https://geen.gp/feed/"]
   },
   "GUATEMALA": {
     "Business & Economy": [
@@ -15631,12 +15273,8 @@
       "https://noticias.uvg.edu.gt/feed/",
       "https://periodico.ingenieria.usac.edu.gt/feed/"
     ],
-    "Sports": [
-      "https://cronica.com.gt/feed/"
-    ],
-    "World / International": [
-      "https://centranews.com.gt/feed/"
-    ]
+    "Sports": ["https://cronica.com.gt/feed/"],
+    "World / International": ["https://centranews.com.gt/feed/"]
   },
   "GUERNSEY": {
     "Local News": [
@@ -15655,12 +15293,8 @@
       "https://forum.turtlecraft.gg/app.php/feed/topics?sid=d9903dc3628d4b40de876efe097584d5",
       "https://forum.turtlecraft.gg/app.php/feed?sid=d9903dc3628d4b40de876efe097584d5"
     ],
-    "Sports": [
-      "https://mut.gg/rss/"
-    ],
-    "World / International": [
-      "https://gfsc.gg/article.xml"
-    ]
+    "Sports": ["https://mut.gg/rss/"],
+    "World / International": ["https://gfsc.gg/article.xml"]
   },
   "GUINEA": {
     "Business & Economy": [
@@ -15671,12 +15305,8 @@
       "https://dgb.gov.gn/feed/",
       "https://www.ugp-passp-ms.org.gn/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://onpa.gov.gn/feed/"
-    ],
-    "Local News": [
-      "https://univ-labe.edu.gn/feed/"
-    ],
+    "Lifestyle & Culture": ["https://onpa.gov.gn/feed/"],
+    "Local News": ["https://univ-labe.edu.gn/feed/"],
     "Politics & Society": [
       "https://gouvernement.gov.gn/feed/",
       "https://primature.gov.gn/feed/",
@@ -15684,15 +15314,10 @@
       "https://mbudget.gov.gn/feed/",
       "https://coursupreme.org.gn/fr/feed/"
     ],
-    "Science & Technology": [
-      "https://irdpmag.edu.gn/feed/"
-    ]
+    "Science & Technology": ["https://irdpmag.edu.gn/feed/"]
   },
   "GUINEA-BISSAU": {
-    "Business & Economy": [
-      "https://apbef.gw/feed/",
-      "https://agefp.gw/feed/"
-    ],
+    "Business & Economy": ["https://apbef.gw/feed/", "https://agefp.gw/feed/"],
     "Politics & Society": [
       "https://jornalnopintcha.gw/feed/",
       "https://rdngbissau.gw/feed/",
@@ -15700,18 +15325,11 @@
       "https://alfandegas.mef.gw/feed/",
       "https://ministerioambiente.gw/feed/"
     ],
-    "World / International": [
-      "https://ang.gw/feed/"
-    ]
+    "World / International": ["https://ang.gw/feed/"]
   },
   "GUYANA": {
-    "Business & Economy": [
-      "https://gcci.gy/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://wenews.gy/feed/",
-      "https://vk.gy/rss/"
-    ],
+    "Business & Economy": ["https://gcci.gy/feed/"],
+    "Lifestyle & Culture": ["https://wenews.gy/feed/", "https://vk.gy/rss/"],
     "Local News": [
       "https://kaieteurnewsonline.com/feed/",
       "https://newsroom.gy/feed/",
@@ -15726,9 +15344,7 @@
       "https://erc.org.gy/feed/",
       "https://eldorado.gy/feed/"
     ],
-    "Sports": [
-      "https://marianacademy.edu.gy/marian/rss.xml"
-    ]
+    "Sports": ["https://marianacademy.edu.gy/marian/rss.xml"]
   },
   "HAITI": {
     "Business & Economy": [
@@ -15766,10 +15382,7 @@
       "https://www.partifusion.ht/feed/",
       "https://kael.ht/feed/"
     ],
-    "World / International": [
-      "https://mae.gouv.ht/feed/",
-      "https://www.amitiefm.ht/blog-feed.xml"
-    ]
+    "World / International": ["https://mae.gouv.ht/feed/", "https://www.amitiefm.ht/blog-feed.xml"]
   },
   "HONDURAS": {
     "Business & Economy": [
@@ -15829,13 +15442,8 @@
       "https://www.metro.hn/feed/",
       "https://ampcwp.ampuertocortes.hn/feed/"
     ],
-    "Opinion": [
-      "https://mfioretti.substack.com/feed"
-    ],
-    "Other": [
-      "https://ihah.hn/feed/",
-      "https://photos.dariuszwinkler.com/atom.xml"
-    ],
+    "Opinion": ["https://mfioretti.substack.com/feed"],
+    "Other": ["https://ihah.hn/feed/", "https://photos.dariuszwinkler.com/atom.xml"],
     "Politics & Society": [
       "https://www.radiohrn.hn/rss/nacionales.xml",
       "https://proceso.hn/feed/",
@@ -16349,12 +15957,8 @@
       "https://fovaros.katasztrofavedelem.hu/10466/RSS_VESZ",
       "https://tarnokitenyek.hu/feed/"
     ],
-    "Opinion": [
-      "https://pestihirek.hu/feed/"
-    ],
-    "Other": [
-      "https://infostart.hu/bulvar/rss/"
-    ],
+    "Opinion": ["https://pestihirek.hu/feed/"],
+    "Other": ["https://infostart.hu/bulvar/rss/"],
     "Politics & Society": [
       "https://24.hu/feed/",
       "https://api.origo.hu/publicapi/hu/rss/origo/nagyvilag/articles",
@@ -21595,13 +21199,8 @@
       "https://www.dailymail.co.uk/home/index.rss",
       "https://tynwald.org.im/rss?site=/business/hansard&list=2020-2040"
     ],
-    "Science & Technology": [
-      "https://writings.agg.im/index.xml"
-    ],
-    "Sports": [
-      "https://www.fcisleofman.im/feed/",
-      "https://orienteering.im/feed/"
-    ]
+    "Science & Technology": ["https://writings.agg.im/index.xml"],
+    "Sports": ["https://www.fcisleofman.im/feed/", "https://orienteering.im/feed/"]
   },
   "ISRAEL": {
     "Business & Economy": [
@@ -21871,12 +21470,8 @@
       "https://www.maariv.co.il/rss/rssfeedsweather",
       "https://home.amana.co.il/feed/"
     ],
-    "Opinion": [
-      "https://talmidi.co.il/feed/"
-    ],
-    "Other": [
-      "https://haifasport.co.il/feed/"
-    ],
+    "Opinion": ["https://talmidi.co.il/feed/"],
+    "Other": ["https://haifasport.co.il/feed/"],
     "Politics & Society": [
       "https://news.israelinfo.co.il/rss/news.xml",
       "https://news.israelinfo.co.il/rss/news_events.xml",
@@ -22867,9 +22462,7 @@
       "https://www.travelsicilyweb.it/feed/",
       "https://ilfattodienna.it/feed.xml"
     ],
-    "Opinion": [
-      "https://www.ilfoglio.it/lettere/rss.xml"
-    ],
+    "Opinion": ["https://www.ilfoglio.it/lettere/rss.xml"],
     "Other": [
       "https://www.thesocialpost.it/feed/",
       "https://qds.it/feed/",
@@ -23340,9 +22933,7 @@
       "https://www.pcoa.gov.jm/feed/",
       "https://megid.gov.jm/feed/"
     ],
-    "Science & Technology": [
-      "https://www.src.gov.jm/feed/"
-    ]
+    "Science & Technology": ["https://www.src.gov.jm/feed/"]
   },
   "JAPAN": {
     "Business & Economy": [
@@ -24037,9 +23628,7 @@
     ]
   },
   "JERSEY": {
-    "Lifestyle & Culture": [
-      "https://www.gallery.je/feed/"
-    ],
+    "Lifestyle & Culture": ["https://www.gallery.je/feed/"],
     "Local News": [
       "https://stpeter.je/feed/",
       "https://stclement.je/feed/",
@@ -24052,10 +23641,7 @@
       "https://lifeboat.je/feed/",
       "https://today.je/rss/"
     ],
-    "Politics & Society": [
-      "https://blog.gov.je/feed/",
-      "https://safeguarding.je/feed/"
-    ]
+    "Politics & Society": ["https://blog.gov.je/feed/", "https://safeguarding.je/feed/"]
   },
   "JORDAN": {
     "Business & Economy": [
@@ -24090,9 +23676,7 @@
       "https://um-arrassas.gov.jo/feed/",
       "https://ahss.edu.jo/feed/"
     ],
-    "Other": [
-      "https://www.exchange.jo/rss_disclosures_financial/rss.xml"
-    ],
+    "Other": ["https://www.exchange.jo/rss_disclosures_financial/rss.xml"],
     "Politics & Society": [
       "https://www.twinkl.jo/rss/blog",
       "https://www.hala.jo/feed/",
@@ -24100,17 +23684,9 @@
       "https://www.exchange.jo/rss_disclosures_assembly/rss.xml",
       "https://edama.jo/feed/"
     ],
-    "Science & Technology": [
-      "https://mejcs.meu.edu.jo/?feed=rss2",
-      "https://abofa.jo/feed/"
-    ],
-    "Sports": [
-      "https://www.ayla.com.jo/feed/",
-      "https://wehdatclub.jo/feed/"
-    ],
-    "World / International": [
-      "http://www.sahafi.jo/rss.xml"
-    ]
+    "Science & Technology": ["https://mejcs.meu.edu.jo/?feed=rss2", "https://abofa.jo/feed/"],
+    "Sports": ["https://www.ayla.com.jo/feed/", "https://wehdatclub.jo/feed/"],
+    "World / International": ["http://www.sahafi.jo/rss.xml"]
   },
   "KAZAKHSTAN": {
     "Business & Economy": [
@@ -24222,9 +23798,7 @@
       "https://ru.newsroom.kz/feed",
       "https://karaganda24.kz/feed/"
     ],
-    "Other": [
-      "https://akyldy.kz/feed/"
-    ],
+    "Other": ["https://akyldy.kz/feed/"],
     "Politics & Society": [
       "https://informburo.kz/rss/pubsubhubbub-feed.xml",
       "https://stan.kz/feed/",
@@ -24561,16 +24135,9 @@
     ]
   },
   "KIRIBATI": {
-    "Business & Economy": [
-      "https://procurement.gov.ki/rss.xml"
-    ],
-    "Local News": [
-      "https://pub.com.ki/feed/",
-      "https://environment.melad.gov.ki/feed/"
-    ],
-    "World / International": [
-      "https://www.pso.gov.ki/feed/"
-    ]
+    "Business & Economy": ["https://procurement.gov.ki/rss.xml"],
+    "Local News": ["https://pub.com.ki/feed/", "https://environment.melad.gov.ki/feed/"],
+    "World / International": ["https://www.pso.gov.ki/feed/"]
   },
   "KOSOVO*": {
     "Business & Economy": [
@@ -24677,19 +24244,10 @@
       "https://kba.com.kw/feed/",
       "https://energyhouse.com.kw/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://248am.com/feed/"
-    ],
-    "Local News": [
-      "https://alnajat.org.kw/feed/",
-      "https://berwaz.com.kw/feed/"
-    ],
-    "Politics & Society": [
-      "https://journal.kilaw.edu.kw/feed/"
-    ],
-    "World / International": [
-      "https://nbaq.edu.kw/website/feed"
-    ]
+    "Lifestyle & Culture": ["https://248am.com/feed/"],
+    "Local News": ["https://alnajat.org.kw/feed/", "https://berwaz.com.kw/feed/"],
+    "Politics & Society": ["https://journal.kilaw.edu.kw/feed/"],
+    "World / International": ["https://nbaq.edu.kw/website/feed"]
   },
   "KYRGYZSTAN": {
     "Business & Economy": [
@@ -24704,10 +24262,7 @@
       "https://sdb.kg/feed/",
       "https://post.kg/language/ru/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://openosh.kg/feed/",
-      "https://adabiyat.kg/feed/"
-    ],
+    "Lifestyle & Culture": ["https://openosh.kg/feed/", "https://adabiyat.kg/feed/"],
     "Local News": [
       "https://24.kg/agent_024/rss/",
       "https://24.kg/obschestvo/rss/",
@@ -24792,13 +24347,8 @@
       "https://caiag.kg/ru/?format=feed&type=rss",
       "https://ilim.oshmpu.kg/index.php/01/gateway/plugin/WebFeedGatewayPlugin/rss2"
     ],
-    "Sports": [
-      "https://24.kg/sport/rss/"
-    ],
-    "World / International": [
-      "https://24.kg/vlast/rss/",
-      "https://oshtu.kg/feed/"
-    ]
+    "Sports": ["https://24.kg/sport/rss/"],
+    "World / International": ["https://24.kg/vlast/rss/", "https://oshtu.kg/feed/"]
   },
   "LAOS": {
     "Business & Economy": [
@@ -24829,9 +24379,7 @@
       "https://klartext.la/feed/",
       "https://www.vientianetimeslao.la/feed/"
     ],
-    "Opinion": [
-      "https://bubb.la/rss/opinion"
-    ],
+    "Opinion": ["https://bubb.la/rss/opinion"],
     "Politics & Society": [
       "https://bubb.la/rss/europa",
       "https://bubb.la/rss/media",
@@ -24858,10 +24406,7 @@
       "https://laopedia.gov.la/index.php?title=%E0%BA%9E%E0%BA%B4%E0%BB%80%E0%BA%AA%E0%BA%94:%E0%BA%81%E0%BA%B2%E0%BA%99%E0%BA%94%E0%BA%B1%E0%BA%94%E0%BB%81%E0%BA%81%E0%BB%89%E0%BA%AB%E0%BA%BC%E0%BB%89%E0%BA%B2%E0%BA%AA%E0%BA%B8%E0%BA%94&feed=atom",
       "https://lases.gov.la/?feed=rss2"
     ],
-    "Sports": [
-      "https://xoilac.la/feed/",
-      "https://educationnews.la/?feed=rss2"
-    ],
+    "Sports": ["https://xoilac.la/feed/", "https://educationnews.la/?feed=rss2"],
     "World / International": [
       "https://bubb.la/rss/blandat",
       "https://bubb.la/rss/varlden",
@@ -25187,9 +24732,7 @@
       "https://www.sadpii.org.ls/feed/",
       "https://lia.org.ls/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://moeletsioabasotho.co.ls/feed/"
-    ],
+    "Lifestyle & Culture": ["https://moeletsioabasotho.co.ls/feed/"],
     "Local News": [
       "https://www.thereporter.co.ls/feed/",
       "https://www.lena.gov.ls/feed/",
@@ -25214,22 +24757,12 @@
       "https://www.che.ac.ls/feed/",
       "https://ombudsman.org.ls/index.php/feed/"
     ],
-    "Science & Technology": [
-      "https://nul.ls/feed/",
-      "https://seahlolo.co.ls/feed/"
-    ],
-    "Sports": [
-      "https://www.cricketlesotho.co.ls/feed/"
-    ],
-    "World / International": [
-      "https://www.lesothoemb-usa.gov.ls/feed/"
-    ]
+    "Science & Technology": ["https://nul.ls/feed/", "https://seahlolo.co.ls/feed/"],
+    "Sports": ["https://www.cricketlesotho.co.ls/feed/"],
+    "World / International": ["https://www.lesothoemb-usa.gov.ls/feed/"]
   },
   "LIBERIA": {
-    "Business & Economy": [
-      "https://nrf.gov.lr/feed/",
-      "https://lpra.gov.lr/feed/"
-    ],
+    "Business & Economy": ["https://nrf.gov.lr/feed/", "https://lpra.gov.lr/feed/"],
     "Local News": [
       "https://ul.edu.lr/new/feed/",
       "https://lwsc.gov.lr/feed/",
@@ -25252,10 +24785,7 @@
       "https://www.liberiasp.gov.lr/?feed=rss2",
       "https://realise.liberiasp.gov.lr/feed/"
     ],
-    "Science & Technology": [
-      "https://mopt.gov.lr/feed/",
-      "https://lta.gov.lr/feed/"
-    ]
+    "Science & Technology": ["https://mopt.gov.lr/feed/", "https://lta.gov.lr/feed/"]
   },
   "LIBYA": {
     "Business & Economy": [
@@ -25296,10 +24826,7 @@
       "https://ssf.gov.ly/?feed=rss2",
       "https://fezzanu.edu.ly/feed/"
     ],
-    "Other": [
-      "https://ifta.ly/feed/",
-      "https://histk.ly/index.php/feed/"
-    ],
+    "Other": ["https://ifta.ly/feed/", "https://histk.ly/index.php/feed/"],
     "Politics & Society": [
       "https://lana.gov.ly/rss/ar/",
       "https://moe.gov.ly/feed/",
@@ -25342,10 +24869,7 @@
       "https://road-muhtarifin.ly/feed/",
       "https://al-imadjournal.ly/index.php/ajhas/en/gateway/plugin/WebFeedGatewayPlugin/atom"
     ],
-    "Sports": [
-      "https://febp.ly/feed/",
-      "https://lcss.gov.ly/feed/"
-    ],
+    "Sports": ["https://febp.ly/feed/", "https://lcss.gov.ly/feed/"],
     "World / International": [
       "https://tu.edu.ly/feed/",
       "https://almusallh.ly/en/?format=feed&type=rss",
@@ -25353,12 +24877,8 @@
     ]
   },
   "LIECHTENSTEIN": {
-    "Business & Economy": [
-      "https://wirtschaftskammer.li/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://www.eliechtensteinensia.li/viewer/api/v1/records/rss?query="
-    ],
+    "Business & Economy": ["https://wirtschaftskammer.li/feed/"],
+    "Lifestyle & Culture": ["https://www.eliechtensteinensia.li/viewer/api/v1/records/rss?query="],
     "Local News": [
       "https://www.lie-zeit.li/feed/",
       "https://feuerwehr-mauren.li/feed/",
@@ -25370,13 +24890,8 @@
       "https://brudiland.li/feed/",
       "https://landesspiegel.li/feed/"
     ],
-    "Science & Technology": [
-      "https://mazzo.li/./rss.xml"
-    ],
-    "Sports": [
-      "https://www.rvschaan.li/blog-feed.xml",
-      "https://fcbalzers.li/feed/"
-    ]
+    "Science & Technology": ["https://mazzo.li/./rss.xml"],
+    "Sports": ["https://www.rvschaan.li/blog-feed.xml", "https://fcbalzers.li/feed/"]
   },
   "LITHUANIA": {
     "Business & Economy": [
@@ -25876,9 +25391,7 @@
       "https://gfhesper.lu/?feed=rss2",
       "https://schifflange.greng.lu/feed/"
     ],
-    "Other": [
-      "https://www.cchl.lu/feed/"
-    ],
+    "Other": ["https://www.cchl.lu/feed/"],
     "Politics & Society": [
       "https://www.dp.lu/feed/",
       "https://maviesanstabac.lu/feed/",
@@ -25954,9 +25467,7 @@
       "https://www.dsat.gov.mo/tc/news_rss.aspx",
       "https://mlc.rc.um.edu.mo/feed/"
     ],
-    "Other": [
-      "http://rss.smg.gov.mo/c_temperatureAlert_rss.xml"
-    ],
+    "Other": ["http://rss.smg.gov.mo/c_temperatureAlert_rss.xml"],
     "Politics & Society": [
       "https://macaudailytimes.com.mo/feed",
       "https://bo.io.gov.mo/cn/rss/bo/a",
@@ -26032,10 +25543,7 @@
       "https://senat.mg/feed/",
       "https://prea.gov.mg/feed/"
     ],
-    "Science & Technology": [
-      "https://www.pasteur.mg/feed/",
-      "https://mft.mg/feed/"
-    ],
+    "Science & Technology": ["https://www.pasteur.mg/feed/", "https://mft.mg/feed/"],
     "World / International": [
       "https://madamag.mg/feed/",
       "https://tv.kolo.mg/feed/",
@@ -26051,10 +25559,7 @@
       "https://www.tractors.mw/feed/",
       "https://lifeco.mw/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://martinmyersct.com/feed/",
-      "https://nls.mw/feed/"
-    ],
+    "Lifestyle & Culture": ["https://martinmyersct.com/feed/", "https://nls.mw/feed/"],
     "Local News": [
       "https://mwnation.com/feed/",
       "https://malawi24.com/feed/",
@@ -26083,15 +25588,9 @@
       "https://cira.mw/feed/",
       "https://ngora.mw/feed/"
     ],
-    "Science & Technology": [
-      "https://macra.mw/feed/"
-    ],
-    "Sports": [
-      "https://chancoradio.mw/feed/"
-    ],
-    "World / International": [
-      "https://othakarhakafoundation.mw/feed/"
-    ]
+    "Science & Technology": ["https://macra.mw/feed/"],
+    "Sports": ["https://chancoradio.mw/feed/"],
+    "World / International": ["https://othakarhakafoundation.mw/feed/"]
   },
   "MALAYSIA": {
     "Business & Economy": [
@@ -26277,9 +25776,7 @@
       "https://malaysiakini.com/rss/en/columns.rss",
       "https://malaysiakini.com/rss/en/letters.rss"
     ],
-    "Other": [
-      "https://hub.emgs.com.my/activity/feed/"
-    ],
+    "Other": ["https://hub.emgs.com.my/activity/feed/"],
     "Politics & Society": [
       "http://www.hmetro.com.my/mutakhir.xml",
       "https://www.freemalaysiatoday.com/feeds/atom/headlines",
@@ -26384,13 +25881,8 @@
     ]
   },
   "MALDIVES": {
-    "Business & Economy": [
-      "https://mbsnews.mv/rss"
-    ],
-    "Lifestyle & Culture": [
-      "https://thearrival.mv/feed/",
-      "https://maldives.net.mv/feed/"
-    ],
+    "Business & Economy": ["https://mbsnews.mv/rss"],
+    "Lifestyle & Culture": ["https://thearrival.mv/feed/", "https://maldives.net.mv/feed/"],
     "Local News": [
       "https://mnu.edu.mv/feed/",
       "https://faafnilandhoo.gov.mv/feed/",
@@ -26414,9 +25906,7 @@
       "https://times.mv/feed",
       "https://transparency.mv/feed/"
     ],
-    "Sports": [
-      "https://revivalsports.mv/feed/"
-    ]
+    "Sports": ["https://revivalsports.mv/feed/"]
   },
   "MALI": {
     "Business & Economy": [
@@ -26425,9 +25915,7 @@
       "https://cnpm.ml/feed/",
       "https://menefp.gouv.ml/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://mixedsignals.ml/games/blog/.atom"
-    ],
+    "Lifestyle & Culture": ["https://mixedsignals.ml/games/blog/.atom"],
     "Local News": [
       "https://amap.ml/feed/",
       "https://bamako.ml/feed/",
@@ -26511,45 +25999,27 @@
       "https://scc.pembrokesecondary.skola.edu.mt/index.php/feed/",
       "https://housingauthority.gov.mt/feed/"
     ],
-    "Politics & Society": [
-      "https://aditus.org.mt/feed/",
-      "https://adpd.mt/feed/"
-    ],
-    "Science & Technology": [
-      "https://esplora.org.mt/feed/",
-      "https://thinkmagazine.mt/feed/"
-    ],
+    "Politics & Society": ["https://aditus.org.mt/feed/", "https://adpd.mt/feed/"],
+    "Science & Technology": ["https://esplora.org.mt/feed/", "https://thinkmagazine.mt/feed/"],
     "Sports": [
       "https://sportmalta.mt/feed/",
       "https://radio105.mt/feed/",
       "https://sliema-asc.org.mt/feed/"
     ],
-    "World / International": [
-      "https://ofm.mt/ofmmt/feed/"
-    ]
+    "World / International": ["https://ofm.mt/ofmmt/feed/"]
   },
   "MARSHALL_ISLANDS": {
-    "Business & Economy": [
-      "https://www.rmiocit.org/blog-feed.xml"
-    ],
-    "Politics & Society": [
-      "https://mof.gov.mh/feed/"
-    ]
+    "Business & Economy": ["https://www.rmiocit.org/blog-feed.xml"],
+    "Politics & Society": ["https://mof.gov.mh/feed/"]
   },
   "MARTINIQUE": {
-    "Business & Economy": [
-      "https://www.parm.mq/feed/",
-      "https://plages.mq/commentaire/feed"
-    ],
+    "Business & Economy": ["https://www.parm.mq/feed/", "https://plages.mq/commentaire/feed"],
     "Local News": [
       "https://www.industrie.mq/feed/",
       "https://imfpa.mq/feed/",
       "https://www.martiniquetransport.mq/feed/"
     ],
-    "Politics & Society": [
-      "https://www.agefma.mq/feed/",
-      "https://www.jafamatinik.mq/feed/"
-    ]
+    "Politics & Society": ["https://www.agefma.mq/feed/", "https://www.jafamatinik.mq/feed/"]
   },
   "MAURITANIA": {
     "Business & Economy": [
@@ -26560,10 +26030,7 @@
       "https://www.cciam.mr/feed/",
       "https://cds.mr/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://www.imrspc.mr/feed/",
-      "https://prixchinguitt.mr/?feed=rss2"
-    ],
+    "Lifestyle & Culture": ["https://www.imrspc.mr/feed/", "https://prixchinguitt.mr/?feed=rss2"],
     "Local News": [
       "https://moudoun.mr/feed/",
       "https://tvz.mr/feed",
@@ -26596,13 +26063,8 @@
       "https://onel.gov.mr/feed/",
       "https://nabd.mr/ar/rss.xml"
     ],
-    "Science & Technology": [
-      "https://anarpam.mr/feed/",
-      "https://www.pnd.mr/feed/"
-    ],
-    "Sports": [
-      "https://oco.mr/?feed=rss2"
-    ]
+    "Science & Technology": ["https://anarpam.mr/feed/", "https://www.pnd.mr/feed/"],
+    "Sports": ["https://oco.mr/?feed=rss2"]
   },
   "MAURITIUS": {
     "Business & Economy": [
@@ -26664,25 +26126,13 @@
       "https://www.scoop.mu/feed/",
       "https://radiomopep.mu/feed/"
     ],
-    "Science & Technology": [
-      "https://www.lexpresscars.mu/feed",
-      "https://www.laserostop.mu/feed/"
-    ],
-    "Sports": [
-      "https://www.goal.mu/feed",
-      "https://oreva.mu/feed/"
-    ],
-    "World / International": [
-      "https://liberation.mu/feed/"
-    ]
+    "Science & Technology": ["https://www.lexpresscars.mu/feed", "https://www.laserostop.mu/feed/"],
+    "Sports": ["https://www.goal.mu/feed", "https://oreva.mu/feed/"],
+    "World / International": ["https://liberation.mu/feed/"]
   },
   "MAYOTTE": {
-    "Business & Economy": [
-      "https://www.medetram.yt/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://vivam.yt/feed/"
-    ],
+    "Business & Economy": ["https://www.medetram.yt/feed/"],
+    "Lifestyle & Culture": ["https://vivam.yt/feed/"],
     "Local News": [
       "https://lejournaldemayotte.yt/feed/",
       "https://www.halo.yt/feed/",
@@ -26691,13 +26141,8 @@
       "https://leader-mayotte.yt/feed/",
       "https://www.cariforef-mayotte.yt/feed/"
     ],
-    "Politics & Society": [
-      "https://cesem.yt/feed",
-      "https://gipmaore.yt/feed/"
-    ],
-    "Science & Technology": [
-      "https://mayotteintech.yt/feed/"
-    ]
+    "Politics & Society": ["https://cesem.yt/feed", "https://gipmaore.yt/feed/"],
+    "Science & Technology": ["https://mayotteintech.yt/feed/"]
   },
   "MEXICO": {
     "Business & Economy": [
@@ -26960,9 +26405,7 @@
       "https://conacento.com.mx/feed/",
       "https://ciudadanosaldia.com.mx/feed/"
     ],
-    "Opinion": [
-      "https://elregional.com.mx/rss/category/opinion"
-    ],
+    "Opinion": ["https://elregional.com.mx/rss/category/opinion"],
     "Other": [
       "https://elregional.com.mx/rss/category/edicion-impresa",
       "https://elregional.com.mx/rss/category/ontv",
@@ -27212,12 +26655,8 @@
       "https://securite.fm/episodes.mp3.rss",
       "https://feeds.transistor.fm/from-the-crows-nest"
     ],
-    "Sports": [
-      "https://feeds.captivate.fm/raginreview/"
-    ],
-    "World / International": [
-      "https://hsa.gov.fm/feed/"
-    ]
+    "Sports": ["https://feeds.captivate.fm/raginreview/"],
+    "World / International": ["https://hsa.gov.fm/feed/"]
   },
   "MOLDOVA": {
     "Business & Economy": [
@@ -27569,10 +27008,7 @@
     ]
   },
   "MONACO": {
-    "Business & Economy": [
-      "https://dameno.mc/feed/",
-      "https://www.montecarlolifestyle.mc/feed/"
-    ],
+    "Business & Economy": ["https://dameno.mc/feed/", "https://www.montecarlolifestyle.mc/feed/"],
     "Lifestyle & Culture": [
       "https://www.montecarlofestival.mc/fr/feed/",
       "https://www.monacopressclub.mc/feed/",
@@ -27583,10 +27019,7 @@
       "https://news.mc/feed/",
       "https://www.nicematin.com/monaco/rss"
     ],
-    "Sports": [
-      "https://www.chessdom.com/feed/",
-      "https://yacht-club-monaco.mc/feed/"
-    ]
+    "Sports": ["https://www.chessdom.com/feed/", "https://yacht-club-monaco.mc/feed/"]
   },
   "MONGOLIA": {
     "Business & Economy": [
@@ -27652,9 +27085,7 @@
       "https://monfatrade.mn/feed/",
       "https://empasoft.ider.edu.mn/feed/"
     ],
-    "Sports": [
-      "https://mra.mn/?feed=rss2"
-    ],
+    "Sports": ["https://mra.mn/?feed=rss2"],
     "World / International": [
       "https://dailypost.mn/feed/",
       "https://www.journas.mn/blog-feed.xml",
@@ -27817,16 +27248,9 @@
     ]
   },
   "MONTSERRAT": {
-    "Business & Economy": [
-      "https://www.innovate.ms/feed/"
-    ],
-    "Local News": [
-      "https://bowtielawyer.ms/feed/",
-      "https://www.tallahatchienews.ms/rss.xml"
-    ],
-    "Politics & Society": [
-      "https://parliament.ms/feed/"
-    ]
+    "Business & Economy": ["https://www.innovate.ms/feed/"],
+    "Local News": ["https://bowtielawyer.ms/feed/", "https://www.tallahatchienews.ms/rss.xml"],
+    "Politics & Society": ["https://parliament.ms/feed/"]
   },
   "MOROCCO": {
     "Business & Economy": [
@@ -28194,9 +27618,7 @@
       "https://www.tec.co.mz/feed/",
       "https://energiaparatodos.co.mz/index.php/feed/"
     ],
-    "Sports": [
-      "https://www.jornaldesafio.co.mz/index.php/feed/"
-    ],
+    "Sports": ["https://www.jornaldesafio.co.mz/index.php/feed/"],
     "World / International": [
       "https://mmo.co.mz/feed/",
       "https://www.frelimo.org.mz/?feed=rss2",
@@ -28229,9 +27651,7 @@
       "https://www.kyauksetu.edu.mm/feed/",
       "https://ytu.edu.mm/feed/"
     ],
-    "World / International": [
-      "https://tumeiktila.edu.mm/feed/"
-    ]
+    "World / International": ["https://tumeiktila.edu.mm/feed/"]
   },
   "NAMIBIA": {
     "Business & Economy": [
@@ -28242,9 +27662,7 @@
       "https://www.dbn.com.na/feed/",
       "https://www.sss.com.na/blog-feed.xml"
     ],
-    "Lifestyle & Culture": [
-      "https://www.divinedeli.com.na/blog-feed.xml"
-    ],
+    "Lifestyle & Culture": ["https://www.divinedeli.com.na/blog-feed.xml"],
     "Local News": [
       "https://nova.com.na/feed/",
       "https://radiowave.com.na/feed/",
@@ -28273,14 +27691,10 @@
       "https://nje.org.na/index.php/nje/gateway/plugin/WebFeedGatewayPlugin/rss2",
       "https://repository.unam.edu.na/server/opensearch/search?format=atom&query=*"
     ],
-    "Sports": [
-      "https://nfa.org.na/feed/"
-    ]
+    "Sports": ["https://nfa.org.na/feed/"]
   },
   "NAURU": {
-    "Politics & Society": [
-      "https://www.nrc.com.nr/blog-feed.xml"
-    ]
+    "Politics & Society": ["https://www.nrc.com.nr/blog-feed.xml"]
   },
   "NEPAL": {
     "Business & Economy": [
@@ -28349,10 +27763,7 @@
       "https://gandakinews.com.np/feed/",
       "https://lekammun.gov.np/rss.xml"
     ],
-    "Other": [
-      "https://www.skl.com.np/feeds/posts/default",
-      "https://bpcbirgunj.edu.np/feed/"
-    ],
+    "Other": ["https://www.skl.com.np/feeds/posts/default", "https://bpcbirgunj.edu.np/feed/"],
     "Politics & Society": [
       "https://ankjit.com.np/feed/",
       "https://pfpid.org.np/feed/",
@@ -28395,13 +27806,8 @@
       "https://bikashbhusal.com.np/feed",
       "https://cubicaltechnologies.com.np/feed/"
     ],
-    "Sports": [
-      "https://www.cricnepal.com/feed"
-    ],
-    "World / International": [
-      "https://niice.org.np/feed",
-      "https://pu.edu.np/feed/"
-    ]
+    "Sports": ["https://www.cricnepal.com/feed"],
+    "World / International": ["https://niice.org.np/feed", "https://pu.edu.np/feed/"]
   },
   "NETHERLANDS": {
     "Business & Economy": [
@@ -29042,12 +28448,8 @@
       "https://pcgwijkbijduurstede.nl/feed/",
       "https://stichtingwijksport.nl/feed/"
     ],
-    "Opinion": [
-      "https://veld-post.nl/rss/opinie/"
-    ],
-    "Other": [
-      "https://st-tkz.nl/index.php/feed/"
-    ],
+    "Opinion": ["https://veld-post.nl/rss/opinie/"],
+    "Other": ["https://st-tkz.nl/index.php/feed/"],
     "Politics & Society": [
       "https://rss.at5.nl/rss/politiek",
       "https://feeds.rijksoverheid.nl/besluiten.rss",
@@ -29250,13 +28652,8 @@
     ]
   },
   "NEW_CALEDONIA": {
-    "Business & Economy": [
-      "https://www.enercal.nc/feed/",
-      "https://www.fsh.nc/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://www.ilesloyauteexplorer.nc/feed/"
-    ],
+    "Business & Economy": ["https://www.enercal.nc/feed/", "https://www.fsh.nc/feed/"],
+    "Lifestyle & Culture": ["https://www.ilesloyauteexplorer.nc/feed/"],
     "Local News": [
       "https://neocean.nc/feed/",
       "https://www.mairie-poya.nc/blog-feed.xml",
@@ -29274,9 +28671,7 @@
       "https://lpmc.ddec.nc/feed/",
       "https://www.pud-paita.nc/feed/"
     ],
-    "Other": [
-      "https://histoire-geo.ac-noumea.nc/spip.php?page=backend"
-    ],
+    "Other": ["https://histoire-geo.ac-noumea.nc/spip.php?page=backend"],
     "Politics & Society": [
       "https://www.congres.nc/feed/",
       "https://noumeapost.nc/feed/",
@@ -29291,10 +28686,7 @@
       "https://drhfpnc.gouv.nc/rss.xml",
       "https://dass.gouv.nc/rss.xml"
     ],
-    "Science & Technology": [
-      "https://oeil.nc/fr/rss.xml",
-      "https://neotech.nc/feed/"
-    ]
+    "Science & Technology": ["https://oeil.nc/fr/rss.xml", "https://neotech.nc/feed/"]
   },
   "NEW_ZEALAND": {
     "Business & Economy": [
@@ -29554,10 +28946,7 @@
       "https://unm.edu.ni/feed/",
       "https://bethlemitasjinotega.edu.ni/feed/"
     ],
-    "Politics & Society": [
-      "https://enel.gob.ni/feed/",
-      "https://noticias.asamblea.gob.ni/feed/"
-    ],
+    "Politics & Society": ["https://enel.gob.ni/feed/", "https://noticias.asamblea.gob.ni/feed/"],
     "Science & Technology": [
       "https://www.laboratorioinmaculada.com.ni/blog-feed.xml",
       "https://telcor.gob.ni/feed/",
@@ -29600,13 +28989,8 @@
       "https://hcme.gouv.ne/index.php/feed/",
       "https://interieur.gouv.ne/index.php/feed/"
     ],
-    "Science & Technology": [
-      "https://mcnti.gouv.ne/feed/",
-      "https://crgm.ne/feed/"
-    ],
-    "World / International": [
-      "https://p2rs-niger.ne/feed/"
-    ]
+    "Science & Technology": ["https://mcnti.gouv.ne/feed/", "https://crgm.ne/feed/"],
+    "World / International": ["https://p2rs-niger.ne/feed/"]
   },
   "NIGERIA": {
     "Business & Economy": [
@@ -29842,9 +29226,7 @@
       "https://infoshoutloud.com.ng/feed/",
       "https://lifeobituaries.com.ng/feed/"
     ],
-    "Opinion": [
-      "https://thestateaffairs.ng/feed/"
-    ],
+    "Opinion": ["https://thestateaffairs.ng/feed/"],
     "Other": [
       "https://nafstsuniuyo.org.ng/feed/",
       "https://suresuccess.ng/feed/",
@@ -30362,40 +29744,21 @@
     ]
   },
   "NIUE": {
-    "Business & Economy": [
-      "https://mof.gov.nu/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://filmint.nu/feed/",
-      "https://niuerentals.nu/feed/"
-    ],
-    "Local News": [
-      "https://hillerod.nu/feed/"
-    ],
+    "Business & Economy": ["https://mof.gov.nu/feed/"],
+    "Lifestyle & Culture": ["https://filmint.nu/feed/", "https://niuerentals.nu/feed/"],
+    "Local News": ["https://hillerod.nu/feed/"],
     "Politics & Society": [
       "https://www.redspark.nu/feed/",
       "https://www.mynewsdesk.com/se/rss/current_news/14765"
     ],
-    "Sports": [
-      "https://www.st.nu/feeds/feed.xml"
-    ],
-    "World / International": [
-      "https://epal.nu/feed/"
-    ]
+    "Sports": ["https://www.st.nu/feeds/feed.xml"],
+    "World / International": ["https://epal.nu/feed/"]
   },
   "NORFOLK_ISLAND": {
-    "Lifestyle & Culture": [
-      "https://onlinegames-city.webs.nf/feed/"
-    ],
-    "Politics & Society": [
-      "https://knowledgecentre.nf/feed/"
-    ],
-    "Science & Technology": [
-      "https://k49.fr.nf/rss/"
-    ],
-    "World / International": [
-      "https://r.nf/feeds/all.xml?sort=Active"
-    ]
+    "Lifestyle & Culture": ["https://onlinegames-city.webs.nf/feed/"],
+    "Politics & Society": ["https://knowledgecentre.nf/feed/"],
+    "Science & Technology": ["https://k49.fr.nf/rss/"],
+    "World / International": ["https://r.nf/feeds/all.xml?sort=Active"]
   },
   "NORTH_MACEDONIA": {
     "Business & Economy": [
@@ -30653,13 +30016,8 @@
       "https://karpos.gov.mk/feed/",
       "https://skopjeregion.gov.mk/feed/"
     ],
-    "Opinion": [
-      "https://www.vladimirdimitrijevic.com/sr-rs/?format=feed&type=rss"
-    ],
-    "Other": [
-      "https://maskimagazin.faktor.mk/feed",
-      "https://vinica.mk/feed/"
-    ],
+    "Opinion": ["https://www.vladimirdimitrijevic.com/sr-rs/?format=feed&type=rss"],
+    "Other": ["https://maskimagazin.faktor.mk/feed", "https://vinica.mk/feed/"],
     "Politics & Society": [
       "https://koha.mk/feed/",
       "https://prizma.mk/feed/",
@@ -30898,9 +30256,7 @@
     ]
   },
   "NORTHERN_MARIANA_ISLANDS": {
-    "Science & Technology": [
-      "https://forum.open.mp/syndication.php"
-    ]
+    "Science & Technology": ["https://forum.open.mp/syndication.php"]
   },
   "NORWAY": {
     "Business & Economy": [
@@ -31483,10 +30839,7 @@
       "https://www.omren.om/feed/",
       "https://squjs.squ.edu.om/recent.rss"
     ],
-    "Sports": [
-      "https://www.muscatdaily.com/category/sports/feed/",
-      "https://ooc.om/?feed=rss2"
-    ],
+    "Sports": ["https://www.muscatdaily.com/category/sports/feed/", "https://ooc.om/?feed=rss2"],
     "World / International": [
       "https://timesofoman.com/feed/",
       "https://www.muscatdaily.com/category/world/feed/",
@@ -32093,13 +31446,8 @@
       "https://attractions.pw/feed/",
       "https://www.cozilla.pw/feeds/posts/default"
     ],
-    "Local News": [
-      "https://bcbp.pw/?feed=rss2",
-      "https://tokiwa.pw/feed/"
-    ],
-    "Other": [
-      "https://forum.comeback.pw/forums/-/index.rss"
-    ],
+    "Local News": ["https://bcbp.pw/?feed=rss2", "https://tokiwa.pw/feed/"],
+    "Other": ["https://forum.comeback.pw/forums/-/index.rss"],
     "Politics & Society": [
       "https://news55.pw/feed/",
       "https://nandemonai.pw/?feed=rss2",
@@ -32116,12 +31464,8 @@
       "https://forums.toud.pw/app.php/feed/topics?sid=cf92632c84c07c6da7bd4e260463851f",
       "https://forums.toud.pw/app.php/feed?sid=cf92632c84c07c6da7bd4e260463851f"
     ],
-    "Sports": [
-      "https://myfootball.pw/rss.xml"
-    ],
-    "World / International": [
-      "https://prayerwall.pw/feed/"
-    ]
+    "Sports": ["https://myfootball.pw/rss.xml"],
+    "World / International": ["https://prayerwall.pw/feed/"]
   },
   "PALESTINIAN_TERRITORIES": {
     "Business & Economy": [
@@ -32342,9 +31686,7 @@
       "https://lpf.com.pa/feed/",
       "https://press.betus.com.pa/press_releases.atom"
     ],
-    "World / International": [
-      "https://mire.gob.pa/feed/"
-    ]
+    "World / International": ["https://mire.gob.pa/feed/"]
   },
   "PAPUA_NEW_GUINEA": {
     "Business & Economy": [
@@ -32359,17 +31701,13 @@
       "https://kumulminerals.com.pg/feed/",
       "https://iccc.gov.pg/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://elcpng.org.pg/feed/"
-    ],
+    "Lifestyle & Culture": ["https://elcpng.org.pg/feed/"],
     "Local News": [
       "https://www.pnguot.ac.pg/feed/",
       "https://rpngc.gov.pg/feed/",
       "https://pngroadfund.gov.pg/feed/"
     ],
-    "Other": [
-      "https://www.lcci.org.pg/feed/"
-    ],
+    "Other": ["https://www.lcci.org.pg/feed/"],
     "Politics & Society": [
       "https://www.postcourier.com.pg/feed/",
       "https://www.pmnec.gov.pg/feed/",
@@ -32379,16 +31717,9 @@
       "https://fm100.com.pg/feed/",
       "https://info.gov.pg/feed/"
     ],
-    "Science & Technology": [
-      "https://www.ict.gov.pg/feed/"
-    ],
-    "Sports": [
-      "https://emtv.com.pg/?feed=rss2"
-    ],
-    "World / International": [
-      "https://devpolicy.org/feed/",
-      "https://www.dfa.gov.pg/feed/"
-    ]
+    "Science & Technology": ["https://www.ict.gov.pg/feed/"],
+    "Sports": ["https://emtv.com.pg/?feed=rss2"],
+    "World / International": ["https://devpolicy.org/feed/", "https://www.dfa.gov.pg/feed/"]
   },
   "PARAGUAY": {
     "Business & Economy": [
@@ -32524,9 +31855,7 @@
       "https://revistatouring.com.py/feed/",
       "https://dpn.com.py/feed/posts"
     ],
-    "World / International": [
-      "https://senepa.gov.py/feed/"
-    ]
+    "World / International": ["https://senepa.gov.py/feed/"]
   },
   "PERU": {
     "Business & Economy": [
@@ -32697,10 +32026,7 @@
       "https://gestion.pe/arcio/rss/",
       "https://kancha.pe/feed/"
     ],
-    "World / International": [
-      "https://cvn.pe/feed/",
-      "https://blogs.upn.edu.pe/feed"
-    ]
+    "World / International": ["https://cvn.pe/feed/", "https://blogs.upn.edu.pe/feed"]
   },
   "PHILIPPINES": {
     "Business & Economy": [
@@ -32906,9 +32232,7 @@
       "https://ormindoro.gov.ph/feed/",
       "https://publicservice.up.edu.ph/feed/"
     ],
-    "Opinion": [
-      "https://www.quezon.ph/feed/"
-    ],
+    "Opinion": ["https://www.quezon.ph/feed/"],
     "Other": [
       "https://topnotcher.ph/feed/",
       "https://archive.ph/rss",
@@ -34268,10 +33592,7 @@
       "https://www.twinkl.com.pr/rss/blog",
       "https://www.ocpr.gov.pr/feed/"
     ],
-    "Sports": [
-      "https://feeds.npr.org/1001/rss.xml",
-      "https://feeds.npr.org/1002/rss.xml"
-    ]
+    "Sports": ["https://feeds.npr.org/1001/rss.xml", "https://feeds.npr.org/1002/rss.xml"]
   },
   "QATAR": {
     "Business & Economy": [
@@ -35761,9 +35082,7 @@
       "http://m.asninfo.ru/rss.xml",
       "https://cherinfo.ru/rss/news"
     ],
-    "Opinion": [
-      "https://english.pravda.ru/opinion/export.xml"
-    ],
+    "Opinion": ["https://english.pravda.ru/opinion/export.xml"],
     "Other": [
       "https://scipress.ru/feed.rss",
       "https://max-platform.ru/feed/",
@@ -36237,10 +35556,7 @@
       "https://theupdate.co.rw/rss/category/religion",
       "https://irizanews.rw/feed/"
     ],
-    "Science & Technology": [
-      "https://thinkbig.rw/feed/",
-      "https://dr.ur.ac.rw/feed/atom_1.0/site"
-    ],
+    "Science & Technology": ["https://thinkbig.rw/feed/", "https://dr.ur.ac.rw/feed/atom_1.0/site"],
     "Sports": [
       "https://aprfc.rw/feed/",
       "https://isangostar.rw/rss/category/imikino",
@@ -36321,15 +35637,10 @@
       "https://thenews.re/feed/",
       "https://www.lareuniondesaidants.re/feed/"
     ],
-    "Sports": [
-      "https://lsar.re/feed/"
-    ]
+    "Sports": ["https://lsar.re/feed/"]
   },
   "SAMOA": {
-    "Business & Economy": [
-      "https://salda.ws/xml/Articles.xml",
-      "https://www.samoaibfc.ws/feed/"
-    ],
+    "Business & Economy": ["https://salda.ws/xml/Articles.xml", "https://www.samoaibfc.ws/feed/"],
     "Lifestyle & Culture": [
       "https://www.medjugorje.ws/data/olm/rss/www-ar.xml",
       "https://www.medjugorje.ws/data/olm/rss/www-be.xml",
@@ -36357,22 +35668,15 @@
       "https://svsg.org.ws/feed/",
       "https://samoawaterauthority.ws/feed/"
     ],
-    "Politics & Society": [
-      "https://mpmc.gov.ws/feed/",
-      "https://mwcsd.gov.ws/feed/"
-    ],
+    "Politics & Society": ["https://mpmc.gov.ws/feed/", "https://mwcsd.gov.ws/feed/"],
     "Science & Technology": [
       "https://ptrpa.ws/atom.xml",
       "https://www.sbs.gov.ws/feed/",
       "https://virology.ws/feed/",
       "https://se7en.ws/feed/"
     ],
-    "Sports": [
-      "https://www.footballsamoa.ws/feed/"
-    ],
-    "World / International": [
-      "https://www.medjugorje.ws/data/olm/rss/www-sw.xml"
-    ]
+    "Sports": ["https://www.footballsamoa.ws/feed/"],
+    "World / International": ["https://www.medjugorje.ws/data/olm/rss/www-sw.xml"]
   },
   "SAN_MARINO": {
     "Business & Economy": [
@@ -36415,9 +35719,7 @@
       "https://www.panoramasport.sm/feed/",
       "https://www.sportpress.sm/feed/"
     ],
-    "World / International": [
-      "https://sanmarinortv.sm/news/mondo-c8.xml"
-    ]
+    "World / International": ["https://sanmarinortv.sm/news/mondo-c8.xml"]
   },
   "SAUDI_ARABIA": {
     "Business & Economy": [
@@ -36481,10 +35783,7 @@
       "http://www.al-jazirah.com/rss/fe.xml?utm_source=rss-jazirah&utm_medium=rss&utm_campaign=rss",
       "http://www.al-jazirah.com/rss/ln.xml?utm_source=rss-jazirah&utm_medium=rss&utm_campaign=rss"
     ],
-    "Science & Technology": [
-      "https://alqarar.sa/feed",
-      "https://en.saudishopper.com.sa/feed/"
-    ],
+    "Science & Technology": ["https://alqarar.sa/feed", "https://en.saudishopper.com.sa/feed/"],
     "Sports": [
       "http://www.al-jazirah.com.sa/rss/sp.xml?utm_source=rss-jazirah&utm_medium=rss&utm_campaign=rss",
       "http://www.al-jazirah.com/rss/sp.xml?utm_source=rss-jazirah&utm_medium=rss&utm_campaign=rss"
@@ -37095,10 +36394,7 @@
       "https://www.banjica.co.rs/feed/",
       "https://kcsokobanja.rs/feed/"
     ],
-    "Opinion": [
-      "https://informer.rs/rss/politika/kolumne",
-      "https://www.milic.rs/feed/"
-    ],
+    "Opinion": ["https://informer.rs/rss/politika/kolumne", "https://www.milic.rs/feed/"],
     "Other": [
       "https://horgos.co.rs/wp-content/plugins/nextgen-gallery/src/Legacy/xml/media-rss.php"
     ],
@@ -37371,13 +36667,8 @@
     ]
   },
   "SEYCHELLES": {
-    "Business & Economy": [
-      "https://tourism.gov.sc/?feed=rss2"
-    ],
-    "Lifestyle & Culture": [
-      "https://www.goodtimes.sc/feed/",
-      "https://belombrepri.edu.sc/feed/"
-    ],
+    "Business & Economy": ["https://tourism.gov.sc/?feed=rss2"],
+    "Lifestyle & Culture": ["https://www.goodtimes.sc/feed/", "https://belombrepri.edu.sc/feed/"],
     "Local News": [
       "https://www.sma.edu.sc/feed/",
       "https://unisey.ac.sc/feed/",
@@ -37389,9 +36680,7 @@
       "https://redcrossseychelles.sc/feed/",
       "https://mofbe.gov.sc/feed/"
     ],
-    "World / International": [
-      "https://macce.gov.sc/feed/"
-    ]
+    "World / International": ["https://macce.gov.sc/feed/"]
   },
   "SIERRA_LEONE": {
     "Business & Economy": [
@@ -37402,9 +36691,7 @@
       "https://nafra.gov.sl/feed/",
       "https://avdp.org.sl/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://www.slefes.org.sl/feed/"
-    ],
+    "Lifestyle & Culture": ["https://www.slefes.org.sl/feed/"],
     "Local News": [
       "https://usl.edu.sl/feed/",
       "https://mohs.gov.sl/feed/",
@@ -37413,9 +36700,7 @@
       "https://ndma.gov.sl/feed/",
       "https://ndma.gov.sl/rsslatest.xml"
     ],
-    "Other": [
-      "https://slccia.sl/feed/"
-    ],
+    "Other": ["https://slccia.sl/feed/"],
     "Politics & Society": [
       "https://statehouse.gov.sl/feed/",
       "https://www.thesierraleonetelegraph.com/feed/",
@@ -37672,16 +36957,9 @@
     ]
   },
   "SINT_MAARTEN": {
-    "Business & Economy": [
-      "https://www.chamberofcommerce.sx/?feed=rss2"
-    ],
-    "Local News": [
-      "https://telem.sx/feed/",
-      "https://pearlfmradio.sx/feed/"
-    ],
-    "Science & Technology": [
-      "https://forums.tms.sx/forums/-/index.rss"
-    ]
+    "Business & Economy": ["https://www.chamberofcommerce.sx/?feed=rss2"],
+    "Local News": ["https://telem.sx/feed/", "https://pearlfmradio.sx/feed/"],
+    "Science & Technology": ["https://forums.tms.sx/forums/-/index.rss"]
   },
   "SLOVAKIA": {
     "Business & Economy": [
@@ -38100,9 +37378,7 @@
       "https://www.jpost.com//rss/rssfeedstorahportion",
       "https://www.jpost.com//rss/rssopinion"
     ],
-    "Other": [
-      "https://hweb.sk/feed/"
-    ],
+    "Other": ["https://hweb.sk/feed/"],
     "Politics & Society": [
       "https://www.sme.sk/rss",
       "https://www.aktuality.sk/rss/domace/",
@@ -38682,9 +37958,7 @@
       "https://sbm.sb/feed/",
       "https://immigration.gov.sb/feed/"
     ],
-    "Sports": [
-      "https://www.siff.com.sb/feed/"
-    ]
+    "Sports": ["https://www.siff.com.sb/feed/"]
   },
   "SOMALIA": {
     "Business & Economy": [
@@ -38716,9 +37990,7 @@
       "https://wadajirfoundation.so/feed/",
       "https://psu.edu.so/feed/"
     ],
-    "Other": [
-      "https://sarkariresult.com.so/feed/"
-    ],
+    "Other": ["https://sarkariresult.com.so/feed/"],
     "Politics & Society": [
       "https://sonna.so/so/feed/",
       "https://sntv.so/feed/",
@@ -39501,15 +38773,9 @@
     ]
   },
   "SOUTH_GEORGIA_&_SOUTH_SANDWICH_ISLANDS": {
-    "Lifestyle & Culture": [
-      "https://igi.gs/feed/"
-    ],
-    "Local News": [
-      "https://da.vebrig.gs/feed/"
-    ],
-    "Politics & Society": [
-      "https://da.vebrig.gs/micropost/feed/"
-    ]
+    "Lifestyle & Culture": ["https://igi.gs/feed/"],
+    "Local News": ["https://da.vebrig.gs/feed/"],
+    "Politics & Society": ["https://da.vebrig.gs/micropost/feed/"]
   },
   "SOUTH_KOREA": {
     "Business & Economy": [
@@ -39791,9 +39057,7 @@
       "https://cdn.idgn.co.kr/rss/gns_allArticle.xml",
       "https://cnumedia.jnu.ac.kr/rss/gns_allArticle.xml"
     ],
-    "Opinion": [
-      "https://cdn.edit.or.kr/rss/gn_rss_allArticle.xml"
-    ],
+    "Opinion": ["https://cdn.edit.or.kr/rss/gn_rss_allArticle.xml"],
     "Politics & Society": [
       "https://www.mk.co.kr/rss/30200030/",
       "https://www.mk.co.kr/rss/50400012/",
@@ -40015,10 +39279,7 @@
     ]
   },
   "SOUTH_SUDAN": {
-    "Business & Economy": [
-      "https://boss.gov.ss/feed/",
-      "https://mofp.gov.ss/?feed=rss2"
-    ],
+    "Business & Economy": ["https://boss.gov.ss/feed/", "https://mofp.gov.ss/?feed=rss2"],
     "Politics & Society": [
       "https://www.radiotamazuj.org/en/feed",
       "https://www.eyeradio.org/feed/",
@@ -40030,13 +39291,8 @@
       "https://mafs.gov.ss/feed/",
       "https://www.isps.org.ss/?feed=rss2"
     ],
-    "Science & Technology": [
-      "https://www.nca.gov.ss/blog-feed.xml"
-    ],
-    "World / International": [
-      "https://jubaechotv.com.ss/feed/",
-      "https://mgcsw.gov.ss/feed/"
-    ]
+    "Science & Technology": ["https://www.nca.gov.ss/blog-feed.xml"],
+    "World / International": ["https://jubaechotv.com.ss/feed/", "https://mgcsw.gov.ss/feed/"]
   },
   "SPAIN": {
     "Business & Economy": [
@@ -44994,9 +44250,7 @@
       "https://results.govdoc.lk/feed",
       "https://jaffnanews.lk/feed/"
     ],
-    "Other": [
-      "https://batticaloaads.lk/feed/"
-    ],
+    "Other": ["https://batticaloaads.lk/feed/"],
     "Politics & Society": [
       "https://www.newswire.lk/feed/",
       "https://unusuma.lk/feed/",
@@ -45086,9 +44340,7 @@
     ]
   },
   "ST._HELENA": {
-    "Local News": [
-      "https://sthelenapublicservicejobs.sh/feed/"
-    ],
+    "Local News": ["https://sthelenapublicservicejobs.sh/feed/"],
     "Science & Technology": [
       "https://bun.com/rss.xml",
       "https://www.nushell.sh/atom.xml",
@@ -45101,9 +44353,7 @@
     ]
   },
   "ST._KITTS_&_NEVIS": {
-    "Business & Economy": [
-      "https://npre.kn/feed/"
-    ],
+    "Business & Economy": ["https://npre.kn/feed/"],
     "Local News": [
       "https://cfbc.edu.kn/feed/",
       "https://mopieudt.gov.kn/feed/",
@@ -45120,12 +44370,8 @@
       "https://www.sknis.gov.kn/feed/",
       "https://ciu.gov.kn/feed/"
     ],
-    "Science & Technology": [
-      "https://ndmd.kn/feed/"
-    ],
-    "World / International": [
-      "https://www.mofa.gov.kn/feed/"
-    ]
+    "Science & Technology": ["https://ndmd.kn/feed/"],
+    "World / International": ["https://www.mofa.gov.kn/feed/"]
   },
   "ST._LUCIA": {
     "Local News": [
@@ -45134,17 +44380,11 @@
       "https://wdc.education.gov.lc/feed",
       "https://met.gov.lc/feed/"
     ],
-    "Politics & Society": [
-      "https://govt.lc/news/rss"
-    ]
+    "Politics & Society": ["https://govt.lc/news/rss"]
   },
   "ST._PIERRE_&_MIQUELON": {
-    "Lifestyle & Culture": [
-      "https://marenostrum.pm/feed/"
-    ],
-    "Science & Technology": [
-      "https://cours-particuliers-maths.pm/feed/"
-    ]
+    "Lifestyle & Culture": ["https://marenostrum.pm/feed/"],
+    "Science & Technology": ["https://cours-particuliers-maths.pm/feed/"]
   },
   "ST._VINCENT_&_GRENADINES": {
     "Business & Economy": [
@@ -45158,9 +44398,7 @@
       "https://blume.vc/reports/feed.xml",
       "https://riconnect.rico.com.vc/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://blog.esfera.com.vc:443/feed/"
-    ],
+    "Lifestyle & Culture": ["https://blog.esfera.com.vc:443/feed/"],
     "Local News": [
       "https://svgcc.vc/feed/",
       "https://www.ntrc.vc/feed/",
@@ -45172,9 +44410,7 @@
       "https://www.nbcsvg.com/feed/",
       "https://transport.gov.vc/transport/index.php?format=feed&type=rss"
     ],
-    "Other": [
-      "https://adzboard.vc/web-stories/feed/"
-    ],
+    "Other": ["https://adzboard.vc/web-stories/feed/"],
     "Politics & Society": [
       "https://mobilization.gov.vc/mobilization/index.php?format=feed&type=rss"
     ],
@@ -45208,9 +44444,7 @@
       "https://nyalau.edu.sd/?feed=rss2",
       "https://sudanports.gov.sd/web/ar/?feed=rss2"
     ],
-    "Other": [
-      "https://pmm.ust.edu.sd/feed/"
-    ],
+    "Other": ["https://pmm.ust.edu.sd/feed/"],
     "Politics & Society": [
       "https://sncmhp.gov.sd/feed/",
       "https://www.dabangasudan.org/ar/feed",
@@ -45233,9 +44467,7 @@
       "https://alprincegroup.sd/feed/",
       "https://ll.sd/rss.xml"
     ],
-    "World / International": [
-      "https://safa.sd/feed/"
-    ]
+    "World / International": ["https://safa.sd/feed/"]
   },
   "SURINAME": {
     "Business & Economy": [
@@ -45262,9 +44494,7 @@
       "https://aakhrisafarmijnzorg.sr/feed/",
       "https://www.notariaatmannes.sr/feed/"
     ],
-    "Other": [
-      "https://ves.sr/feed/"
-    ],
+    "Other": ["https://ves.sr/feed/"],
     "Politics & Society": [
       "https://gov.sr/feed/",
       "https://keynews.sr/feed/",
@@ -45287,13 +44517,8 @@
       "https://www.kntsdagblad.sr/feed/",
       "https://huiselijkgeweld.sr/feed/"
     ],
-    "Science & Technology": [
-      "https://datasur.sr/feed/",
-      "https://majeeda.sr/feed/"
-    ],
-    "Sports": [
-      "https://svb.sr/feed/"
-    ],
+    "Science & Technology": ["https://datasur.sr/feed/", "https://majeeda.sr/feed/"],
+    "Sports": ["https://svb.sr/feed/"],
     "World / International": [
       "https://sun.sr/rss/kunst%20&%20cultuur?id=37",
       "https://sun.sr/rss/mode?id=36",
@@ -45632,10 +44857,7 @@
       "https://www.bjorklingemaleritjanst.se/feed/",
       "https://www.svenskamord.se/feed/"
     ],
-    "Other": [
-      "https://veckonr.se/rss",
-      "http://www.svtplay.se/lokala-nyheter-jonkoping/rss.xml"
-    ],
+    "Other": ["https://veckonr.se/rss", "http://www.svtplay.se/lokala-nyheter-jonkoping/rss.xml"],
     "Politics & Society": [
       "https://skatteverket.se/4.dfe345a107ebcc9baf800017593/12.dfe345a107ebcc9baf800017599.portlet?state=rss&sv.contenttype=text/xml;charset=UTF-8",
       "https://skatteverket.se/4.dfe345a107ebcc9baf800017640/12.dfe345a107ebcc9baf800017646.portlet?state=rss&sv.contenttype=text/xml;charset=UTF-8",
@@ -46440,9 +45662,7 @@
       "https://bso.com.sy/feed/",
       "https://syrianexpert.sy/?feed=rss2"
     ],
-    "Lifestyle & Culture": [
-      "https://awu.sy/?feed=rss2"
-    ],
+    "Lifestyle & Culture": ["https://awu.sy/?feed=rss2"],
     "Local News": [
       "https://hpu.edu.sy/feed/",
       "https://alwatan.sy/feed/",
@@ -46460,15 +45680,10 @@
       "https://furat.alwehda.gov.sy/?feed=rss2",
       "https://archive.thawra.sy/?feed=rss2"
     ],
-    "Science & Technology": [
-      "https://homs-univ.edu.sy/feed/",
-      "https://wpu.edu.sy/feed/"
-    ]
+    "Science & Technology": ["https://homs-univ.edu.sy/feed/", "https://wpu.edu.sy/feed/"]
   },
   "SÃO_TOMÉ_&_PRÍNCIPE": {
-    "Business & Economy": [
-      "https://www.process.st/feed/"
-    ],
+    "Business & Economy": ["https://www.process.st/feed/"],
     "Politics & Society": [
       "https://cipstp.st/feed/",
       "https://principe.gov.st/feed/",
@@ -46476,9 +45691,7 @@
       "https://www.jornaltropical.st/feed/",
       "https://zuntatv.st/feed/"
     ],
-    "Science & Technology": [
-      "https://sanet.st/rss-titles"
-    ],
+    "Science & Technology": ["https://sanet.st/rss-titles"],
     "World / International": [
       "https://ager.st/index.php/pt/?format=feed&type=rss",
       "https://www.radiogospelstp.st/feed/"
@@ -46626,10 +45839,7 @@
       "https://epaper.ntu.edu.tw/rss/91.xml",
       "https://cjc.shu.edu.tw/feed/"
     ],
-    "Other": [
-      "https://gscholar.ntu.edu.tw/feed/",
-      "https://epaper.ntu.edu.tw/rss/251.xml"
-    ],
+    "Other": ["https://gscholar.ntu.edu.tw/feed/", "https://epaper.ntu.edu.tw/rss/251.xml"],
     "Politics & Society": [
       "https://news.ltn.com.tw/rss/all.xml",
       "https://news.ltn.com.tw/rss/life.xml",
@@ -46814,9 +46024,7 @@
       "https://www.greeneconomy.tj/feed/",
       "https://m-davo.tj/feed/"
     ],
-    "Sports": [
-      "https://varzishtv.tj/tj/rss.php"
-    ],
+    "Sports": ["https://varzishtv.tj/tj/rss.php"],
     "World / International": [
       "https://sputnik.tj/export/rss2/archive/index.xml",
       "https://majmilli.tj/feed/",
@@ -46860,9 +46068,7 @@
       "https://www.adpmbozi.or.tz/feed/",
       "https://www.cdf.or.tz/feed/"
     ],
-    "Other": [
-      "https://www.mwalimumakoba.co.tz/feeds/posts/default"
-    ],
+    "Other": ["https://www.mwalimumakoba.co.tz/feeds/posts/default"],
     "Politics & Society": [
       "https://dailynews.co.tz/feed/",
       "https://globalpublishers.co.tz/feed/",
@@ -47046,9 +46252,7 @@
       "https://solgen.wu.ac.th/?feed=rss2&lang=th",
       "https://riie.wu.ac.th/?feed=rss2"
     ],
-    "Sports": [
-      "https://www.chiangmainews.co.th/feed/"
-    ],
+    "Sports": ["https://www.chiangmainews.co.th/feed/"],
     "World / International": [
       "https://scandasia.com/feed/",
       "https://tmd.go.th/api/xml/storm-tracking",
@@ -47068,9 +46272,7 @@
       "https://www.frac.tl/feed/",
       "https://inetl-ip.gov.tl/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://cet.tl/feed/"
-    ],
+    "Lifestyle & Culture": ["https://cet.tl/feed/"],
     "Local News": [
       "https://arqddili.tl/feed/",
       "https://nks-lospalos.sch.tl/feed/",
@@ -47246,10 +46448,7 @@
       "https://anpctogo.tg/feed/",
       "https://togodailynews.tg/feed/"
     ],
-    "Science & Technology": [
-      "https://itra.tg/index.php/feed/",
-      "https://edusup.gouv.tg/feed/"
-    ],
+    "Science & Technology": ["https://itra.tg/index.php/feed/", "https://edusup.gouv.tg/feed/"],
     "Sports": [
       "https://www.togogoal.tg/feed/",
       "https://www.csportsinfos.tg/feed/",
@@ -47276,33 +46475,19 @@
       "https://shanson-e.tk/forum/external.php?type=RSS2",
       "https://tied.tk/feed/"
     ],
-    "Science & Technology": [
-      "https://pulkomandy.tk/rss.pl",
-      "https://www.webreference.fr/feed/"
-    ],
-    "World / International": [
-      "https://corlobe.tk/?page=backend"
-    ]
+    "Science & Technology": ["https://pulkomandy.tk/rss.pl", "https://www.webreference.fr/feed/"],
+    "World / International": ["https://corlobe.tk/?page=backend"]
   },
   "TONGA": {
-    "Local News": [
-      "https://thelocal.to/feed/",
-      "https://www.morditonga.to/feed/"
-    ],
+    "Local News": ["https://thelocal.to/feed/", "https://www.morditonga.to/feed/"],
     "Politics & Society": [
       "https://parliament.gov.to/en?format=feed&type=rss",
       "https://talanoaotonga.to/feed/",
       "https://tbc.to/feed/"
     ],
-    "Science & Technology": [
-      "https://tongastats.gov.to/feed/"
-    ],
-    "Sports": [
-      "https://www.tongafootball.to/feed/"
-    ],
-    "World / International": [
-      "https://climatechange.gov.to/feed/"
-    ]
+    "Science & Technology": ["https://tongastats.gov.to/feed/"],
+    "Sports": ["https://www.tongafootball.to/feed/"],
+    "World / International": ["https://climatechange.gov.to/feed/"]
   },
   "TRINIDAD_&_TOBAGO": {
     "Business & Economy": [
@@ -47338,16 +46523,9 @@
       "https://www.cnc3.co.tt/feed/",
       "https://www.guardian.co.tt/rss-6.21.0.0.ae52d23427"
     ],
-    "Science & Technology": [
-      "https://www.ima.gov.tt/feed/",
-      "https://ma.tt/feed/"
-    ],
-    "Sports": [
-      "https://wired868.com/feed/"
-    ],
-    "World / International": [
-      "https://cananewsonline.com/main/feed/"
-    ]
+    "Science & Technology": ["https://www.ima.gov.tt/feed/", "https://ma.tt/feed/"],
+    "Sports": ["https://wired868.com/feed/"],
+    "World / International": ["https://cananewsonline.com/main/feed/"]
   },
   "TUNISIA": {
     "Business & Economy": [
@@ -47406,9 +46584,7 @@
       "https://saheltv.tn/ar/feed/",
       "https://radioml.tn/feed/"
     ],
-    "Other": [
-      "https://www.imti7aneti.tn/rss.xml"
-    ],
+    "Other": ["https://www.imti7aneti.tn/rss.xml"],
     "Politics & Society": [
       "https://lapresse.tn/feed/",
       "http://tunisien.tn/feed",
@@ -47451,13 +46627,8 @@
       "https://balkanshipyard.com.tm/?feed=rss2",
       "https://tla.tm/language/ru/feed"
     ],
-    "Lifestyle & Culture": [
-      "https://museum.gov.tm/rss.xml",
-      "https://ahalhakimlik.gov.tm/rss"
-    ],
-    "Local News": [
-      "https://tohu.edu.tm/./rss"
-    ],
+    "Lifestyle & Culture": ["https://museum.gov.tm/rss.xml", "https://ahalhakimlik.gov.tm/rss"],
+    "Local News": ["https://tohu.edu.tm/./rss"],
     "Politics & Society": [
       "https://halkbank.gov.tm/rss",
       "http://dayhanbank.gov.tm/rss",
@@ -47470,9 +46641,7 @@
     "Science & Technology": [
       "https://forum.asterios.tm/rss/5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B.xml/"
     ],
-    "Sports": [
-      "https://sportcom.gov.tm/rss"
-    ],
+    "Sports": ["https://sportcom.gov.tm/rss"],
     "World / International": [
       "https://turkmenistan.gov.tm/rss.xml",
       "https://tdh.gov.tm/tk/rss.xml",
@@ -47481,17 +46650,9 @@
     ]
   },
   "TURKS_&_CAICOS_ISLANDS": {
-    "Business & Economy": [
-      "https://investturksandcaicos.tc/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://thesource.tc/feed/",
-      "https://ep.tc/rss.xml"
-    ],
-    "Local News": [
-      "https://www.timespub.tc/feed/",
-      "https://www.tcipolice.tc/feed/"
-    ]
+    "Business & Economy": ["https://investturksandcaicos.tc/feed/"],
+    "Lifestyle & Culture": ["https://thesource.tc/feed/", "https://ep.tc/rss.xml"],
+    "Local News": ["https://www.timespub.tc/feed/", "https://www.tcipolice.tc/feed/"]
   },
   "TUVALU": {
     "Business & Economy": [
@@ -49353,9 +48514,7 @@
     ]
   },
   "U.S._VIRGIN_ISLANDS": {
-    "Politics & Society": [
-      "https://casinocontrolcommission.vi/feed/"
-    ]
+    "Politics & Society": ["https://casinocontrolcommission.vi/feed/"]
   },
   "UGANDA": {
     "Business & Economy": [
@@ -49492,9 +48651,7 @@
       "https://nbssport.co.ug/feed/",
       "https://sportsnation.co.ug/feed/"
     ],
-    "World / International": [
-      "https://www.independent.co.ug/feed/"
-    ]
+    "World / International": ["https://www.independent.co.ug/feed/"]
   },
   "UKRAINE": {
     "Business & Economy": [
@@ -55110,9 +54267,7 @@
       "https://serrano.uy/feed/",
       "https://noticias.vtv.com.uy/feed/"
     ],
-    "Opinion": [
-      "https://delsol.uy//feed/notoquennada"
-    ],
+    "Opinion": ["https://delsol.uy//feed/notoquennada"],
     "Politics & Society": [
       "https://brecha.com.uy/feed/",
       "https://elpopular.uy/feed/",
@@ -55140,10 +54295,7 @@
       "https://revista.fder.edu.uy/index.php/rfd/gateway/plugin/WebFeedGatewayPlugin/atom",
       "https://universidad.claeh.edu.uy/feed/"
     ],
-    "Science & Technology": [
-      "https://ambienta.uy/feed/",
-      "https://www.meteored.com.uy/feed/"
-    ],
+    "Science & Technology": ["https://ambienta.uy/feed/", "https://www.meteored.com.uy/feed/"],
     "Sports": [
       "https://www.pasiontricolor.com.uy/feed/",
       "https://delsol.uy//feed/darwin",
@@ -55151,9 +54303,7 @@
       "https://dl.uy//feed/darwin",
       "https://radiocaperuza.uy/feed/"
     ],
-    "World / International": [
-      "https://www.laondadigital.com.uy/feed"
-    ]
+    "World / International": ["https://www.laondadigital.com.uy/feed"]
   },
   "UZBEKISTAN": {
     "Business & Economy": [
@@ -55271,19 +54421,10 @@
     ]
   },
   "VANUATU": {
-    "Business & Economy": [
-      "https://fma.vu/feed/",
-      "https://blog.dot.vu/feed/"
-    ],
-    "Local News": [
-      "https://www.univ.edu.vu/feed/"
-    ],
-    "Politics & Society": [
-      "https://vbtc.vu/feed/"
-    ],
-    "Science & Technology": [
-      "https://blog.inhousepharmacy.vu/feed"
-    ]
+    "Business & Economy": ["https://fma.vu/feed/", "https://blog.dot.vu/feed/"],
+    "Local News": ["https://www.univ.edu.vu/feed/"],
+    "Politics & Society": ["https://vbtc.vu/feed/"],
+    "Science & Technology": ["https://blog.inhousepharmacy.vu/feed"]
   },
   "VATICAN_CITY": {
     "Lifestyle & Culture": [
@@ -57571,27 +56712,14 @@
     ]
   },
   "WALLIS_&_FUTUNA": {
-    "Lifestyle & Culture": [
-      "https://psa.wf/feed/",
-      "https://www.dogblog.wf/blog-feed.xml"
-    ],
-    "Local News": [
-      "https://pmcc.wf/index.php/feed/"
-    ],
-    "Politics & Society": [
-      "https://www.alinea-media.fr/feed/"
-    ],
-    "Science & Technology": [
-      "https://25.wf/./rss.xml"
-    ]
+    "Lifestyle & Culture": ["https://psa.wf/feed/", "https://www.dogblog.wf/blog-feed.xml"],
+    "Local News": ["https://pmcc.wf/index.php/feed/"],
+    "Politics & Society": ["https://www.alinea-media.fr/feed/"],
+    "Science & Technology": ["https://25.wf/./rss.xml"]
   },
   "YEMEN": {
-    "Business & Economy": [
-      "https://www.sabafon.com.ye/feed/"
-    ],
-    "Lifestyle & Culture": [
-      "https://gabpd.gov.ye/feed/"
-    ],
+    "Business & Economy": ["https://www.sabafon.com.ye/feed/"],
+    "Lifestyle & Culture": ["https://gabpd.gov.ye/feed/"],
     "Local News": [
       "https://ust.edu.ye/feed/",
       "https://msu.edu.ye/feed/",
@@ -57640,9 +56768,7 @@
       "https://www.idc.co.zm/feed/",
       "https://schweizeragriculture.co.zm/feed/"
     ],
-    "Lifestyle & Culture": [
-      "https://ilovezedmusic.com.zm/feed/"
-    ],
+    "Lifestyle & Culture": ["https://ilovezedmusic.com.zm/feed/"],
     "Local News": [
       "https://zcasu.edu.zm/feed/",
       "https://northrise.edu.zm/feed/",
@@ -57677,13 +56803,8 @@
       "https://www.zanis.gov.zm/?feed=rss2",
       "https://www.fian.org.zm/blog-feed.xml"
     ],
-    "Science & Technology": [
-      "https://tau.edu.zm/feed/",
-      "https://solwezitrades.edu.zm/feed/"
-    ],
-    "Sports": [
-      "https://zambianfootball.co.zm/feed/"
-    ],
+    "Science & Technology": ["https://tau.edu.zm/feed/", "https://solwezitrades.edu.zm/feed/"],
+    "Sports": ["https://zambianfootball.co.zm/feed/"],
     "World / International": [
       "https://tau.edu.zm/web-stories/feed/",
       "https://coalitionhealth.org.zm/feed/"
@@ -57802,16 +56923,9 @@
     ]
   },
   "ÅLAND_ISLANDS": {
-    "Business & Economy": [
-      "https://www.sjofart.ax/feed/"
-    ],
-    "Local News": [
-      "https://landsbygd.ax/feed/",
-      "https://leader.ax/feed/"
-    ],
-    "Politics & Society": [
-      "https://andersekstrom.ax/feed/"
-    ],
+    "Business & Economy": ["https://www.sjofart.ax/feed/"],
+    "Local News": ["https://landsbygd.ax/feed/", "https://leader.ax/feed/"],
+    "Politics & Society": ["https://andersekstrom.ax/feed/"],
     "Sports": [
       "https://www.alandstidningen.ax/rss/allt",
       "https://www.alandunited.ax/blog-feed.xml"

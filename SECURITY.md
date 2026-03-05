@@ -19,13 +19,13 @@ You should receive a response within 48 hours. If for some reason you do not, pl
 
 Please include the following information in your report:
 
-* Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
-* Full paths of source file(s) related to the manifestation of the issue
-* The location of the affected source code (tag/branch/commit or direct URL)
-* Any special configuration required to reproduce the issue
-* Step-by-step instructions to reproduce the issue
-* Proof-of-concept or exploit code (if possible)
-* Impact of the issue, including how an attacker might exploit the issue
+- Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
+- Full paths of source file(s) related to the manifestation of the issue
+- The location of the affected source code (tag/branch/commit or direct URL)
+- Any special configuration required to reproduce the issue
+- Step-by-step instructions to reproduce the issue
+- Proof-of-concept or exploit code (if possible)
+- Impact of the issue, including how an attacker might exploit the issue
 
 This information will help us triage your report more quickly.
 
@@ -83,6 +83,7 @@ git commit -am "Add API key"  # ❌ NEVER!
 ### Data Privacy
 
 This application processes publicly available data only:
+
 - ADS-B aircraft positions (public broadcasts)
 - AIS maritime data (public broadcasts)
 - RSS news feeds (public sources)
@@ -98,12 +99,14 @@ The Vite frontend may expose some API configuration. Never put sensitive keys in
 ### Rate Limiting
 
 Implement rate limiting on the backend to prevent abuse:
+
 - ADSB.lol API calls (currently 3-second cache)
 - AISStream WebSocket reconnections (currently 5-second backoff)
 
 ### WebSocket Security
 
 The AISStream WebSocket connection:
+
 - Authenticates via API key (kept server-side only)
 - Automatically reconnects on disconnect
 - Should be monitored for unusual traffic patterns
@@ -111,6 +114,7 @@ The AISStream WebSocket connection:
 ## Dependencies
 
 We use automated tools to monitor dependencies:
+
 - `npm audit` - Regular security audits
 - Dependabot (if enabled) - Automated updates
 - Manual review of dependency changes
@@ -118,6 +122,7 @@ We use automated tools to monitor dependencies:
 ## Responsible Disclosure
 
 We kindly ask that you:
+
 - Allow us reasonable time to address the vulnerability
 - Avoid public disclosure until a fix is available
 - Make a good faith effort to avoid privacy violations and disruption

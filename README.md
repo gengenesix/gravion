@@ -17,6 +17,7 @@
 ## ⚠️ Legal & Ethical Notice
 
 This application uses **exclusively public data sources**:
+
 - [ADSB.lol](https://adsb.lol) — community-fed ADS-B flight data (no auth required)
 - [AISStream.io](https://aisstream.io) — public AIS maritime data over WebSocket
 
@@ -27,6 +28,7 @@ No proprietary, classified, or unauthorized surveillance data is used. The "inte
 ## ✨ Features
 
 ### 🛩️ Flight Tracking Module
+
 - **Live aircraft positions** sourced from ADSB.lol, refreshed every 3 seconds
 - **Rich telemetry panel** — altitude (baro/geo), speed, heading, vertical rate, squawk, Mach, IAS, TAS, roll, wind direction/speed, OAT/TAT, nav modes, RSSI
 - **Aircraft database enrichment** — registration, manufacturer, model, operator, type code, year built (powered by DuckDB + Parquet DB)
@@ -37,6 +39,7 @@ No proprietary, classified, or unauthorized surveillance data is used. The "inte
 - **Globe & Mercator projection** toggle in the top nav
 
 ### 🚢 Maritime Tracking Module
+
 - **Live vessel positions** via a persistent WebSocket connection to `wss://stream.aisstream.io/v0/stream`
 - **Full AIS message type support**: PositionReport, StandardClassB, ExtendedClassB, ShipStaticData, StaticDataReport, BaseStationReport, SAR Aircraft, AidsToNavigation, SafetyBroadcastMessage
 - **Vessel detail panel** — MMSI, name, call sign, type, destination, SOG, COG, heading, navigational status
@@ -45,13 +48,14 @@ No proprietary, classified, or unauthorized surveillance data is used. The "inte
 - **Auto-reconnect** — WebSocket reconnects automatically on disconnect (5 s backoff)
 
 ### 🎨 Display Modes
+
 Three visual themes selectable from the top navigation bar:
 
-| Mode | Description |
-|------|-------------|
-| **EO** | Standard electro-optical — clean dark interface |
-| **FLIR** | Forward-looking infrared — thermal color palette |
-| **CRT** | Cathode-ray tube — retro phosphor green aesthetic |
+| Mode     | Description                                       |
+| -------- | ------------------------------------------------- |
+| **EO**   | Standard electro-optical — clean dark interface   |
+| **FLIR** | Forward-looking infrared — thermal color palette  |
+| **CRT**  | Cathode-ray tube — retro phosphor green aesthetic |
 
 ---
 
@@ -84,24 +88,25 @@ intelligence-dashboard/
 
 ### Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend framework | React 19 + Vite 7 + TypeScript 5.9 |
-| Map rendering | MapLibre GL JS 5 via react-map-gl 8 |
-| State management | Zustand 5 |
-| Data fetching | TanStack Query v5 |
-| Styling | Tailwind CSS v4 |
-| Icons | Lucide React |
-| Backend runtime | Node.js + Express 4 |
-| Aircraft database | DuckDB + Parquet |
-| Maritime stream | WebSocket (`ws` library) |
-| Build tooling | `concurrently` (monorepo dev runner) |
+| Layer              | Technology                           |
+| ------------------ | ------------------------------------ |
+| Frontend framework | React 19 + Vite 7 + TypeScript 5.9   |
+| Map rendering      | MapLibre GL JS 5 via react-map-gl 8  |
+| State management   | Zustand 5                            |
+| Data fetching      | TanStack Query v5                    |
+| Styling            | Tailwind CSS v4                      |
+| Icons              | Lucide React                         |
+| Backend runtime    | Node.js + Express 4                  |
+| Aircraft database  | DuckDB + Parquet                     |
+| Maritime stream    | WebSocket (`ws` library)             |
+| Build tooling      | `concurrently` (monorepo dev runner) |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - **Node.js** v18 or later
 - **npm** v9 or later
 
@@ -150,6 +155,7 @@ npm run dev
 ```
 
 This concurrently starts:
+
 - **Frontend** → [http://localhost:5173](http://localhost:5173)
 - **Backend proxy** → [http://localhost:3001](http://localhost:3001)
 - **Health check** → [http://localhost:3001/health](http://localhost:3001/health)
@@ -162,34 +168,36 @@ All routes are served by the Express backend on port `3001`.
 
 ### Flights
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/flights/states` | Returns all currently tracked aircraft as `AircraftState[]` |
-| `GET` | `/api/flights/track/:icao24` | Returns the route path for a specific aircraft by ICAO24 hex |
+| Method | Endpoint                     | Description                                                  |
+| ------ | ---------------------------- | ------------------------------------------------------------ |
+| `GET`  | `/api/flights/states`        | Returns all currently tracked aircraft as `AircraftState[]`  |
+| `GET`  | `/api/flights/track/:icao24` | Returns the route path for a specific aircraft by ICAO24 hex |
 
 ### Maritime
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/maritime/snapshot` | Returns all live vessels as `VesselState[]`, including position history |
+| Method | Endpoint                 | Description                                                             |
+| ------ | ------------------------ | ----------------------------------------------------------------------- |
+| `GET`  | `/api/maritime/snapshot` | Returns all live vessels as `VesselState[]`, including position history |
 
 ### System
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/health` | Returns `{ status: "ok" }` |
+| Method | Endpoint  | Description                |
+| ------ | --------- | -------------------------- |
+| `GET`  | `/health` | Returns `{ status: "ok" }` |
 
 ---
 
 ## 🔌 Data Sources
 
 ### ADSB.lol (Flights)
+
 - **URL**: `https://api.adsb.lol/v2/point/{lat}/{lon}/{radius}`
 - **Auth**: None required — community-operated, free to use
 - **Polling interval**: 3-second TTL cache on the backend
 - **Enrichment**: Aircraft registration/model data is joined from a local DuckDB/Parquet database at server startup
 
 ### AISStream.io (Maritime)
+
 - **URL**: `wss://stream.aisstream.io/v0/stream`
 - **Auth**: API key required (free tier available at [aisstream.io](https://aisstream.io))
 - **Coverage**: Global bounding box `[[-90, -180], [90, 180]]`
@@ -199,14 +207,14 @@ All routes are served by the Express backend on port `3001`.
 
 ## 🛠️ Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start both client and server in development mode |
-| `npm run install:all` | Install all workspace dependencies |
-| `npm run build` (in `client/`) | Build the production frontend bundle |
-| `npm run build` (in `server/`) | Compile TypeScript to `server/dist/` |
-| `npm run start` (in `server/`) | Run the compiled production server |
-| `npm run lint` (in `client/`) | Run ESLint on the frontend codebase |
+| Command                        | Description                                      |
+| ------------------------------ | ------------------------------------------------ |
+| `npm run dev`                  | Start both client and server in development mode |
+| `npm run install:all`          | Install all workspace dependencies               |
+| `npm run build` (in `client/`) | Build the production frontend bundle             |
+| `npm run build` (in `server/`) | Compile TypeScript to `server/dist/`             |
+| `npm run start` (in `server/`) | Run the compiled production server               |
+| `npm run lint` (in `client/`)  | Run ESLint on the frontend codebase              |
 
 ---
 

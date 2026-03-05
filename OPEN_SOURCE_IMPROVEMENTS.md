@@ -7,12 +7,14 @@ This document summarizes all improvements made and recommendations for making IN
 ### 1. Security & Environment Management
 
 **Files Created:**
+
 - `server/.env.example` - Template for server environment variables
 - `client/.env.example` - Template for client environment variables
 - Updated `.gitignore` - Now properly excludes `.env` files
 
 **Critical Action Required:**
 ⚠️ **Your `server/.env` contains real API keys!** You must:
+
 1. Rotate ALL API keys immediately:
    - AISSTREAM_API_KEY
    - OPENROUTER_API_KEY
@@ -25,6 +27,7 @@ This document summarizes all improvements made and recommendations for making IN
 ### 2. Legal & Community Documents
 
 **Files Created:**
+
 - `LICENSE` - MIT License for the project
 - `CONTRIBUTING.md` - Comprehensive contribution guidelines
 - `CODE_OF_CONDUCT.md` - Contributor Covenant v2.0
@@ -33,6 +36,7 @@ This document summarizes all improvements made and recommendations for making IN
 - `ROADMAP.md` - Future development plans
 
 **Benefits:**
+
 - Clear licensing for contributors
 - Professional contribution process
 - Safe and inclusive community
@@ -42,6 +46,7 @@ This document summarizes all improvements made and recommendations for making IN
 ### 3. CI/CD & Automation
 
 **Files Created:**
+
 - `.github/workflows/ci.yml` - Continuous Integration pipeline
   - Runs tests on client and server
   - Performs security audits
@@ -54,6 +59,7 @@ This document summarizes all improvements made and recommendations for making IN
   - Publishes to GitHub Container Registry
 
 **Benefits:**
+
 - Automated testing on every commit
 - Catch bugs before merge
 - Automated Docker builds
@@ -62,11 +68,13 @@ This document summarizes all improvements made and recommendations for making IN
 ### 4. Issue & PR Templates
 
 **Files Created:**
+
 - `.github/ISSUE_TEMPLATE/bug_report.md` - Structured bug reports
 - `.github/ISSUE_TEMPLATE/feature_request.md` - Feature proposals
 - `.github/pull_request_template.md` - PR checklist
 
 **Benefits:**
+
 - Consistent issue reporting
 - Better bug reproduction
 - Clearer feature requests
@@ -75,11 +83,13 @@ This document summarizes all improvements made and recommendations for making IN
 ### 5. Docker & Deployment
 
 **Files Created:**
+
 - `Dockerfile` - Multi-stage production build
 - `docker-compose.yml` - Complete deployment setup
 - `.dockerignore` - Optimized Docker builds
 
 **Usage:**
+
 ```bash
 # Development
 docker-compose up
@@ -90,6 +100,7 @@ docker run -p 3001:3001 --env-file server/.env intelmap:latest
 ```
 
 **Benefits:**
+
 - Easy deployment anywhere
 - Consistent environments
 - Production-ready containers
@@ -98,11 +109,13 @@ docker run -p 3001:3001 --env-file server/.env intelmap:latest
 ### 6. Cross-Platform Compatibility Fix
 
 **Changes Made:**
+
 - Replaced `@vitejs/plugin-react-swc` with `@vitejs/plugin-react`
 - Updated dependencies
 - Fixed native binding errors
 
 **Benefits:**
+
 - Works on macOS (Intel & Apple Silicon)
 - Works on Windows
 - Works on Linux
@@ -129,6 +142,7 @@ git status  # Should NOT show server/.env or client/.env
 ### 2. Add Testing Infrastructure
 
 **Install Testing Libraries:**
+
 ```bash
 # Client (Vitest already configured)
 cd client
@@ -140,6 +154,7 @@ npm install -D vitest @vitest/coverage-v8 supertest @types/supertest
 ```
 
 **Create test files:**
+
 ```
 server/
 ├── src/
@@ -156,11 +171,13 @@ server/
 ### 3. Add Code Quality Tools
 
 **Install Prettier:**
+
 ```bash
 npm install -D prettier --workspace=client --workspace=server
 ```
 
 **Create `.prettierrc.json`:**
+
 ```json
 {
   "semi": true,
@@ -172,6 +189,7 @@ npm install -D prettier --workspace=client --workspace=server
 ```
 
 **Install Husky (pre-commit hooks):**
+
 ```bash
 npm install -D husky lint-staged
 npx husky install
@@ -191,6 +209,7 @@ npx husky install
 ### 4. Improve Documentation
 
 **Add to README.md:**
+
 - Badges (build status, license, version)
 - Screenshots/GIFs of the application
 - Demo link (if deployed)
@@ -198,6 +217,7 @@ npx husky install
 - Star history graph
 
 **Example badges:**
+
 ```markdown
 ![Build Status](https://github.com/YOUR_ORG/INTELMAP/workflows/CI/badge.svg)
 ![License](https://img.shields.io/github/license/YOUR_ORG/INTELMAP)
@@ -205,6 +225,7 @@ npx husky install
 ```
 
 **Create `/docs` folder:**
+
 ```
 docs/
 ├── ARCHITECTURE.md     # System design
@@ -219,11 +240,13 @@ docs/
 ### 1. Monitoring & Logging
 
 **Add Structured Logging:**
+
 ```bash
 npm install winston --workspace=server
 ```
 
 **Add Error Tracking:**
+
 - Sign up for Sentry (free tier available)
 - Add Sentry SDK to client and server
 - Track errors and performance
@@ -231,11 +254,13 @@ npm install winston --workspace=server
 ### 2. Performance Optimization
 
 **Current Issues:**
+
 - No caching strategy beyond in-memory
 - No CDN for static assets
 - Large bundle size (MapLibre + dependencies)
 
 **Solutions:**
+
 - Add Redis for caching
 - Use Cloudflare CDN
 - Implement code splitting
@@ -244,11 +269,13 @@ npm install winston --workspace=server
 ### 3. Database Integration
 
 **Current State:**
+
 - All data in memory (lost on restart)
 - No historical data
 - No user preferences storage
 
 **Recommended:**
+
 ```bash
 # PostgreSQL for relational data
 npm install pg --workspace=server
@@ -263,11 +290,13 @@ npm install mongodb --workspace=server
 ### 4. Authentication & Authorization
 
 **For Public API:**
+
 - Add API key authentication
 - Implement rate limiting (express-rate-limit)
 - Add CORS restrictions
 
 **For User Features:**
+
 - Add OAuth (Google, GitHub)
 - Implement JWT tokens
 - Create user profile system
@@ -275,6 +304,7 @@ npm install mongodb --workspace=server
 ### 5. Enhanced Error Handling
 
 **Frontend:**
+
 ```tsx
 // Add Error Boundaries
 import { ErrorBoundary } from 'react-error-boundary';
@@ -291,10 +321,11 @@ function ErrorFallback({ error }) {
 // Wrap components
 <ErrorBoundary FallbackComponent={ErrorFallback}>
   <FlightsPage />
-</ErrorBoundary>
+</ErrorBoundary>;
 ```
 
 **Backend:**
+
 ```typescript
 // Centralized error handler
 app.use((err, req, res, next) => {
@@ -302,8 +333,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: {
       message: err.message,
-      ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
-    }
+      ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+    },
   });
 });
 ```
@@ -313,16 +344,19 @@ app.use((err, req, res, next) => {
 ### 1. Additional Modules
 
 **Satellite Tracking:**
+
 - Use TLE (Two-Line Element) data
 - Track ISS, Starlink, etc.
 - Show orbital paths
 
 **Weather Overlay:**
+
 - Integrate OpenWeather API
 - Show storms, precipitation
 - Wind speed/direction
 
 **Airport Operations:**
+
 - Real-time departures/arrivals
 - Gate assignments
 - Delay tracking
@@ -330,11 +364,13 @@ app.use((err, req, res, next) => {
 ### 2. Mobile Support
 
 **Progressive Web App (PWA):**
+
 - Add service worker
 - Enable offline mode
 - Add to home screen
 
 **React Native App:**
+
 - Share business logic
 - Native mobile experience
 - Push notifications
@@ -342,6 +378,7 @@ app.use((err, req, res, next) => {
 ### 3. Data Export
 
 **Features:**
+
 - Export to CSV/JSON
 - Generate PDF reports
 - Email scheduled reports
@@ -350,6 +387,7 @@ app.use((err, req, res, next) => {
 ### 4. User Customization
 
 **Settings:**
+
 - Custom map styles
 - Notification preferences
 - Saved searches
@@ -359,6 +397,7 @@ app.use((err, req, res, next) => {
 ## 📊 Metrics to Track
 
 ### GitHub Metrics
+
 - ⭐ Stars (virality indicator)
 - 🍴 Forks (developer interest)
 - 👀 Watchers (active followers)
@@ -366,6 +405,7 @@ app.use((err, req, res, next) => {
 - 👥 Contributors count
 
 ### Technical Metrics
+
 - 🧪 Test coverage (aim for 80%+)
 - 🐛 Open issues vs. closed
 - ⏱️ Issue resolution time
@@ -373,6 +413,7 @@ app.use((err, req, res, next) => {
 - 🔒 Security vulnerabilities
 
 ### Application Metrics
+
 - 👤 Active users (if tracked)
 - 📊 API request volume
 - ⚠️ Error rate
@@ -393,22 +434,26 @@ app.use((err, req, res, next) => {
 ## 📚 Resources
 
 ### Documentation Templates
+
 - https://github.com/RichardLitt/standard-readme
 - https://www.makeareadme.com/
 - https://readme.so/
 
 ### Best Practices
+
 - https://opensource.guide/
 - https://github.com/github/opensource.guide
 - https://12factor.net/
 
 ### Tools
+
 - https://shields.io/ - Badges
 - https://gitignore.io/ - .gitignore generator
 - https://choosealicense.com/ - License picker
 - https://keepachangelog.com/ - Changelog format
 
 ### Communities
+
 - /r/opensource
 - /r/webdev
 - /r/typescript
@@ -418,6 +463,7 @@ app.use((err, req, res, next) => {
 ## 🎯 Success Criteria
 
 ### Month 1
+
 - [ ] 50+ GitHub stars
 - [ ] 5+ external contributors
 - [ ] 80%+ test coverage
@@ -425,6 +471,7 @@ app.use((err, req, res, next) => {
 - [ ] CI/CD fully operational
 
 ### Month 3
+
 - [ ] 200+ GitHub stars
 - [ ] 20+ external contributors
 - [ ] Featured on awesome lists
@@ -432,6 +479,7 @@ app.use((err, req, res, next) => {
 - [ ] Community Discord/Slack
 
 ### Month 6
+
 - [ ] 500+ GitHub stars
 - [ ] 50+ external contributors
 - [ ] Conference talk/blog post
@@ -441,6 +489,7 @@ app.use((err, req, res, next) => {
 ## 🤝 Getting Community Involved
 
 ### Ways to Contribute
+
 1. **Code** - Fix bugs, add features
 2. **Documentation** - Improve guides
 3. **Design** - UI/UX improvements
@@ -450,6 +499,7 @@ app.use((err, req, res, next) => {
 7. **Support** - Answer questions
 
 ### Recognition
+
 - Contributors list in README
 - "Thank you" in CHANGELOG
 - Shoutouts on social media
@@ -469,6 +519,7 @@ app.use((err, req, res, next) => {
 You have built an impressive intelligence dashboard with real-time tracking capabilities. With these open source best practices implemented, INTELMAP can become a widely-used and well-maintained project.
 
 The foundation is solid - now it's about:
+
 1. **Security** - Protect your keys
 2. **Quality** - Add tests and documentation
 3. **Community** - Engage contributors

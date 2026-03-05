@@ -23,12 +23,12 @@ app.use('/api/cyber', cyberRouter);
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
 app.listen(PORT, async () => {
-    console.log(`Server intel-proxy listening on port ${PORT}`);
+  console.log(`Server intel-proxy listening on port ${PORT}`);
 
-    // Load the massive aircraft database in the background
-    try {
-        await aircraftDb.load();
-    } catch (e) {
-        console.error('Failed to initialize aircraft DB:', e);
-    }
+  // Load the massive aircraft database in the background
+  try {
+    await aircraftDb.load();
+  } catch (e) {
+    console.error('Failed to initialize aircraft DB:', e);
+  }
 });

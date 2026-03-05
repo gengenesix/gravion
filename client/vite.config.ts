@@ -10,9 +10,9 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:3001',
-        changeOrigin: true
-      }
-    }
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     chunkSizeWarningLimit: 1100, // maplibre is intentionally large; suppress false-positive warning
@@ -23,17 +23,11 @@ export default defineConfig({
           maplibre: ['maplibre-gl'],
           // Page-level splits: each lazy route ships as its own chunk so users
           // only download the JS for the module they're actually using.
-          'page-flights': [
-            './src/modules/flights/FlightsPage',
-          ],
-          'page-maritime': [
-            './src/modules/maritime/MaritimePage',
-          ],
-          'page-cyber': [
-            './src/modules/cyber/CyberPage',
-          ],
-        }
-      }
-    }
-  }
-})
+          'page-flights': ['./src/modules/flights/FlightsPage'],
+          'page-maritime': ['./src/modules/maritime/MaritimePage'],
+          'page-cyber': ['./src/modules/cyber/CyberPage'],
+        },
+      },
+    },
+  },
+});

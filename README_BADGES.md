@@ -75,23 +75,27 @@ Here's how the badge section could look in your README.md:
 Create custom badges at [shields.io](https://shields.io/):
 
 ### Online Status
+
 ```markdown
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fyour-demo-site.com)
 ```
 
 ### Security
+
 ```markdown
 ![Security](https://img.shields.io/badge/security-A+-brightgreen)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/YOUR_ORG/INTELMAP)
 ```
 
 ### Activity
+
 ```markdown
 ![Last Commit](https://img.shields.io/github/last-commit/YOUR_ORG/INTELMAP)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/YOUR_ORG/INTELMAP)
 ```
 
 ### Downloads/Usage
+
 ```markdown
 ![Docker Pulls](https://img.shields.io/docker/pulls/YOUR_ORG/intelmap)
 ![GitHub downloads](https://img.shields.io/github/downloads/YOUR_ORG/INTELMAP/total)
@@ -100,21 +104,25 @@ Create custom badges at [shields.io](https://shields.io/):
 ## Alternative Styles
 
 ### Flat
+
 ```markdown
 ?style=flat
 ```
 
 ### Flat Square
+
 ```markdown
 ?style=flat-square
 ```
 
 ### For the Badge
+
 ```markdown
 ?style=for-the-badge
 ```
 
 ### Social
+
 ```markdown
 ?style=social
 ```
@@ -122,6 +130,7 @@ Create custom badges at [shields.io](https://shields.io/):
 ## Color Customization
 
 Add color parameter:
+
 ```markdown
 ?color=blue
 ?color=success
@@ -131,6 +140,7 @@ Add color parameter:
 ## Links
 
 Make badges clickable:
+
 ```markdown
 [![CI](https://github.com/YOUR_ORG/INTELMAP/workflows/CI/badge.svg)](https://github.com/YOUR_ORG/INTELMAP/actions)
 ```
@@ -138,6 +148,7 @@ Make badges clickable:
 ## Dynamic Badges
 
 For npm packages (if you publish):
+
 ```markdown
 ![npm version](https://img.shields.io/npm/v/@YOUR_ORG/intelmap)
 ![npm downloads](https://img.shields.io/npm/dm/@YOUR_ORG/intelmap)
@@ -146,6 +157,7 @@ For npm packages (if you publish):
 ## Coverage Badge
 
 If using Codecov:
+
 ```markdown
 ![Coverage](https://codecov.io/gh/YOUR_ORG/INTELMAP/branch/main/graph/badge.svg)
 ```

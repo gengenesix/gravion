@@ -7,18 +7,16 @@ import '../theme/flir.css';
 import '../theme/eo.css';
 
 interface ShellLayoutProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export const ShellLayout: React.FC<ShellLayoutProps> = ({ children }) => {
-    const mode = useThemeStore(s => s.mode);
+  const mode = useThemeStore((s) => s.mode);
 
-    return (
-        <div className={clsx("flex flex-col h-screen w-screen overflow-hidden", `theme-${mode}`)}>
-            <TopNav />
-            <main className="flex-1 relative bg-intel-bg">
-                {children}
-            </main>
-        </div>
-    );
+  return (
+    <div className={clsx('flex flex-col h-screen w-screen overflow-hidden', `theme-${mode}`)}>
+      <TopNav />
+      <main className="flex-1 relative bg-intel-bg">{children}</main>
+    </div>
+  );
 };

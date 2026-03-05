@@ -11,20 +11,20 @@ import type { VesselState } from './useMaritimeSnapshot';
  * changes, which React Query does only on actual data updates.
  */
 export function useVesselSelection(vessels: VesselState[]) {
-    const selectedMmsi = useMaritimeStore(s => s.selectedMmsi);
-    const setSelectedMmsi = useMaritimeStore(s => s.setSelectedMmsi);
+  const selectedMmsi = useMaritimeStore((s) => s.selectedMmsi);
+  const setSelectedMmsi = useMaritimeStore((s) => s.setSelectedMmsi);
 
-    // O(n) to build once, then O(1) lookups.
-    const vesselMap = useMemo(() => {
-        const m = new Map<number, VesselState>();
-        for (const v of vessels) m.set(v.mmsi, v);
-        return m;
-    }, [vessels]);
+  // O(n) to build once, then O(1) lookups.
+  const vesselMap = useMemo(() => {
+    const m = new Map<number, VesselState>();
+    for (const v of vessels) m.set(v.mmsi, v);
+    return m;
+  }, [vessels]);
 
-    const selectedVessel = useMemo(
-        () => (selectedMmsi ? vesselMap.get(selectedMmsi) ?? null : null),
-        [selectedMmsi, vesselMap],
-    );
+  const selectedVessel = useMemo(
+    () => (selectedMmsi ? (vesselMap.get(selectedMmsi) ?? null) : null),
+    [selectedMmsi, vesselMap],
+  );
 
-    return { selectedMmsi, setSelectedMmsi, selectedVessel };
+  return { selectedMmsi, setSelectedMmsi, selectedVessel };
 }

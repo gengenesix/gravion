@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - LICENSE file (MIT)
 - CONTRIBUTING.md with contribution guidelines
 - CODE_OF_CONDUCT.md
@@ -19,20 +20,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive .gitignore
 
 ### Changed
+
 - Switched from @vitejs/plugin-react-swc to @vitejs/plugin-react for cross-platform compatibility
 - Updated .gitignore to properly exclude .env files
 
 ### Fixed
+
 - Fixed native binding error on macOS (SWC compatibility issue)
 - Ensured cross-platform compatibility (macOS, Windows, Linux)
 
 ### Security
+
 - Added .env files to .gitignore (prevent credential leaks)
 - Created SECURITY.md with vulnerability reporting process
 
 ## [1.0.0] - 2026-03-05
 
 ### Added
+
 - Initial release
 - Flights tracking module (ADS-B data via ADSB.lol)
 - Maritime tracking module (AIS data via AISStream.io)
@@ -53,6 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Features
 
 #### Flight Tracking
+
 - Live aircraft positions from ADSB.lol
 - Rich telemetry panel (altitude, speed, heading, etc.)
 - Aircraft database lookup (registration, operator, model)
@@ -61,6 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - On-ground/airborne state detection
 
 #### Maritime Tracking
+
 - Live vessel positions via WebSocket
 - Full AIS message type support
 - Vessel detail panel (MMSI, name, destination, etc.)
@@ -69,12 +76,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-reconnect on disconnect
 
 #### Cyber Module
+
 - Cloudflare Radar integration
 - BGP routing anomaly detection
 - DDoS attack visualization
 - Network traffic analysis
 
 #### Monitor Module
+
 - ACLED conflict event integration
 - Live news feeds (238 countries)
 - AI-powered insights
@@ -94,6 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## How to Update
 
 ### From Source
+
 ```bash
 git pull origin main
 npm run install:all
@@ -101,6 +111,7 @@ npm run dev
 ```
 
 ### Using Docker
+
 ```bash
 docker-compose pull
 docker-compose up -d
@@ -111,6 +122,7 @@ docker-compose up -d
 ## Upgrade Notes
 
 ### Migrating to 1.0.0
+
 No migration needed - this is the initial release.
 
 ---

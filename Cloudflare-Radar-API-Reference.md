@@ -4,7 +4,7 @@
 **Auth:** `Authorization: Bearer <TOKEN>`  
 **Permissions:** User Details Read or User Details Write (most endpoints)
 
-*272 endpoints across AI, Annotations, AS112, Attacks, BGP, Bots, CT, Datasets, DNS, Email, Entities, Geolocations, HTTP, Leaked Credentials, NetFlows, Origins, Post Quantum, Quality, Ranking, Robots.txt, Search, TCP Resets, TLDs, Traffic Anomalies, Verified Bots*
+_272 endpoints across AI, Annotations, AS112, Attacks, BGP, Bots, CT, Datasets, DNS, Email, Entities, Geolocations, HTTP, Leaked Credentials, NetFlows, Origins, Post Quantum, Quality, Ranking, Robots.txt, Search, TCP Resets, TLDs, Traffic Anomalies, Verified Bots_
 
 ---
 
@@ -19,7 +19,7 @@ All endpoints return:
 }
 ```
 
-- `meta`: date range, units, confidence info  
+- `meta`: date range, units, confidence info
 - Data keys vary by endpoint: `top_0`, `summary_0`, `serie_0`, `annotations`, etc.
 
 ---
@@ -38,7 +38,7 @@ Retrieves AI bots HTTP request volume over time.
 
 Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 
-### `GET /radar/ai/bots/summary/user_agent` *(deprecated)*
+### `GET /radar/ai/bots/summary/user_agent` _(deprecated)_
 
 Retrieves the distribution of traffic by AI user agent.
 
@@ -50,35 +50,35 @@ Retrieves an aggregated summary of unique accounts using Workers AI inference gr
 
 Retrieves the distribution of unique accounts using Workers AI inference, grouped by the specified dimension over time.
 
-### `GET /radar/ai/inference/summary/model` *(deprecated)*
+### `GET /radar/ai/inference/summary/model` _(deprecated)_
 
 Retrieves the distribution of unique accounts by model.
 
-### `GET /radar/ai/inference/summary/task` *(deprecated)*
+### `GET /radar/ai/inference/summary/task` _(deprecated)_
 
 Retrieves the distribution of unique accounts by task.
 
-### `GET /radar/ai/inference/timeseries_groups/model` *(deprecated)*
+### `GET /radar/ai/inference/timeseries_groups/model` _(deprecated)_
 
 Retrieves the distribution of unique accounts by model over time.
 
-### `GET /radar/ai/inference/timeseries_groups/task` *(deprecated)*
+### `GET /radar/ai/inference/timeseries_groups/task` _(deprecated)_
 
 Retrieves the distribution of unique accounts by task over time.
 
-### `GET /radar/ai/bots/timeseries_groups/user_agent` *(deprecated)*
+### `GET /radar/ai/bots/timeseries_groups/user_agent` _(deprecated)_
 
 Retrieves the distribution of traffic by AI user agent over time.
 
-### `GET /radar/ai/bots/summary/{dimension}` *(deprecated)*
+### `GET /radar/ai/bots/summary/{dimension}` _(deprecated)_
 
 Retrieves an aggregated summary of AI bots HTTP requests grouped by the specified dimension.
 
-### `GET /radar/ai/bots/timeseries` *(deprecated)*
+### `GET /radar/ai/bots/timeseries` _(deprecated)_
 
 Retrieves AI bots HTTP request volume over time.
 
-### `GET /radar/ai/bots/timeseries_groups/{dimension}` *(deprecated)*
+### `GET /radar/ai/bots/timeseries_groups/{dimension}` _(deprecated)_
 
 Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 
@@ -114,51 +114,51 @@ Retrieves the distribution of AS112 queries by the specified dimension.
 
 Retrieves the distribution of AS112 queries grouped by dimension over time.
 
-### `GET /radar/as112/summary/dnssec` *(deprecated)*
+### `GET /radar/as112/summary/dnssec` _(deprecated)_
 
 Retrieves the distribution of DNS queries to AS112 by DNSSEC (DNS Security Extensions) support.
 
-### `GET /radar/as112/summary/edns` *(deprecated)*
+### `GET /radar/as112/summary/edns` _(deprecated)_
 
 Retrieves the distribution of DNS queries to AS112 by EDNS (Extension Mechanisms for DNS) support.
 
-### `GET /radar/as112/summary/ip_version` *(deprecated)*
+### `GET /radar/as112/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of DNS queries to AS112 by IP version.
 
-### `GET /radar/as112/summary/protocol` *(deprecated)*
+### `GET /radar/as112/summary/protocol` _(deprecated)_
 
 Retrieves the distribution of DNS queries to AS112 by protocol.
 
-### `GET /radar/as112/summary/query_type` *(deprecated)*
+### `GET /radar/as112/summary/query_type` _(deprecated)_
 
 Retrieves the distribution of DNS queries to AS112 by type.
 
-### `GET /radar/as112/summary/response_codes` *(deprecated)*
+### `GET /radar/as112/summary/response_codes` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS requests classified by response code.
 
-### `GET /radar/as112/timeseries_groups/protocol` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/protocol` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS requests classified by protocol over time.
 
-### `GET /radar/as112/timeseries_groups/query_type` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/query_type` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS queries by type over time.
 
-### `GET /radar/as112/timeseries_groups/response_codes` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/response_codes` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS requests classified by response code over time.
 
-### `GET /radar/as112/timeseries_groups/dnssec` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/dnssec` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS queries by DNSSEC (DNS Security Extensions) support over time.
 
-### `GET /radar/as112/timeseries_groups/edns` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/edns` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS queries by EDNS (Extension Mechanisms for DNS) support over time.
 
-### `GET /radar/as112/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/as112/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of AS112 DNS queries by IP version over time.
 
@@ -194,59 +194,59 @@ Retrieves layer 3 attacks over time.
 
 Retrieves the distribution of layer 3 attacks grouped by dimension over time.
 
-### `GET /radar/attacks/layer3/summary/bitrate` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/bitrate` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by bitrate.
 
-### `GET /radar/attacks/layer3/summary/duration` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/duration` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by duration.
 
-### `GET /radar/attacks/layer3/summary/ip_version` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by IP version.
 
-### `GET /radar/attacks/layer3/summary/protocol` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/protocol` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by protocol.
 
-### `GET /radar/attacks/layer3/summary/vector` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/vector` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by vector.
 
-### `GET /radar/attacks/layer3/summary/industry` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/industry` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by targeted industry.
 
-### `GET /radar/attacks/layer3/summary/vertical` *(deprecated)*
+### `GET /radar/attacks/layer3/summary/vertical` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by targeted vertical.
 
-### `GET /radar/attacks/layer3/timeseries_groups/industry` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/industry` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by targeted industry over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by IP version over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/protocol` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/protocol` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by protocol over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/vector` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/vector` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by vector over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/vertical` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/vertical` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by targeted vertical over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/bitrate` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/bitrate` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by bitrate over time.
 
-### `GET /radar/attacks/layer3/timeseries_groups/duration` *(deprecated)*
+### `GET /radar/attacks/layer3/timeseries_groups/duration` _(deprecated)_
 
 Retrieves the distribution of layer 3 attacks by duration over time.
 
@@ -254,11 +254,11 @@ Retrieves the distribution of layer 3 attacks by duration over time.
 
 Retrieves the top layer 3 attacks from origin to target location. Values are a percentage out of the total layer 3 attacks (with billing country). You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
 
-### `GET /radar/attacks/layer3/top/industry` *(deprecated)*
+### `GET /radar/attacks/layer3/top/industry` _(deprecated)_
 
 (see docs)
 
-### `GET /radar/attacks/layer3/top/vertical` *(deprecated)*
+### `GET /radar/attacks/layer3/top/vertical` _(deprecated)_
 
 (see docs)
 
@@ -282,59 +282,59 @@ Retrieves layer 7 attacks over time.
 
 Retrieves the distribution of layer 7 attacks grouped by dimension over time.
 
-### `GET /radar/attacks/layer7/summary/ip_version` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by IP version.
 
-### `GET /radar/attacks/layer7/summary/http_method` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/http_method` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by HTTP method.
 
-### `GET /radar/attacks/layer7/summary/http_version` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/http_version` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by HTTP version.
 
-### `GET /radar/attacks/layer7/summary/managed_rules` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/managed_rules` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by managed rules.
 
-### `GET /radar/attacks/layer7/summary/mitigation_product` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/mitigation_product` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by mitigation product.
 
-### `GET /radar/attacks/layer7/summary/industry` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/industry` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by targeted industry.
 
-### `GET /radar/attacks/layer7/summary/vertical` *(deprecated)*
+### `GET /radar/attacks/layer7/summary/vertical` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by targeted vertical.
 
-### `GET /radar/attacks/layer7/timeseries_groups/industry` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/industry` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by targeted industry over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by IP version used over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/vertical` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/vertical` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by targeted vertical over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/http_method` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/http_method` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by HTTP method over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/http_version` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/http_version` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by HTTP version over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/managed_rules` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/managed_rules` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by managed rules over time.
 
-### `GET /radar/attacks/layer7/timeseries_groups/mitigation_product` *(deprecated)*
+### `GET /radar/attacks/layer7/timeseries_groups/mitigation_product` _(deprecated)_
 
 Retrieves the distribution of layer 7 attacks by mitigation product over time.
 
@@ -342,11 +342,11 @@ Retrieves the distribution of layer 7 attacks by mitigation product over time.
 
 Retrieves the top attacks from origin to target location. Values are percentages of the total layer 7 attacks (with billing country). The attack magnitude can be defined by the number of mitigated requests or by the number of zones affected. You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
 
-### `GET /radar/attacks/layer7/top/industry` *(deprecated)*
+### `GET /radar/attacks/layer7/top/industry` _(deprecated)_
 
 (see docs)
 
-### `GET /radar/attacks/layer7/top/vertical` *(deprecated)*
+### `GET /radar/attacks/layer7/top/vertical` _(deprecated)_
 
 (see docs)
 
@@ -522,83 +522,83 @@ Retrieves normalized query volume to the 1.1.1.1 DNS resolver over time.
 
 Retrieves the distribution of DNS queries grouped by dimension over time.
 
-### `GET /radar/dns/summary/cache_hit` *(deprecated)*
+### `GET /radar/dns/summary/cache_hit` _(deprecated)_
 
 Retrieves the distribution of DNS queries by cache status.
 
-### `GET /radar/dns/summary/dnssec` *(deprecated)*
+### `GET /radar/dns/summary/dnssec` _(deprecated)_
 
 Retrieves the distribution of DNS responses by DNSSEC (DNS Security Extensions) support.
 
-### `GET /radar/dns/summary/dnssec_aware` *(deprecated)*
+### `GET /radar/dns/summary/dnssec_aware` _(deprecated)_
 
 Retrieves the distribution of DNS queries by DNSSEC (DNS Security Extensions) client awareness.
 
-### `GET /radar/dns/summary/dnssec_e2e` *(deprecated)*
+### `GET /radar/dns/summary/dnssec_e2e` _(deprecated)_
 
 Retrieves the distribution of DNSSEC-validated answers by end-to-end security status.
 
-### `GET /radar/dns/summary/ip_version` *(deprecated)*
+### `GET /radar/dns/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of DNS queries by IP version.
 
-### `GET /radar/dns/summary/matching_answer` *(deprecated)*
+### `GET /radar/dns/summary/matching_answer` _(deprecated)_
 
 Retrieves the distribution of DNS queries by matching answers.
 
-### `GET /radar/dns/summary/protocol` *(deprecated)*
+### `GET /radar/dns/summary/protocol` _(deprecated)_
 
 Retrieves the distribution of DNS queries by DNS transport protocol.
 
-### `GET /radar/dns/summary/query_type` *(deprecated)*
+### `GET /radar/dns/summary/query_type` _(deprecated)_
 
 Retrieves the distribution of DNS queries by type.
 
-### `GET /radar/dns/summary/response_code` *(deprecated)*
+### `GET /radar/dns/summary/response_code` _(deprecated)_
 
 Retrieves the distribution of DNS queries by response code.
 
-### `GET /radar/dns/summary/response_ttl` *(deprecated)*
+### `GET /radar/dns/summary/response_ttl` _(deprecated)_
 
 Retrieves the distribution of DNS queries by minimum response TTL.
 
-### `GET /radar/dns/timeseries_groups/cache_hit` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/cache_hit` _(deprecated)_
 
 Retrieves the distribution of DNS queries by cache status over time.
 
-### `GET /radar/dns/timeseries_groups/dnssec` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/dnssec` _(deprecated)_
 
 Retrieves the distribution of DNS responses by DNSSEC (DNS Security Extensions) support over time.
 
-### `GET /radar/dns/timeseries_groups/dnssec_aware` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/dnssec_aware` _(deprecated)_
 
 Retrieves the distribution of DNS queries by DNSSEC (DNS Security Extensions) client awareness over time.
 
-### `GET /radar/dns/timeseries_groups/dnssec_e2e` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/dnssec_e2e` _(deprecated)_
 
 Retrieves the distribution of DNSSEC-validated answers by end-to-end security status over time.
 
-### `GET /radar/dns/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of DNS queries by IP version over time.
 
-### `GET /radar/dns/timeseries_groups/matching_answer` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/matching_answer` _(deprecated)_
 
 Retrieves the distribution of DNS queries by matching answers over time.
 
-### `GET /radar/dns/timeseries_groups/protocol` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/protocol` _(deprecated)_
 
 Retrieves the distribution of DNS queries by DNS transport protocol over time.
 
-### `GET /radar/dns/timeseries_groups/query_type` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/query_type` _(deprecated)_
 
 Retrieves the distribution of DNS queries by type over time.
 
-### `GET /radar/dns/timeseries_groups/response_code` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/response_code` _(deprecated)_
 
 Retrieves the distribution of DNS queries by response code over time.
 
-### `GET /radar/dns/timeseries_groups/response_ttl` *(deprecated)*
+### `GET /radar/dns/timeseries_groups/response_ttl` _(deprecated)_
 
 Retrieves the distribution of DNS queries by minimum answer TTL over time.
 
@@ -622,51 +622,51 @@ Retrieves the distribution of email routing metrics by the specified dimension.
 
 Retrieves the distribution of email routing metrics grouped by dimension over time.
 
-### `GET /radar/email/routing/summary/arc` *(deprecated)*
+### `GET /radar/email/routing/summary/arc` _(deprecated)_
 
 Retrieves the distribution of emails by ARC (Authenticated Received Chain) validation.
 
-### `GET /radar/email/routing/summary/dkim` *(deprecated)*
+### `GET /radar/email/routing/summary/dkim` _(deprecated)_
 
 Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation.
 
-### `GET /radar/email/routing/summary/dmarc` *(deprecated)*
+### `GET /radar/email/routing/summary/dmarc` _(deprecated)_
 
 Retrieves the distribution of emails by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation.
 
-### `GET /radar/email/routing/summary/encrypted` *(deprecated)*
+### `GET /radar/email/routing/summary/encrypted` _(deprecated)_
 
 Retrieves the distribution of emails by encryption status (encrypted vs. not-encrypted).
 
-### `GET /radar/email/routing/summary/ip_version` *(deprecated)*
+### `GET /radar/email/routing/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of emails by IP version.
 
-### `GET /radar/email/routing/summary/spf` *(deprecated)*
+### `GET /radar/email/routing/summary/spf` _(deprecated)_
 
 Retrieves the distribution of emails by SPF (Sender Policy Framework) validation.
 
-### `GET /radar/email/routing/timeseries_groups/arc` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/arc` _(deprecated)_
 
 Retrieves the distribution of emails by ARC (Authenticated Received Chain) validation over time.
 
-### `GET /radar/email/routing/timeseries_groups/dkim` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/dkim` _(deprecated)_
 
 Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation over time.
 
-### `GET /radar/email/routing/timeseries_groups/dmarc` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/dmarc` _(deprecated)_
 
 Retrieves the distribution of emails by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation over time.
 
-### `GET /radar/email/routing/timeseries_groups/encrypted` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/encrypted` _(deprecated)_
 
 Retrieves the distribution of emails by encryption status (encrypted vs. not-encrypted) over time.
 
-### `GET /radar/email/routing/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of emails by IP version over time.
 
-### `GET /radar/email/routing/timeseries_groups/spf` *(deprecated)*
+### `GET /radar/email/routing/timeseries_groups/spf` _(deprecated)_
 
 Retrieves the distribution of emails by SPF (Sender Policy Framework) validation over time.
 
@@ -678,75 +678,75 @@ Retrieves the distribution of email security metrics by the specified dimension.
 
 Retrieves the distribution of email security metrics grouped by dimension over time.
 
-### `GET /radar/email/security/summary/arc` *(deprecated)*
+### `GET /radar/email/security/summary/arc` _(deprecated)_
 
 Retrieves the distribution of emails by ARC (Authenticated Received Chain) validation.
 
-### `GET /radar/email/security/summary/dkim` *(deprecated)*
+### `GET /radar/email/security/summary/dkim` _(deprecated)_
 
 Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation.
 
-### `GET /radar/email/security/summary/dmarc` *(deprecated)*
+### `GET /radar/email/security/summary/dmarc` _(deprecated)_
 
 Retrieves the distribution of emails by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation.
 
-### `GET /radar/email/security/summary/malicious` *(deprecated)*
+### `GET /radar/email/security/summary/malicious` _(deprecated)_
 
 Retrieves the distribution of emails by malicious classification.
 
-### `GET /radar/email/security/summary/spam` *(deprecated)*
+### `GET /radar/email/security/summary/spam` _(deprecated)_
 
 Retrieves the proportion of emails by spam classification (spam vs. non-spam).
 
-### `GET /radar/email/security/summary/spf` *(deprecated)*
+### `GET /radar/email/security/summary/spf` _(deprecated)_
 
 Retrieves the distribution of emails by SPF (Sender Policy Framework) validation.
 
-### `GET /radar/email/security/summary/threat_category` *(deprecated)*
+### `GET /radar/email/security/summary/threat_category` _(deprecated)_
 
 Retrieves the distribution of emails by threat categories.
 
-### `GET /radar/email/security/summary/spoof` *(deprecated)*
+### `GET /radar/email/security/summary/spoof` _(deprecated)_
 
 Retrieves the proportion of emails by spoof classification (spoof vs. non-spoof).
 
-### `GET /radar/email/security/summary/tls_version` *(deprecated)*
+### `GET /radar/email/security/summary/tls_version` _(deprecated)_
 
 Retrieves the distribution of emails by TLS version.
 
-### `GET /radar/email/security/timeseries_groups/arc` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/arc` _(deprecated)_
 
 Retrieves the distribution of emails by ARC (Authenticated Received Chain) validation over time.
 
-### `GET /radar/email/security/timeseries_groups/dkim` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/dkim` _(deprecated)_
 
 Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation over time.
 
-### `GET /radar/email/security/timeseries_groups/dmarc` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/dmarc` _(deprecated)_
 
 Retrieves the distribution of emails by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation over time.
 
-### `GET /radar/email/security/timeseries_groups/malicious` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/malicious` _(deprecated)_
 
 Retrieves the distribution of emails by malicious classification over time.
 
-### `GET /radar/email/security/timeseries_groups/spam` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/spam` _(deprecated)_
 
 Retrieves the distribution of emails by spam classification (spam vs. non-spam) over time.
 
-### `GET /radar/email/security/timeseries_groups/spf` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/spf` _(deprecated)_
 
 Retrieves the distribution of emails by SPF (Sender Policy Framework) validation over time.
 
-### `GET /radar/email/security/timeseries_groups/threat_category` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/threat_category` _(deprecated)_
 
 Retrieves the distribution of emails by threat category over time.
 
-### `GET /radar/email/security/timeseries_groups/spoof` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/spoof` _(deprecated)_
 
 Retrieves the distribution of emails by spoof classification (spoof vs. non-spoof) over time.
 
-### `GET /radar/email/security/timeseries_groups/tls_version` *(deprecated)*
+### `GET /radar/email/security/timeseries_groups/tls_version` _(deprecated)_
 
 Retrieves the distribution of emails by TLS version over time.
 
@@ -906,83 +906,83 @@ Retrieves the top locations, by HTTP requests, of the requested operating system
 
 Retrieves the top locations, by HTTP requests, of the requested TLS protocol version.
 
-### `GET /radar/http/summary/bot_class` *(deprecated)*
+### `GET /radar/http/summary/bot_class` _(deprecated)_
 
 Retrieves the distribution of bot-generated HTTP requests to genuine human traffic, as classified by Cloudflare. Visit for more information.
 
-### `GET /radar/http/summary/device_type` *(deprecated)*
+### `GET /radar/http/summary/device_type` _(deprecated)_
 
 Retrieves the distribution of HTTP requests generated by mobile, desktop, and other types of devices.
 
-### `GET /radar/http/summary/http_protocol` *(deprecated)*
+### `GET /radar/http/summary/http_protocol` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by HTTP protocol (HTTP vs. HTTPS).
 
-### `GET /radar/http/summary/http_version` *(deprecated)*
+### `GET /radar/http/summary/http_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by HTTP version.
 
-### `GET /radar/http/summary/ip_version` *(deprecated)*
+### `GET /radar/http/summary/ip_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by IP version.
 
-### `GET /radar/http/summary/os` *(deprecated)*
+### `GET /radar/http/summary/os` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by operating system (Windows, macOS, Android, iOS, and others).
 
-### `GET /radar/http/summary/tls_version` *(deprecated)*
+### `GET /radar/http/summary/tls_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by TLS version.
 
-### `GET /radar/http/summary/post_quantum` *(deprecated)*
+### `GET /radar/http/summary/post_quantum` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by post-quantum support.
 
-### `GET /radar/http/timeseries_groups/tls_version` *(deprecated)*
+### `GET /radar/http/timeseries_groups/tls_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by TLS version over time.
 
-### `GET /radar/http/timeseries_groups/bot_class` *(deprecated)*
+### `GET /radar/http/timeseries_groups/bot_class` _(deprecated)_
 
 Retrieves the distribution of HTTP requests classified as automated or human over time. Visit for more information.
 
-### `GET /radar/http/timeseries_groups/browser` *(deprecated)*
+### `GET /radar/http/timeseries_groups/browser` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by user agent over time.
 
-### `GET /radar/http/timeseries_groups/browser_family` *(deprecated)*
+### `GET /radar/http/timeseries_groups/browser_family` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by user agent family over time.
 
-### `GET /radar/http/timeseries_groups/device_type` *(deprecated)*
+### `GET /radar/http/timeseries_groups/device_type` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by device type over time.
 
-### `GET /radar/http/timeseries_groups/http_protocol` *(deprecated)*
+### `GET /radar/http/timeseries_groups/http_protocol` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by HTTP protocol (HTTP vs. HTTPS) over time.
 
-### `GET /radar/http/timeseries_groups/http_version` *(deprecated)*
+### `GET /radar/http/timeseries_groups/http_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by HTTP version over time.
 
-### `GET /radar/http/timeseries_groups/ip_version` *(deprecated)*
+### `GET /radar/http/timeseries_groups/ip_version` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by IP version over time.
 
-### `GET /radar/http/timeseries_groups/os` *(deprecated)*
+### `GET /radar/http/timeseries_groups/os` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by operating system over time.
 
-### `GET /radar/http/timeseries_groups/post_quantum` *(deprecated)*
+### `GET /radar/http/timeseries_groups/post_quantum` _(deprecated)_
 
 Retrieves the distribution of HTTP requests by post-quantum support over time.
 
-### `GET /radar/http/top/browser` *(deprecated)*
+### `GET /radar/http/top/browser` _(deprecated)_
 
 Retrieves the top user agents by HTTP requests.
 
-### `GET /radar/http/top/browser_family` *(deprecated)*
+### `GET /radar/http/top/browser_family` _(deprecated)_
 
 Retrieves the top user agents, aggregated in families, by HTTP requests.
 
@@ -998,19 +998,19 @@ Retrieves an aggregated summary of HTTP authentication requests grouped by the s
 
 Retrieves the distribution of HTTP authentication requests, grouped by the specified dimension over time.
 
-### `GET /radar/leaked_credential_checks/summary/bot_class` *(deprecated)*
+### `GET /radar/leaked_credential_checks/summary/bot_class` _(deprecated)_
 
 Retrieves the distribution of HTTP authentication requests by bot class.
 
-### `GET /radar/leaked_credential_checks/summary/compromised` *(deprecated)*
+### `GET /radar/leaked_credential_checks/summary/compromised` _(deprecated)_
 
 Retrieves the distribution of HTTP authentication requests by compromised credential status.
 
-### `GET /radar/leaked_credential_checks/timeseries_groups/bot_class` *(deprecated)*
+### `GET /radar/leaked_credential_checks/timeseries_groups/bot_class` _(deprecated)_
 
 Retrieves the distribution of HTTP authentication requests by bot class over time.
 
-### `GET /radar/leaked_credential_checks/timeseries_groups/compromised` *(deprecated)*
+### `GET /radar/leaked_credential_checks/timeseries_groups/compromised` _(deprecated)_
 
 Retrieves the distribution of HTTP authentication requests by compromised credential status over time.
 
@@ -1022,7 +1022,7 @@ Retrieves the distribution of HTTP authentication requests by compromised creden
 
 Retrieves network traffic (NetFlows) over time.
 
-### `GET /radar/netflows/summary` *(deprecated)*
+### `GET /radar/netflows/summary` _(deprecated)_
 
 Retrieves the distribution of network traffic (NetFlows) by HTTP vs other protocols.
 
@@ -1072,7 +1072,7 @@ Retrieves the distribution of origin metrics grouped by the specified dimension 
 
 ### `GET /radar/post_quantum/origin/summary/{dimension}`
 
-Get Origin Post Quantum Data Over Time \-> Envelope<{ meta, serie\_0 }\>
+Get Origin Post Quantum Data Over Time \-> Envelope<{ meta, serie_0 }\>
 
 ### `GET /radar/post_quantum/origin/timeseries_groups/{dimension}`
 
@@ -1200,30 +1200,36 @@ Retrieves the sum of Internet traffic anomalies, grouped by location. These anom
 
 > Use [Radar Bots](#bots) API instead of these deprecated endpoints.
 
-### `GET /radar/verified_bots/top/bots` *(deprecated)*
+### `GET /radar/verified_bots/top/bots` _(deprecated)_
 
 Retrieves the top verified bots by HTTP requests, with owner and category.
 
 **Query:** `asn`, `continent`, `dateEnd`, `dateRange`, `dateStart`, `format` (JSON/CSV), `limit`, `location`, `name`
 
 **Response example:**
+
 ```json
 {
   "success": true,
   "result": {
     "meta": {
-      "dateRange": [{"startTime": "...", "endTime": "..."}],
+      "dateRange": [{ "startTime": "...", "endTime": "..." }],
       "normalization": "PERCENTAGE",
-      "units": [{"name": "*", "value": "requests"}]
+      "units": [{ "name": "*", "value": "requests" }]
     },
     "top_0": [
-      {"botCategory": "Search Engine Crawler", "botName": "GoogleBot", "botOwner": "Google", "value": "10"}
+      {
+        "botCategory": "Search Engine Crawler",
+        "botName": "GoogleBot",
+        "botOwner": "Google",
+        "value": "10"
+      }
     ]
   }
 }
 ```
 
-### `GET /radar/verified_bots/top/categories` *(deprecated)*
+### `GET /radar/verified_bots/top/categories` _(deprecated)_
 
 Retrieves the top verified bot categories by HTTP requests, along with their corresponding percentage, over the total verified bot HTTP requests.
 
@@ -1231,7 +1237,7 @@ Retrieves the top verified bot categories by HTTP requests, along with their cor
 
 ## Accounts
 
-### `POST /accounts/{account_id}/ai/tomarkdown` *(deprecated)*
+### `POST /accounts/{account_id}/ai/tomarkdown` _(deprecated)_
 
 Convert Files into Markdown
 

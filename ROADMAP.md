@@ -107,6 +107,7 @@ This document outlines suggested improvements to make INTELMAP a production-read
 ### 8. Frontend Enhancements
 
 **UI/UX:**
+
 - [ ] Add loading states everywhere
 - [ ] Implement skeleton screens
 - [ ] Add error states with retry
@@ -117,6 +118,7 @@ This document outlines suggested improvements to make INTELMAP a production-read
 - [ ] Create dark/light theme toggle
 
 **Features:**
+
 - [ ] Add flight path prediction
 - [ ] Implement geofencing alerts
 - [ ] Add search/filter functionality
@@ -176,6 +178,7 @@ Based on the existing cyber module, suggest:
 ### 13. Additional Features
 
 **New Modules:**
+
 - [ ] Satellite tracking module (TLE data)
 - [ ] Weather overlay module
 - [ ] Traffic analysis module
@@ -184,6 +187,7 @@ Based on the existing cyber module, suggest:
 - [ ] Space debris tracking
 
 **Integrations:**
+
 - [ ] Slack notifications
 - [ ] Discord webhooks
 - [ ] Telegram bot
