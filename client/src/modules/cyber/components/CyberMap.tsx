@@ -107,6 +107,7 @@ export function CyberMap() {
         const features = rows
             .map((row: CyberDataRow) => {
                 const code = row.clientCountryAlpha2 ?? row.originCountryAlpha2;
+                if (!code) return null;
                 const coords = COUNTRY_CENTROIDS[code];
                 if (!coords) return null;
                 const rawVal = parseFloat(row.value ?? '0');
@@ -289,7 +290,7 @@ export function CyberMap() {
 function PopupCard({ props, color, category, onClose }: { props: FeatureProperties; color: string; category: string; onClose: () => void }) {
     const code = props.code ?? props.clientCountryAlpha2 ?? props.originCountryAlpha2 ?? '';
     const name = props.name ?? props.clientCountryName ?? props.originCountryName ?? 'Unknown';
-    const value = parseFloat(props.value ?? '0');
+    const value = typeof props.value === 'number' ? props.value : parseFloat(String(props.value ?? '0'));
     const rank = props.rank;
 
     // Known fields we handle specially — everything else goes to the "Extra" section

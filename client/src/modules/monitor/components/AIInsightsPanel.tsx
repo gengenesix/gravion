@@ -4,7 +4,7 @@ import { useIntelBrief } from '../../osint/hooks/useIntelBrief';
 import { Cpu, Radio } from 'lucide-react';
 import clsx from 'clsx';
 
-const CATEGORIES = ["All", "Politics & Society", "Business & Economy", "Military", "Science & Technology", "Local News"] as const;
+const CATEGORIES = ["All", "Politics & Society", "Business & Economy", "Science & Technology", "Local News"] as const;
 const TIME_FORMATTER = new Intl.DateTimeFormat(undefined, { timeStyle: 'short' });
 const DATE_FORMATTER = new Intl.DateTimeFormat(undefined, { dateStyle: 'short' });
 
