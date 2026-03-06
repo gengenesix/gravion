@@ -6,6 +6,8 @@ import type { ProjectionSpecification } from 'maplibre-gl';
 import { useThemeStore } from '../../../ui/theme/theme.store';
 import { SATELLITE_STYLE, DARK_STYLE } from '../../../lib/mapStyles';
 import { useOsintStore } from '../../osint/osint.store';
+import { GPSJammingLayer } from './GPSJammingLayer';
+import { useGPSJammingStore } from '../gpsJamming.store';
 
 const INITIAL_VIEW_STATE = {
   longitude: 0,
@@ -17,6 +19,7 @@ export function MonitorMap() {
   const mapRef = useRef<MapRef>(null);
   const { mapLayer, mapProjection } = useThemeStore();
   const { setCurrentRegion } = useOsintStore();
+  const gpsJammingEnabled = useGPSJammingStore((s) => s.enabled);
 
   const activeMapStyle = mapLayer === 'satellite' ? SATELLITE_STYLE : DARK_STYLE;
 
@@ -56,11 +59,16 @@ export function MonitorMap() {
         style={{ width: '100%', height: '100%' }}
       >
         <NavigationControl position="top-right" showCompass={true} visualizePitch={true} />
+
+        {/* GPS Jamming Layer */}
+        {gpsJammingEnabled && <GPSJammingLayer />}
       </Map>
-      <div className="absolute top-4 left-4 pointer-events-none z-10 tech-panel px-4 py-2 drop-shadow-[0_0_15px_rgba(0,229,255,0.2)]">
-        <div className="flex items-center gap-3 text-sm font-mono font-bold tracking-[0.15em] text-intel-text-light">
-          <span className="w-2 h-2 bg-intel-accent animate-pulse shadow-[0_0_10px_var(--color-intel-accent)]"></span>
-          GLOBAL TACTICAL OVERVIEW
+
+      {/* Map Label */}
+      <div className="absolute top-3 left-3 pointer-events-none z-10 tech-panel px-3 py-1.5 shadow-lg">
+        <div className="flex items-center gap-2 text-[11px] font-mono font-bold tracking-wider text-intel-text-light uppercase">
+          <span className="w-1.5 h-1.5 bg-intel-accent rounded-full animate-pulse shadow-[0_0_6px_var(--color-intel-accent)]"></span>
+          Global Monitor
         </div>
       </div>
     </div>

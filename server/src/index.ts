@@ -7,6 +7,7 @@ import geoRouter from './routes/geo';
 import monitorRouter from './routes/monitor';
 import cyberRouter from './routes/cyber';
 import { aircraftDb } from './core/aircraft_db';
+import { initializeDefaultJobs, startScheduler } from './core/scheduler';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -30,5 +31,14 @@ app.listen(PORT, async () => {
     await aircraftDb.load();
   } catch (e) {
     console.error('Failed to initialize aircraft DB:', e);
+  }
+
+  // Initialize and start scheduled jobs for data ingestion
+  try {
+    initializeDefaultJobs();
+    startScheduler();
+    console.log('Scheduler initialized successfully');
+  } catch (e) {
+    console.error('Failed to initialize scheduler:', e);
   }
 });
