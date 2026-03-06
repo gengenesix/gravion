@@ -9,7 +9,7 @@
 ![MapLibre](https://img.shields.io/badge/MapLibre_GL_JS-5.x-396CB2?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
-**A comprehensive real-time geospatial intelligence platform for tracking aircraft, maritime vessels, cybersecurity threats, and global conflict events.**
+**A comprehensive real-time geospatial intelligence platform for tracking aircraft, maritime vessels, cybersecurity threats, and news intelligence.**
 
 [Features](#-features) • [Architecture](#-architecture) • [Quick Start](#-quick-start) • [API](#-api-reference) • [Contributing](CONTRIBUTING.md)
 
@@ -24,7 +24,7 @@
 - **🛩️ Flight Tracking** — Live aircraft positions via ADS-B data
 - **🚢 Maritime Tracking** — Global vessel tracking via AIS streams
 - **🛡️ Cyber Intelligence** — Internet security metrics via Cloudflare Radar
-- **🌍 OSINT Monitor** — Conflict events, news feeds, and strategic posture analysis
+- **🌍 OSINT Monitor** — Geo-located news feeds and AI-powered intelligence briefs
 
 Built with React 19, TypeScript, Express.js, and MapLibre GL JS, Radar delivers a high-performance, military-styled interface with three visual modes (EO/FLIR/CRT).
 
@@ -54,7 +54,7 @@ Built with React 19, TypeScript, Express.js, and MapLibre GL JS, Radar delivers 
 
 ### 🌍 OSINT Monitor Module
 
-A comprehensive intelligence monitoring dashboard with six real-time panels:
+A comprehensive intelligence monitoring dashboard with three real-time panels:
 
 #### Live News Panel
 
@@ -68,33 +68,12 @@ A comprehensive intelligence monitoring dashboard with six real-time panels:
 - Rotating display of live webcam feeds from strategic locations
 - Visual HUMINT supplement for ground-truth verification
 
-#### Conflict Events Panel (ACLED)
-
-- **Real-time conflict data** from ACLED (Armed Conflict Location & Event Data Project)
-- Tracks battles, explosions, violence against civilians
-- Last 7 days by default, filterable by country and date range
-- Geographic visualization on map with fatality counts
-
 #### AI Insights Panel
 
 - **LLM-powered intelligence briefs** via OpenRouter API
 - Generates military-styled summaries from intercepted news headlines
 - Regional context-aware analysis
 - Uses Google Gemini 2.5 Flash (fast, cost-effective)
-
-#### Country Instability Index (CII) Panel
-
-- **Dynamic risk scoring** for 19 Tier-1 countries (US, Russia, China, Ukraine, Iran, Israel, Taiwan, North Korea, etc.)
-- Baseline risk + dynamic event-driven adjustments
-- Integrates ACLED protest/riot data with country-specific multipliers
-- Real-time composite scores (0-100 scale)
-
-#### Strategic Posture Panel
-
-- **Military aircraft tracking** across three theaters (Europe, Middle East, Indo-Pacific)
-- Detects tankers, AWACS, fighters, bombers by callsign/operator
-- **Strike capability assessment** — flags when theater has sufficient tankers + AWACS + fighters for offensive operations
-- Posture levels: Normal / Elevated / Critical
 
 ### 🛡️ Cyber Intelligence Module
 
@@ -146,14 +125,13 @@ radar/
         │   │   ├── adsblol.ts       # ADSB.lol polling + cache
         │   │   ├── opensky.ts       # OpenSky fallback
         │   │   ├── aisstream.ts     # AISStream WebSocket singleton
-        │   │   ├── acled.ts         # ACLED conflict data API
         │   │   └── cloudflare.ts    # Cloudflare Radar API client
         │   ├── aircraft_db.ts       # DuckDB/Parquet aircraft enrichment
         │   └── cache.ts             # TTL cache utility
         ├── routes/
         │   ├── flights.ts           # GET /api/flights/*
         │   ├── maritime.ts          # GET /api/maritime/*
-        │   ├── monitor.ts           # GET /api/monitor/* (CII, posture, ACLED)
+        │   ├── monitor.ts           # GET /api/monitor/* (monitoring endpoints)
         │   ├── geo.ts               # GET /api/geo/* (news, intel briefs)
         │   └── cyber.ts             # GET /api/cyber/* (Cloudflare proxy)
         ├── types/                   # TypeScript definitions
@@ -209,13 +187,11 @@ nano server/.env
 
 **Required API Keys:**
 
-| Service          | Variable                 | Where to get                   | Cost          |
-| ---------------- | ------------------------ | ------------------------------ | ------------- |
-| AISStream        | `AISSTREAM_API_KEY`      | https://aisstream.io           | Free tier     |
-| ACLED            | `ACLED_USERNAME`         | https://acleddata.com/register | Free          |
-|                  | `ACLED_PASSWORD`         |                                |               |
-| OpenRouter (LLM) | `OPENROUTER_API_KEY`     | https://openrouter.ai/keys     | Pay as you go |
-| Cloudflare Radar | `CLOUDFLARE_RADAR_TOKEN` | https://dash.cloudflare.com/   | Free          |
+| Service          | Variable                 | Where to get                 | Cost          |
+| ---------------- | ------------------------ | ---------------------------- | ------------- |
+| AISStream        | `AISSTREAM_API_KEY`      | https://aisstream.io         | Free tier     |
+| OpenRouter (LLM) | `OPENROUTER_API_KEY`     | https://openrouter.ai/keys   | Pay as you go |
+| Cloudflare Radar | `CLOUDFLARE_RADAR_TOKEN` | https://dash.cloudflare.com/ | Free          |
 
 **Optional:**
 
@@ -277,11 +253,7 @@ All routes served by Express backend on port `3001`.
 
 ### Monitor (OSINT)
 
-| Method | Endpoint               | Description                                                           |
-| ------ | ---------------------- | --------------------------------------------------------------------- |
-| `GET`  | `/api/monitor/cii`     | Country Instability Index scores for 19 Tier-1 countries              |
-| `GET`  | `/api/monitor/posture` | Strategic military posture across 3 theaters                          |
-| `GET`  | `/api/monitor/acled`   | ACLED conflict events (query: `?country=Ukraine&start=<ms>&end=<ms>`) |
+_Note: Monitor module endpoints are currently being refactored._
 
 ### Geo (OSINT)
 
@@ -325,13 +297,6 @@ All routes served by Express backend on port `3001`.
 - **Auth**: API key required (free tier: 15 requests/min)
 - **Coverage**: Global bounding box `[[-90, -180], [90, 180]]`
 - **Memory**: Up to 150 history points per vessel; stale vessels purged after 30 min
-
-### ACLED (Conflict Data)
-
-- **URL**: `https://api.acleddata.com/acled/read`
-- **Auth**: Username + password (free registration)
-- **Coverage**: Global conflict events since 1997
-- **Rate limits**: Generous for academic/non-commercial use
 
 ### Cloudflare Radar (Cyber)
 
@@ -481,7 +446,6 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 
 - **ADSB.lol** — Community-fed ADS-B network
 - **AISStream.io** — Free maritime AIS WebSocket API
-- **ACLED** — Armed Conflict Location & Event Data Project
 - **Cloudflare Radar** — Internet security metrics
 - **OpenSky Network** — Flight data fallback
 - **MapLibre GL JS** — Open-source map rendering

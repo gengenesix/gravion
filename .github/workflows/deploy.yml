@@ -37,10 +37,6 @@ jobs:
           # OSINT / LLM
           OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
 
-          # ACLED Conflict Data
-          ACLED_USERNAME=${{ secrets.ACLED_USERNAME }}
-          ACLED_PASSWORD=${{ secrets.ACLED_PASSWORD }}
-
           # Cloudflare Radar
           CLOUDFLARE_RADAR_TOKEN=${{ secrets.CLOUDFLARE_RADAR_TOKEN }}
           EOF

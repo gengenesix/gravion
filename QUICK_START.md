@@ -61,7 +61,6 @@ cp client/.env.example client/.env
 ### Other APIs (Optional)
 
 - **OpenRouter** (for AI insights): https://openrouter.ai
-- **ACLED** (conflict data): https://acleddata.com
 - **Cloudflare Radar** (cyber data): https://dash.cloudflare.com
 
 ## Step 5: Start the Application

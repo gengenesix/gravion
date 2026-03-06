@@ -23,6 +23,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Switched from @vitejs/plugin-react-swc to @vitejs/plugin-react for cross-platform compatibility
 - Updated .gitignore to properly exclude .env files
+- Streamlined Monitor module to focus on core intelligence features
+- Simplified OSINT dashboard to 3 panels (News, Webcams, AI Insights)
+
+### Removed
+
+- ACLED conflict data integration (external dependency removed)
+- Country Instability Index panel (ACLED-dependent)
+- Strategic Posture panel (flight tracking redundancy)
+- Unused documentation files (IMPLEMENTATION_SUMMARY.md, IMMEDIATE_ACTIONS.md, etc.)
+- Python venv directory (unused)
 
 ### Fixed
 
@@ -33,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added .env files to .gitignore (prevent credential leaks)
 - Created SECURITY.md with vulnerability reporting process
+- Removed ACLED API credentials requirement
 
 ## [1.0.0] - 2026-03-05
 
@@ -43,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Maritime tracking module (AIS data via AISStream.io)
 - Cyber security monitoring module
 - OSINT news monitoring module
-- Monitor dashboard with conflict events
+- Monitor dashboard with news intelligence
 - Real-time WebSocket connections
 - Aircraft database enrichment (DuckDB + Parquet)
 - Interactive 3D globe with MapLibre GL JS
@@ -84,12 +95,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Monitor Module
 
-- ACLED conflict event integration
-- Live news feeds (238 countries)
-- AI-powered insights
-- Country instability scoring
-- Strategic posture analysis
-- Live webcam feeds
+- Live news feeds (190+ countries)
+- AI-powered intelligence briefs
+- Live webcam feeds from strategic locations
+- Geo-located RSS aggregation
 
 ---
 

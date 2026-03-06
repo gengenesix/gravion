@@ -21,10 +21,6 @@ services:
       # OSINT / LLM
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
 
-      # ACLED Conflict Data
-      - ACLED_USERNAME=${ACLED_USERNAME}
-      - ACLED_PASSWORD=${ACLED_PASSWORD}
-
       # Cloudflare Radar
       - CLOUDFLARE_RADAR_TOKEN=${CLOUDFLARE_RADAR_TOKEN}
 
