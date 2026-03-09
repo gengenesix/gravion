@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as gpsjam from '../core/source/gpsjam';
 import * as rocketalert from '../core/source/rocketalert';
+import * as gulfwatch from '../core/source/gulfwatch';
 
 const router = Router();
 
@@ -214,6 +215,70 @@ router.get('/rocket-alerts/daily', async (req, res) => {
   } catch (error: any) {
     console.error('[API] Rocket alerts daily error:', error);
     res.status(500).json({ error: 'Failed to fetch daily counts', message: error.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GulfWatch routes  (source: gulfwatch-api.onrender.com)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * GET /api/monitor/gulf-watch/alerts
+ * Active alert summary for UAE.
+ *
+ * Response: AlertSummary
+ * {
+ *   isActive:         boolean,
+ *   activeEmirateIds: string[],
+ *   alerts:           GulfWatchAlert[],
+ *   totalActive:      number,
+ *   lastUpdated:      string
+ * }
+ */
+router.get('/gulf-watch/alerts', async (req, res) => {
+  try {
+    const summary = await gulfwatch.getAlertSummary();
+    res.json(summary);
+  } catch (error: any) {
+    console.error('[API] GulfWatch alerts error:', error);
+    res.status(500).json({ error: 'Failed to fetch GulfWatch alerts', message: error.message });
+  }
+});
+
+/**
+ * GET /api/monitor/gulf-watch/alerts/history
+ * Recent alert history for UAE.
+ *
+ * Query parameters:
+ *   limit  – max records (default 50, max 200)
+ *   offset – pagination offset (default 0)
+ *
+ * Response: { alerts: GulfWatchAlert[], count: number }
+ */
+router.get('/gulf-watch/alerts/history', async (req, res) => {
+  try {
+    const limit = Math.min(200, Math.max(1, parseInt(String(req.query.limit ?? '50'), 10) || 50));
+    const offset = Math.max(0, parseInt(String(req.query.offset ?? '0'), 10) || 0);
+    const data = await gulfwatch.fetchAlertHistory(limit, offset);
+    res.json(data);
+  } catch (error: any) {
+    console.error('[API] GulfWatch history error:', error);
+    res.status(500).json({ error: 'Failed to fetch GulfWatch history', message: error.message });
+  }
+});
+
+/**
+ * GET /api/monitor/gulf-watch/geojson
+ * UAE emirates GeoJSON (proxied to avoid CORS; cached by CDN).
+ */
+router.get('/gulf-watch/geojson', async (req, res) => {
+  try {
+    const geojson = await gulfwatch.fetchEmiratesGeoJSON();
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.json(geojson);
+  } catch (error: any) {
+    console.error('[API] GulfWatch GeoJSON error:', error);
+    res.status(500).json({ error: 'Failed to fetch emirates GeoJSON', message: error.message });
   }
 });
 
