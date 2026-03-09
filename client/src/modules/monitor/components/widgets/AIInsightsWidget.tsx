@@ -36,9 +36,16 @@ export function AIInsightsWidget() {
           <Cpu size={14} className="text-purple-400 drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]" />
           <span>AI Synthesis Engine</span>
         </div>
-        {isLoading && (
-          <span className="text-purple-400 animate-pulse text-[10px]">PROCESSING...</span>
-        )}
+        <div className="flex items-center gap-3">
+          {routeData && (routeData.news.length > 0 || (routeData.intercepts?.length ?? 0) > 0) && (
+            <span className="text-[9px] text-purple-400/60 tabular-nums normal-case tracking-normal font-normal">
+              {routeData.news.length + (routeData.intercepts?.length ?? 0)} articles
+            </span>
+          )}
+          {isLoading && (
+            <span className="text-purple-400 animate-pulse text-[10px]">PROCESSING...</span>
+          )}
+        </div>
       </div>
 
       {/* Category Tabs */}
@@ -60,7 +67,7 @@ export function AIInsightsWidget() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto space-y-3 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto space-y-3 custom-scrollbar pt-3">
         {isError && (
           <div className="text-red-400 text-xs p-3 border border-red-500/30 bg-red-500/10 rounded">
             &gt; COMMS LINK SEVERED. UNABLE TO FETCH OSINT DATA.
@@ -115,20 +122,34 @@ export function AIInsightsWidget() {
         </div>
 
         {/* Critical Intercepts */}
-        {routeData?.intercepts?.map((intercept, idx) => (
-          <div
-            key={`intercept-${idx}`}
-            className="border-l-2 border-red-500 pl-3 py-2 bg-red-500/10 rounded-r"
-          >
-            <div className="text-red-400 font-bold text-[10px] mb-1 tracking-widest flex justify-between">
-              <span>[CRITICAL INTERCEPT]</span>
-              <span>{TIME_FORMATTER.format(new Date(intercept.pubDate))}</span>
+        {routeData?.intercepts && routeData.intercepts.length > 0 && (
+          <div className="space-y-2">
+            <div className="text-[9px] text-red-400/60 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse inline-block" />
+              {routeData.intercepts.length} critical signal
+              {routeData.intercepts.length > 1 ? 's' : ''} detected
             </div>
-            <div className="text-white text-[11px] leading-relaxed font-semibold">
-              {intercept.title}
-            </div>
+            {routeData.intercepts.map((intercept, idx) => (
+              <div
+                key={`intercept-${idx}`}
+                className="border-l-2 border-red-500 pl-3 py-2 bg-red-500/10"
+              >
+                <div className="text-red-400/70 font-bold text-[9px] mb-1 tracking-widest flex justify-between">
+                  <span>{intercept.source}</span>
+                  <span>{TIME_FORMATTER.format(new Date(intercept.pubDate))}</span>
+                </div>
+                <a
+                  href={intercept.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white text-[11px] leading-relaxed font-semibold hover:text-red-300 transition-colors block"
+                >
+                  {intercept.title}
+                </a>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
 
         {/* Standard News Items */}
         {routeData?.news?.map((item, idx) => (

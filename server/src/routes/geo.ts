@@ -26,7 +26,85 @@ try {
   console.error('[OSINT] Failed to load news_feeds.json', e);
 }
 
-const rssParser = new Parser();
+// RSS parser with custom fields to capture all common feed structures
+const rssParser = new Parser({
+  customFields: {
+    item: [
+      ['media:content', 'mediaContent'],
+      ['content:encoded', 'contentEncoded'],
+      ['dc:creator', 'dcCreator'],
+      ['description', 'description'],
+    ],
+  },
+  timeout: 8000,
+});
+
+// Keywords that flag an item as a critical intercept
+const INTERCEPT_KEYWORDS = [
+  'attack',
+  'missile',
+  'strike',
+  'explosion',
+  'killed',
+  'war',
+  'nuclear',
+  'crisis',
+  'conflict',
+  'troops',
+  'invasion',
+  'sanctions',
+  'coup',
+  'arrested',
+  'hostage',
+  'terror',
+  'bomb',
+  'threat',
+  'emergency',
+  'dead',
+  'combat',
+];
+
+/** Safely parse a date string; return epoch 0 on failure */
+function safeParseDateMs(dateStr: string | undefined): number {
+  if (!dateStr) return 0;
+  const ms = new Date(dateStr).getTime();
+  return isNaN(ms) ? 0 : ms;
+}
+
+/** Extract the best available snippet from an RSS item */
+function extractSnippet(item: any): string {
+  const raw =
+    item.contentSnippet ||
+    item.description ||
+    item.contentEncoded ||
+    item.content ||
+    item.summary ||
+    '';
+  return raw
+    .replace(/<[^>]*>/g, '')
+    .trim()
+    .slice(0, 300);
+}
+
+/** Extract the best available publication date from an RSS item */
+function extractPubDate(item: any): string {
+  return item.isoDate || item.pubDate || new Date().toISOString();
+}
+
+/** Fetch a single RSS feed with a hard timeout; returns null on failure */
+async function fetchFeedWithTimeout(url: string, timeoutMs = 8000): Promise<any | null> {
+  try {
+    const result = await Promise.race([
+      rssParser.parseURL(url),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Feed timeout')), timeoutMs),
+      ),
+    ]);
+    return result;
+  } catch {
+    return null;
+  }
+}
 
 const router = Router();
 
@@ -114,44 +192,57 @@ router.get('/news', async (req: Request, res: Response) => {
       }
     }
 
-    // Fetch and parse randomly selected 5 feeds concurrently from the region to save time
-    const shuffledFeeds = feedsToFetch.sort(() => 0.5 - Math.random()).slice(0, 5);
-    const results = await Promise.allSettled(shuffledFeeds.map((url) => rssParser.parseURL(url)));
+    // Shuffle and pick up to 15 feeds to fetch concurrently
+    const shuffledFeeds = feedsToFetch.sort(() => 0.5 - Math.random()).slice(0, 15);
+    const feeds = await Promise.all(shuffledFeeds.map((url) => fetchFeedWithTimeout(url)));
 
-    const newsItems: any[] = [];
+    const allItems: any[] = [];
 
-    results.forEach((result, index) => {
-      if (result.status === 'fulfilled') {
-        const feed = result.value;
-        const sourceTitle = feed.title || 'Unknown Source';
-
-        // Take top 5 from each feed
-        const topItems = (feed.items || []).slice(0, 5).map((item) => ({
-          source: sourceTitle,
-          title: item.title,
-          link: item.link,
-          pubDate: item.pubDate,
-          snippet: item.contentSnippet || item.content || '',
-        }));
-
-        newsItems.push(...topItems);
-      } else {
-        console.warn(
-          `[OSINT] Failed to fetch RSS feed (${shuffledFeeds[index]}): ${result.reason}`,
-        );
+    feeds.forEach((feed, index) => {
+      if (!feed) {
+        console.warn(`[OSINT] Failed to fetch feed: ${shuffledFeeds[index]}`);
+        return;
       }
+      const sourceTitle = feed.title || 'Unknown Source';
+
+      // Take top 8 items from each feed
+      (feed.items || []).slice(0, 8).forEach((item: any) => {
+        const title = (item.title || '').trim();
+        const link = item.link || item.guid || '';
+        if (!title || !link) return; // skip empty items
+
+        allItems.push({
+          source: sourceTitle,
+          title,
+          link,
+          pubDate: extractPubDate(item),
+          snippet: extractSnippet(item),
+        });
+      });
     });
 
-    // Sort by date descending
-    newsItems.sort((a, b) => {
-      return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
-    });
+    // Sort by date descending, placing items with no date at the end
+    allItems.sort((a, b) => safeParseDateMs(b.pubDate) - safeParseDateMs(a.pubDate));
+
+    // Classify critical intercepts by keyword matching title
+    const intercepts: any[] = [];
+    const news: any[] = [];
+
+    for (const item of allItems) {
+      const lowerTitle = item.title.toLowerCase();
+      const isCritical = INTERCEPT_KEYWORDS.some((kw) => lowerTitle.includes(kw));
+      if (isCritical && intercepts.length < 5) {
+        intercepts.push(item);
+      } else {
+        news.push(item);
+      }
+    }
 
     res.json({
       region_lat: lat,
       region_lon: lon,
-      news: newsItems.slice(0, 15),
-      intercepts: [],
+      news: news.slice(0, 40),
+      intercepts,
     });
   } catch (e: any) {
     console.error('[Geo News Error]', e);
