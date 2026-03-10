@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import 'dotenv/config';
 import flightsRouter from './routes/flights';
 import maritimeRouter from './routes/maritime';
@@ -22,6 +23,11 @@ app.use('/api/monitor', monitorRouter);
 app.use('/api/cyber', cyberRouter);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
+// Serve React frontend
+const publicDir = path.join(__dirname, '..', 'public');
+app.use(express.static(publicDir));
+app.get('*', (_req, res) => res.sendFile(path.join(publicDir, 'index.html')));
 
 const server = app.listen(PORT, async () => {
   console.log(`Server intel-proxy listening on port ${PORT}`);
