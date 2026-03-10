@@ -48,9 +48,8 @@ COPY --from=builder /app/client/dist ./public
 # Copy server source files that might be needed at runtime
 COPY --from=builder /app/server/src/news_feeds.json ./
 
-# Create Data directory for aircraft database
-# Note: The parquet file is large (~150MB) and not included in git
-# The server will download/generate it at runtime if needed
+# Copy static data files
+COPY --from=builder "/app/server/src/Data/Kml Military bases.kml" "./Data/Kml Military bases.kml"
 RUN mkdir -p ./Data
 
 # Expose port
