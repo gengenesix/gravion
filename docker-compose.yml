@@ -24,16 +24,28 @@ services:
     # volumes:
     #   - ./server/src/Data:/app/Data:ro
 
-  # Optional: Add a reverse proxy (nginx)
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: radar-proxy
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
-  #     - ./ssl:/etc/nginx/ssl:ro
-  #   depends_on:
-  #     - radar
-  #   restart: unless-stopped
+  nginx:
+    image: nginx:alpine
+    container_name: radar-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - certbot-www:/var/www/certbot:ro
+      - certbot-certs:/etc/letsencrypt:ro
+    depends_on:
+      - radar
+    restart: unless-stopped
+
+  certbot:
+    image: certbot/certbot
+    container_name: radar-certbot
+    volumes:
+      - certbot-www:/var/www/certbot
+      - certbot-certs:/etc/letsencrypt
+    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done"
+
+volumes:
+  certbot-www:
+  certbot-certs:
