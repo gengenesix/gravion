@@ -17,7 +17,7 @@ interface ThemeState {
 }
 
 export const useThemeStore = create<ThemeState>((set) => ({
-  mode: 'crt',
+  mode: 'eo',
   setMode: (mode) => set({ mode }),
   mapProjection: 'mercator',
   setMapProjection: (mapProjection) => set({ mapProjection }),
