@@ -21,7 +21,7 @@ export function useOsintNews(lat: number, lon: number, category: string, enabled
     queryKey: ['osint-news', Math.round(lat), Math.round(lon), category], // Round to 1 degree to avoid over-fetching
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:3001/api/geo/news?lat=${lat}&lon=${lon}&category=${encodeURIComponent(category)}`,
+        `/api/geo/news?lat=${lat}&lon=${lon}&category=${encodeURIComponent(category)}`,
       );
       if (!res.ok) {
         throw new Error('Failed to fetch OSINT news');

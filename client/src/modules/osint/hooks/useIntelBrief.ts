@@ -14,7 +14,7 @@ interface IntelBriefResponse {
 export function useIntelBrief() {
   return useMutation({
     mutationFn: async (reqData: IntelBriefRequest) => {
-      const res = await fetch('http://localhost:3001/api/geo/intel-brief', {
+      const res = await fetch('/api/geo/intel-brief', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

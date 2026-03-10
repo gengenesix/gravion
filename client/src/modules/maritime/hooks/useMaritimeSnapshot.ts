@@ -28,7 +28,7 @@ export function useMaritimeSnapshot() {
   return useQuery<MaritimeSnapshotResponse>({
     queryKey: ['maritime', 'snapshot'],
     queryFn: async () => {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+      const API_URL = import.meta.env.VITE_API_URL || '/api';
       const res = await fetch(`${API_URL}/maritime/snapshot`);
       if (!res.ok) {
         throw new Error('Network error fetching maritime snapshot');
