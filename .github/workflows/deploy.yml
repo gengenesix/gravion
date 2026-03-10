@@ -24,37 +24,32 @@ jobs:
 
       - name: Create .env file
         run: |
-          cat > server/.env <<EOF
-          # Flight Data
-          FLIGHT_DATA_SOURCE=adsblol
-          ADSB_LOL_LAT=0
-          ADSB_LOL_LON=0
-          ADSB_LOL_RADIUS=25000
+          mkdir -p server
+          printf 'FLIGHT_DATA_SOURCE=adsblol\nADSB_LOL_LAT=0\nADSB_LOL_LON=0\nADSB_LOL_RADIUS=25000\nAISSTREAM_API_KEY=%s\nOPENROUTER_API_KEY=%s\nCLOUDFLARE_RADAR_TOKEN=%s\n' \
+            "${{ secrets.AISSTREAM_API_KEY }}" \
+            "${{ secrets.OPENROUTER_API_KEY }}" \
+            "${{ secrets.CLOUDFLARE_RADAR_TOKEN }}" > server/.env
 
-          # Maritime Data
-          AISSTREAM_API_KEY=${{ secrets.AISSTREAM_API_KEY }}
-
-          # OSINT / LLM
-          OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
-
-          # Cloudflare Radar
-          CLOUDFLARE_RADAR_TOKEN=${{ secrets.CLOUDFLARE_RADAR_TOKEN }}
-          EOF
+      - name: Upload .env to server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "mkdir -p /opt/radar/server"
+          scp -o StrictHostKeyChecking=no server/.env $SERVER_USER@$SERVER_IP:/opt/radar/server/.env
 
       - name: Deploy to server
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
-          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'ENDSSH'
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'bash -s' << 'ENDSSH'
             set -e
 
             echo "=== Starting deployment ==="
 
-            # Navigate to app directory
             cd /opt/radar
 
-            # Pull latest code
             echo "Pulling latest code..."
             if [ -d ".git" ]; then
               git fetch origin
@@ -63,33 +58,21 @@ jobs:
               git clone https://github.com/Syntax-Error-1337/radar.git .
             fi
 
-            # Stop existing containers
             echo "Stopping containers..."
             docker-compose down || true
 
-            # Remove old images to free space
             docker image prune -f
 
-            # Build and start
             echo "Building and starting containers..."
             docker-compose up -d --build
 
-            # Wait for health check
             echo "Waiting for application to start..."
             sleep 10
 
-            # Check status
             docker-compose ps
 
             echo "=== Deployment complete ==="
           ENDSSH
-
-      - name: Upload .env to server
-        env:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-        run: |
-          scp -o StrictHostKeyChecking=no server/.env $SERVER_USER@$SERVER_IP:/opt/radar/server/.env
 
       - name: Verify deployment
         env:
