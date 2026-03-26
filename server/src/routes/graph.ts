@@ -2,38 +2,24 @@ import { Router, Request, Response } from 'express';
 
 const router = Router();
 
-interface Neo4jDriver {
-  verifyConnectivity(): Promise<unknown>;
-  session(): Neo4jSession;
-}
+// We use `require` at runtime so the build doesn't need neo4j-driver as a dep.
+// If neo4j-driver is not installed, the status endpoint reports disconnected.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let _driver: any = null;
 
-interface Neo4jSession {
-  run(query: string, params: unknown): Promise<{ records: Neo4jRecord[] }>;
-  close(): Promise<void>;
-}
-
-interface Neo4jRecord {
-  keys: string[];
-  get(key: string): unknown;
-}
-
-// Lazy neo4j driver — avoids hard dependency at startup
-let _driver: Neo4jDriver | null = null;
-
-async function getDriver(): Promise<Neo4jDriver | null> {
+async function getDriver(): Promise<any> {
   if (_driver) return _driver;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const neo4j = await import('neo4j-driver').catch(() => null) as any;
-    if (!neo4j) return null;
-    _driver = neo4j.default.driver(
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const neo4j = require('neo4j-driver');
+    _driver = neo4j.driver(
       process.env.NEO4J_URI || 'bolt://localhost:7687',
-      neo4j.default.auth.basic(
+      neo4j.auth.basic(
         process.env.NEO4J_USER || 'neo4j',
         process.env.NEO4J_PASSWORD || 'gravion_neo4j_2024'
       ),
       { maxConnectionLifetime: 30000 }
-    ) as Neo4jDriver;
+    );
     return _driver;
   } catch {
     return null;
@@ -43,7 +29,7 @@ async function getDriver(): Promise<Neo4jDriver | null> {
 // GET /api/graph/status
 router.get('/status', async (_req: Request, res: Response) => {
   const d = await getDriver();
-  if (!d) return res.json({ connected: false, reason: 'neo4j-driver not installed' });
+  if (!d) return res.json({ connected: false, reason: 'neo4j-driver not installed (run: npm install neo4j-driver in server/)' });
   try {
     await d.verifyConnectivity();
     res.json({ connected: true });
@@ -52,19 +38,20 @@ router.get('/status', async (_req: Request, res: Response) => {
   }
 });
 
-// POST /api/graph/query  — body: { cypher, params? }
+// POST /api/graph/query — body: { cypher, params? }
 router.post('/query', async (req: Request, res: Response) => {
   const { cypher, params } = req.body as { cypher?: string; params?: unknown };
   if (!cypher) return res.status(400).json({ error: 'cypher query required' });
 
   const d = await getDriver();
-  if (!d) return res.status(503).json({ error: 'Neo4j not available' });
+  if (!d) return res.status(503).json({ error: 'Neo4j not available — neo4j-driver not installed' });
 
   const session = d.session();
   try {
     const result = await session.run(cypher, params || {});
-    const records = result.records.map((r: Neo4jRecord) =>
-      Object.fromEntries(r.keys.map((k) => [k, r.get(k)]))
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const records = result.records.map((r: any) =>
+      Object.fromEntries(r.keys.map((k: string) => [k, r.get(k)]))
     );
     res.json({ records, count: records.length });
   } catch (err: unknown) {
