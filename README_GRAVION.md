@@ -72,15 +72,25 @@ Edit `/opt/gravion/server/.env` (or `server/.env` in dev):
 
 | Key | Description |
 |-----|-------------|
-| `AISSTREAM_API_KEY` | AIS ship data API key (aisstream.io) |
-| `OPENROUTER_API_KEY` | AI/LLM API key (openrouter.ai) |
-| `CLOUDFLARE_RADAR_TOKEN` | Cloudflare Radar API token |
+| `CESIUM_ION_TOKEN` | CesiumJS Ion token for 3D globe + imagery |
+| `AIS_API_KEY` | AISstream.io API key (WebSocket maritime feed) |
+| `AISSTREAM_API_KEY` | AIS ship data API key (same as AIS_API_KEY) |
+| `FLIGHT_DATA_SOURCE` | ADS-B source: `adsblol` or `opensky` |
+| `ADSB_LOL_LAT` | Center latitude for ADS-B coverage area |
+| `ADSB_LOL_LON` | Center longitude for ADS-B coverage area |
+| `ADSB_LOL_RADIUS` | Radius in nautical miles for ADS-B feed |
 | `NEO4J_URI` | Neo4j bolt URI (default: bolt://localhost:7687) |
+| `NEO4J_USER` | Neo4j username (default: neo4j) |
 | `NEO4J_PASSWORD` | Neo4j password |
-| `TRACCAR_URL` | Traccar server URL |
+| `TRACCAR_URL` | Traccar server URL (default: http://localhost:8082) |
+| `TRACCAR_USER` | Traccar admin username |
+| `TRACCAR_PASSWORD` | Traccar admin password |
 | `OLLAMA_URL` | Ollama API URL (default: http://localhost:11434) |
 | `OLLAMA_MODEL` | Ollama model name (default: llama3) |
-| `JWT_SECRET` | JWT signing secret (auto-generated on install) |
+| `JWT_SECRET` | JWT signing secret — auto-generated on install |
+| `SESSION_SECRET` | Session signing secret — auto-generated on install |
+| `OPENROUTER_API_KEY` | AI/LLM API key (openrouter.ai) — optional |
+| `CLOUDFLARE_RADAR_TOKEN` | Cloudflare Radar API token — optional |
 
 Edit `client/.env`:
 
