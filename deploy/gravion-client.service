@@ -1,0 +1,34 @@
+[Unit]
+Description=GRAVION Client — Military Intelligence Fusion Frontend
+Documentation=https://github.com/gengenesix/gravion
+After=network.target gravion-server.service
+Wants=gravion-server.service
+
+[Service]
+Type=simple
+User=gravion
+Group=gravion
+WorkingDirectory=/opt/gravion/client
+Environment=NODE_ENV=production
+Environment=PORT=3000
+ExecStartPre=/usr/bin/npm ci --omit=dev
+ExecStart=/usr/bin/npx serve -s dist -l 3000
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gravion-client
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/gravion/client /tmp
+PrivateTmp=yes
+
+# Resource limits
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

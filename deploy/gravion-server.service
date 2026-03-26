@@ -1,0 +1,34 @@
+[Unit]
+Description=GRAVION Server — Military Intelligence Fusion API
+Documentation=https://github.com/gengenesix/gravion
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User=gravion
+Group=gravion
+WorkingDirectory=/opt/gravion
+Environment=NODE_ENV=production
+EnvironmentFile=/opt/gravion/server/.env
+ExecStart=/usr/bin/node /opt/gravion/server/dist/index.js
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gravion-server
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/gravion /var/log/gravion /tmp
+PrivateTmp=yes
+PrivateDevices=yes
+
+# Resource limits
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

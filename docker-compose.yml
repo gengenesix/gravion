@@ -1,32 +1,37 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  radar:
+  gravion:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: radar
+    container_name: gravion-app
     ports:
       - "3001:3001"
     env_file:
       - ./server/.env
-
+    environment:
+      - NODE_ENV=production
+      - NEO4J_URI=bolt://neo4j:7687
+      - TRACCAR_URL=http://traccar:8082
+      - OLLAMA_URL=http://ollama:11434
+    depends_on:
+      - neo4j
+      - traccar
+      - ollama
     restart: unless-stopped
-
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-
-    # Optional: Mount data directory for aircraft database
-    # volumes:
-    #   - ./server/src/Data:/app/Data:ro
+    volumes:
+      - gravion_data:/app/data
 
   nginx:
     image: nginx:alpine
-    container_name: radar-nginx
+    container_name: gravion-nginx
     ports:
       - "80:80"
       - "443:443"
@@ -34,6 +39,58 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./ssl:/etc/nginx/ssl:ro
     depends_on:
-      - radar
+      - gravion
     restart: unless-stopped
 
+  neo4j:
+    image: neo4j:5-community
+    container_name: gravion-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/gravion_neo4j_2024
+      - NEO4J_PLUGINS=["graph-data-science", "apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=gds.*,apoc.*
+      - NEO4J_dbms_memory_heap_initial__size=512m
+      - NEO4J_dbms_memory_heap_max__size=2G
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    restart: unless-stopped
+
+  traccar:
+    image: traccar/traccar:latest
+    container_name: gravion-traccar
+    ports:
+      - "8082:8082"
+      - "5055:5055"
+    volumes:
+      - traccar_data:/opt/traccar/data
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: gravion-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  gravion_data:
+    driver: local
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  traccar_data:
+    driver: local
+  ollama_data:
+    driver: local
+
+networks:
+  default:
+    name: gravion-network
+    driver: bridge

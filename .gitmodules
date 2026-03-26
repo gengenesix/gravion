@@ -1,0 +1,15 @@
+[submodule "external/traccar"]
+	path = external/traccar
+	url = https://github.com/traccar/traccar
+[submodule "external/neo4j"]
+	path = external/neo4j
+	url = https://github.com/neo4j/neo4j
+[submodule "external/memgraph"]
+	path = external/memgraph
+	url = https://github.com/memgraph/memgraph
+[submodule "external/CommonCoreOntologies"]
+	path = external/CommonCoreOntologies
+	url = https://github.com/CommonCoreOntology/CommonCoreOntologies
+[submodule "external/graphiti"]
+	path = external/graphiti
+	url = https://github.com/getzep/graphiti
