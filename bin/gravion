@@ -250,6 +250,40 @@ except Exception as e:
   echo ""
 }
 
+cmd_intel_brief() {
+  local query="${*:-Generate current SITREP based on active intelligence feeds}"
+  local api_url="http://localhost:3001/api/intel/sitrep"
+
+  info "Querying GRAVION AI agent..."
+  echo ""
+
+  # Build JSON payload safely using python3
+  local result
+  result=$(python3 -c "
+import urllib.request, urllib.error, json, sys
+query = sys.argv[1]
+payload = json.dumps({'query': query}).encode()
+req = urllib.request.Request('$api_url', data=payload, headers={'Content-Type': 'application/json'})
+try:
+    with urllib.request.urlopen(req, timeout=60) as r:
+        print(r.read().decode())
+except Exception as e:
+    print(json.dumps({'error': str(e)}))
+" "$query" 2>/dev/null)
+
+  if echo "$result" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0 if 'sitrep' in d else 1)" 2>/dev/null; then
+    echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${BOLD}GRAVION SITREP — $(date -u '+%Y-%m-%d %H:%M:%S UTC')${NC}"
+    echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+    python3 -c "import sys,json; print(json.loads(sys.argv[1])['sitrep'])" "$result"
+    echo ""
+  else
+    warn "AI agent unavailable or returned error:"
+    echo "$result"
+  fi
+}
+
 cmd_help() {
   echo ""
   echo -e "${BLUE}${BOLD}GRAVION CLI — Military Intelligence Platform${NC}"
@@ -257,25 +291,26 @@ cmd_help() {
   echo "Usage: gravion <command> [options]"
   echo ""
   echo -e "${BOLD}Commands:${NC}"
-  echo "  start              Start all GRAVION services (docker compose up -d)"
-  echo "  stop               Stop all services (docker compose down)"
-  echo "  restart [service]  Restart all or a specific service"
-  echo "  status             Show running containers and port bindings"
-  echo "  logs [service]     Tail logs (all services or a specific one)"
-  echo "  update             Git pull + rebuild + restart"
-  echo "  backup             Backup volumes to $BACKUP_DIR"
-  echo "  restore <file>     Restore from a backup archive"
-  echo "  health             Ping all services and report status"
-  echo "  ip-trace <IP>      Geolocate and trace an IP address"
-  echo "  help               Show this help message"
+  echo "  start                Start all GRAVION services (docker compose up -d)"
+  echo "  stop                 Stop all services (docker compose down)"
+  echo "  restart [service]    Restart all or a specific service"
+  echo "  status               Show running containers and port bindings"
+  echo "  logs [service]       Tail logs (all services or a specific one)"
+  echo "  update               Git pull + rebuild + restart"
+  echo "  backup               Backup volumes to $BACKUP_DIR"
+  echo "  restore <file>       Restore from a backup archive"
+  echo "  health               Ping all services and report status"
+  echo "  ip-trace <IP>        Geolocate and trace an IP address"
+  echo "  intel-brief [query]  Generate AI SITREP via Ollama"
+  echo "  help                 Show this help message"
   echo ""
   echo -e "${BOLD}Examples:${NC}"
   echo "  gravion start"
-  echo "  gravion logs gravion"
-  echo "  gravion logs neo4j"
+  echo "  gravion logs gravion-app"
   echo "  gravion restart ollama"
   echo "  gravion backup"
   echo "  gravion ip-trace 8.8.8.8"
+  echo "  gravion intel-brief 'Show vessels near Strait of Hormuz'"
   echo "  gravion restore /var/backups/gravion/gravion_backup_20260101_120000.tar.gz"
   echo ""
 }
@@ -292,6 +327,7 @@ case "${1:-help}" in
   restore)  shift; cmd_restore "${1:-}" ;;
   health)   cmd_health ;;
   ip-trace) shift; cmd_ip_trace "${1:-}" ;;
+  intel-brief) shift; cmd_intel_brief "$@" ;;
   help|--help|-h) cmd_help ;;
   *) err "Unknown command: ${1}. Run 'gravion help' for usage." ;;
 esac

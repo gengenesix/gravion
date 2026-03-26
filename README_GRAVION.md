@@ -155,6 +155,114 @@ cd client && npm install && npm run dev
 
 ---
 
+## Satellite Intelligence Layers
+
+GRAVION integrates multiple real-time satellite data sources as toggleable map overlays:
+
+| Layer | Source | Delay | Notes |
+|-------|--------|-------|-------|
+| MODIS Terra TrueColor | NASA GIBS | ~3–5 hours | Global optical imagery |
+| Sentinel-2 Cloudless | Copernicus/EOX | Annual mosaic | High-res, no auth needed |
+| FIRMS Active Fire | NASA VIIRS | ~3 hours | Hotspot & wildfire detections |
+| NOAA Weather Radar | IEM NEXRAD | ~5 min | US composite precipitation |
+| VIIRS Night Lights | NASA GIBS | ~24 hours | Activity & infrastructure indicator |
+
+Toggle layers via the **SATELLITE** panel in the Monitor view. Each layer has adjustable opacity.
+
+---
+
+## AI Intel Agent (SITREP Generator)
+
+GRAVION includes an Ollama-powered AI agent for generating military-style situation reports.
+
+**Via CLI:**
+```bash
+gravion intel-brief
+gravion intel-brief "Show all vessels near Strait of Hormuz"
+gravion intel-brief "Assess cyber threat landscape from active feeds"
+```
+
+**Via API:**
+```bash
+curl -X POST http://localhost:3001/api/intel/sitrep \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Generate SITREP for current situation"}'
+```
+
+**Check AI status:**
+```bash
+curl http://localhost:3001/api/intel/status
+```
+
+Requires Ollama running with a model pulled (default: `llama3`):
+```bash
+docker exec gravion-ollama ollama pull llama3
+```
+
+---
+
+## Neo4j Graph Database
+
+Entity relationship graph for intelligence fusion. Access via:
+
+```bash
+# Browser UI
+open http://localhost:7474  # neo4j / gravion_neo4j_2024
+
+# API query
+curl -X POST http://localhost:3001/api/graph/query \
+  -H "Content-Type: application/json" \
+  -d '{"cypher": "MATCH (n) RETURN n LIMIT 25"}'
+
+# Status
+curl http://localhost:3001/api/graph/status
+```
+
+---
+
+## Traccar GPS Tracking
+
+Connect phones and IoT devices via Traccar. Access at `http://localhost:8082`.
+
+**API:**
+```bash
+curl http://localhost:3001/api/traccar/devices    # all devices
+curl http://localhost:3001/api/traccar/positions  # latest positions
+curl http://localhost:3001/api/traccar/status     # service health
+```
+
+**Connect a device:** Install Traccar Client on Android/iOS and point it to `http://<server-ip>:5055`.
+
+---
+
+## IP Geolocation
+
+Trace any IP address to real-world location:
+
+```bash
+# CLI
+gravion ip-trace 8.8.8.8
+
+# API
+curl "http://localhost:3001/api/ip-trace?ip=8.8.8.8"
+```
+
+Returns: IP, city, region, country, ISP/org, coordinates (lat/lon), timezone.
+
+---
+
+## .deb Packaging
+
+Build a Debian/Ubuntu installable package:
+
+```bash
+./scripts/build-deb.sh 1.0.0
+sudo dpkg -i gravion_1.0.0_amd64.deb
+gravion start
+```
+
+---
+
 ## Credits
 
 - Forked from [RADAR](https://github.com/Syntax-Error-1337/radar) by Syntax-Error-1337

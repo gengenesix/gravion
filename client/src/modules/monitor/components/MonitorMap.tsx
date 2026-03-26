@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
-import Map, { NavigationControl, Popup } from 'react-map-gl/maplibre';
+import Map, { NavigationControl, Popup, Source, Layer } from 'react-map-gl/maplibre';
+import { SATELLITE_LAYERS } from './SatelliteLayersPanel';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { MapRef } from 'react-map-gl/maplibre';
 import type { MapLayerMouseEvent, ProjectionSpecification } from 'maplibre-gl';
@@ -81,6 +82,19 @@ export function MonitorMap() {
   const { setCurrentRegion } = useOsintStore();
   const gpsJammingEnabled = useGPSJammingStore((s) => s.enabled);
   const [popup, setPopup] = useState<ActivePopup | null>(null);
+  const [activeSatLayers, setActiveSatLayers] = useState<Set<string>>(new Set());
+  const [satOpacities, setSatOpacities] = useState<Record<string, number>>({});
+
+  const toggleSatLayer = (id: string) => {
+    setActiveSatLayers((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+  const setSatOpacity = (id: string, opacity: number) => {
+    setSatOpacities((prev) => ({ ...prev, [id]: opacity }));
+  };
 
   const activeMapStyle = mapLayer === 'satellite' ? SATELLITE_STYLE : DARK_STYLE;
 
@@ -183,6 +197,23 @@ export function MonitorMap() {
         style={{ width: '100%', height: '100%' }}
       >
         <NavigationControl position="top-right" showCompass={true} visualizePitch={true} />
+
+        {/* Satellite Intelligence Layers */}
+        {SATELLITE_LAYERS.filter((l) => activeSatLayers.has(l.id)).map((layer) => (
+          <Source
+            key={layer.id}
+            id={layer.id}
+            type="raster"
+            tiles={[layer.getTileUrl()]}
+            tileSize={256}
+          >
+            <Layer
+              id={`sat-${layer.id}`}
+              type="raster"
+              paint={{ 'raster-opacity': satOpacities[layer.id] ?? layer.opacity }}
+            />
+          </Source>
+        ))}
 
         {gpsJammingEnabled && <GPSJammingLayer />}
         <MilitaryBasesLayer />
