@@ -182,7 +182,7 @@ ENVEOF
     sed -i "s|^JWT_SECRET=.*|JWT_SECRET=${JWT}|" "$SERVER_ENV"
     sed -i "s|^SESSION_SECRET=.*|SESSION_SECRET=${SES}|" "$SERVER_ENV"
   fi
-  chmod 600 "$SERVER_ENV"
+  chmod 644 "$SERVER_ENV"
   ok "Created server/.env"
 else
   ok "server/.env exists — keeping"
@@ -221,10 +221,68 @@ fi
 
 # ─── Nginx ────────────────────────────────────────────────────────────────────
 step "Nginx configuration"
-cp "$GRAVION_DIR/nginx.conf" /etc/nginx/conf.d/gravion.conf
 rm -f /etc/nginx/sites-enabled/default > /dev/null 2>&1
-nginx -t > /dev/null 2>&1 && systemctl reload nginx > /dev/null 2>&1 && ok "Nginx configured" \
-  || warn "Nginx test failed — check /etc/nginx/conf.d/gravion.conf"
+
+# Always write a clean HTTP-only config (simple, no SSL block that may fail)
+cat > /etc/nginx/conf.d/gravion.conf << 'NGINXEOF'
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+limit_req_zone $binary_remote_addr zone=gravion_api:10m    rate=60r/m;
+limit_req_zone $binary_remote_addr zone=gravion_all:10m rate=200r/m;
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    client_max_body_size 10M;
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/javascript image/svg+xml;
+    location /api/ {
+        limit_req zone=gravion_api burst=30 nodelay;
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_read_timeout 120s;
+    }
+    location /ws/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $host;
+        proxy_read_timeout 86400s;
+    }
+    location /socket.io/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $host;
+        proxy_read_timeout 86400s;
+    }
+    location / {
+        limit_req zone=gravion_all burst=60 nodelay;
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_read_timeout 90s;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+    }
+}
+NGINXEOF
+
+/usr/sbin/nginx -t > /dev/null 2>&1 \
+  && systemctl reload nginx > /dev/null 2>&1 \
+  && ok "Nginx configured" \
+  || warn "Nginx reload failed — run: sudo nginx -t"
 
 # ─── gravion CLI ──────────────────────────────────────────────────────────────
 step "CLI tool"
@@ -255,11 +313,21 @@ has ufw && ufw allow 80/tcp > /dev/null 2>&1 && ufw allow 443/tcp > /dev/null 2>
 
 # ─── Docker Compose Up ────────────────────────────────────────────────────────
 step "Starting GRAVION services"
-log "Pulling Docker images — first run may take several minutes..."
+# Ensure .env is readable by docker
+chmod 644 "$GRAVION_DIR/server/.env" > /dev/null 2>&1 || true
+chmod 644 "$GRAVION_DIR/client/.env" > /dev/null 2>&1 || true
+
 cd "$GRAVION_DIR"
-docker compose pull > /dev/null 2>&1 || true
-docker compose up -d --build
-ok "Services started"
+log "Pulling Docker images — this downloads ~2GB on first run. Do NOT Ctrl+C!"
+log "If you need to cancel, run: cd /opt/gravion && docker compose up -d"
+docker compose pull 2>&1 | grep -E "Pull|pull|Pulled|already" || true
+docker compose up -d --build 2>&1
+COMPOSE_EXIT=$?
+if [ $COMPOSE_EXIT -eq 0 ]; then
+  ok "All services started"
+else
+  warn "docker compose returned exit $COMPOSE_EXIT — run: cd /opt/gravion && docker compose ps"
+fi
 
 # ─── Done ─────────────────────────────────────────────────────────────────────
 SERVER_IP=$(hostname -I 2>/dev/null | awk '{print $1}' || echo "localhost")
