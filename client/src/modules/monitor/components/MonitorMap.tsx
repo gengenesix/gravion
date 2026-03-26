@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import Map, { NavigationControl, Popup, Source, Layer } from 'react-map-gl/maplibre';
-import { SATELLITE_LAYERS } from './SatelliteLayersPanel';
+import { SATELLITE_LAYERS, SatelliteLayersPanel } from './SatelliteLayersPanel';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { MapRef } from 'react-map-gl/maplibre';
 import type { MapLayerMouseEvent, ProjectionSpecification } from 'maplibre-gl';
@@ -180,6 +180,15 @@ export function MonitorMap() {
 
   return (
     <div className="w-full h-full relative bg-black">
+      {/* Satellite Layers floating panel */}
+      <div className="absolute top-12 left-3 z-10 w-52">
+        <SatelliteLayersPanel
+          activeLayers={activeSatLayers}
+          onToggle={toggleSatLayer}
+          onOpacityChange={setSatOpacity}
+          opacities={satOpacities}
+        />
+      </div>
       <Map
         ref={mapRef}
         initialViewState={INITIAL_VIEW_STATE}

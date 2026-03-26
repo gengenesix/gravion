@@ -2,17 +2,26 @@ import { Router, Request, Response } from 'express';
 
 const router = Router();
 
-// Lazy neo4j driver — avoids hard dependency at startup
-let _driver: unknown = null;
-
-async function getDriver(): Promise<{
+interface Neo4jDriver {
   verifyConnectivity(): Promise<unknown>;
-  session(): {
-    run(q: string, p: unknown): Promise<{ records: unknown[] }>;
-    close(): Promise<void>;
-  };
-} | null> {
-  if (_driver) return _driver as ReturnType<typeof getDriver> extends Promise<infer T> ? T : never;
+  session(): Neo4jSession;
+}
+
+interface Neo4jSession {
+  run(query: string, params: unknown): Promise<{ records: Neo4jRecord[] }>;
+  close(): Promise<void>;
+}
+
+interface Neo4jRecord {
+  keys: string[];
+  get(key: string): unknown;
+}
+
+// Lazy neo4j driver — avoids hard dependency at startup
+let _driver: Neo4jDriver | null = null;
+
+async function getDriver(): Promise<Neo4jDriver | null> {
+  if (_driver) return _driver;
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const neo4j = await import('neo4j-driver').catch(() => null) as any;
@@ -24,8 +33,8 @@ async function getDriver(): Promise<{
         process.env.NEO4J_PASSWORD || 'gravion_neo4j_2024'
       ),
       { maxConnectionLifetime: 30000 }
-    );
-    return _driver as ReturnType<typeof getDriver> extends Promise<infer T> ? T : never;
+    ) as Neo4jDriver;
+    return _driver;
   } catch {
     return null;
   }
@@ -54,10 +63,9 @@ router.post('/query', async (req: Request, res: Response) => {
   const session = d.session();
   try {
     const result = await session.run(cypher, params || {});
-    const records = result.records.map((r: unknown) => {
-      const rec = r as { keys: string[]; get(k: string): unknown };
-      return Object.fromEntries(rec.keys.map((k) => [k, rec.get(k)]));
-    });
+    const records = result.records.map((r: Neo4jRecord) =>
+      Object.fromEntries(r.keys.map((k) => [k, r.get(k)]))
+    );
     res.json({ records, count: records.length });
   } catch (err: unknown) {
     res.status(500).json({ error: String(err) });
