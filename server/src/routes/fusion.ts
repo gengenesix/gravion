@@ -33,9 +33,10 @@ async function gatherLiveContext(): Promise<Record<string, unknown>> {
 
   // Maritime vessels
   try {
-    const vessels = await fetchJSON(`${API_BASE}/api/maritime/vessels`) as unknown[];
-    ctx.vessel_count = Array.isArray(vessels) ? vessels.length : 0;
-    ctx.sample_vessels = Array.isArray(vessels) ? vessels.slice(0, 5) : [];
+    const vesselData = await fetchJSON(`${API_BASE}/api/maritime/snapshot`) as { vessels?: unknown[] };
+    const vessels = vesselData.vessels || [];
+    ctx.vessel_count = vessels.length;
+    ctx.sample_vessels = vessels.slice(0, 5);
   } catch { ctx.vessels = 'unavailable'; }
 
   // Traccar devices

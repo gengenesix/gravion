@@ -191,10 +191,10 @@ export function GlobePage() {
     const update = async () => {
       if (isDestroyed()) return;
       try {
-        const res = await fetch(`${API_BASE}/api/maritime/vessels`);
+        const res = await fetch(`${API_BASE}/api/maritime/snapshot`);
         if (!res.ok) return;
-        const ships = await res.json() as Array<{ mmsi: number; name: string; lat: number; lon: number; course: number; speed: number }>;
-        if (!Array.isArray(ships)) return;
+        const data = await res.json() as { vessels?: Array<{ mmsi: number; name: string; lat: number; lon: number; cog: number; heading: number; sog: number }> };
+        const ships = data.vessels || [];
 
         shipIds.forEach((id) => {
           const e = v.entities.getById(id);
@@ -212,7 +212,7 @@ export function GlobePage() {
               image: '/flight.svg',
               width: 16, height: 16,
               color: C.Color.fromCssColorString('#fbbf24'),
-              rotation: C.Math.toRadians(s.course || 0),
+              rotation: C.Math.toRadians(s.heading || s.cog || 0),
               scaleByDistance: new C.NearFarScalar(1e4, 1.5, 2e7, 0.3),
               disableDepthTestDistance: Number.POSITIVE_INFINITY,
             },
@@ -227,7 +227,7 @@ export function GlobePage() {
               scaleByDistance: new C.NearFarScalar(1e5, 1.0, 5e6, 0.0),
               disableDepthTestDistance: Number.POSITIVE_INFINITY,
             },
-            gravionData: { type: 'vessel', mmsi: s.mmsi, name: s.name, speed: s.speed },
+            gravionData: { type: 'vessel', mmsi: s.mmsi, name: s.name, speed: s.sog },
           } as unknown as object);
           shipIds.add(id);
         });
