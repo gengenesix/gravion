@@ -1,4 +1,6 @@
 import * as gpsjam from './source/gpsjam';
+import { getDriver, bootstrapSchema, upsertAircraft, upsertVessels } from './neo4j-loader';
+import { aisStreamService } from './source/aisstream';
 
 /**
  * Scheduler for periodic data ingestion tasks
@@ -122,15 +124,54 @@ async function checkJobs() {
 /**
  * Initialize default scheduled jobs
  */
+let neo4jDriver: unknown = null;
+
+async function neo4jEntitySync() {
+  try {
+    if (!neo4jDriver) {
+      neo4jDriver = await getDriver();
+      if (neo4jDriver) await bootstrapSchema(neo4jDriver);
+    }
+    if (!neo4jDriver) return; // Neo4j not available
+
+    // Sync aircraft from ADS-B
+    const flightRes = await fetch('http://localhost:' + (process.env.PORT || 3001) + '/api/flights/snapshot').catch(() => null);
+    if (flightRes?.ok) {
+      const data = await flightRes.json() as { states?: unknown[][] };
+      const aircraft = (data.states || [])
+        .filter((s: unknown[]) => s[5] != null && s[6] != null)
+        .slice(0, 500)
+        .map((s: unknown[]) => ({
+          icao: String(s[0] || ''),
+          callsign: String(s[1] || '').trim(),
+          lat: Number(s[6]),
+          lon: Number(s[5]),
+          alt: Number(s[7] || 0),
+          speed: Number(s[9] || 0),
+          heading: Number(s[10] || 0),
+          country: String(s[2] || ''),
+        }));
+      await upsertAircraft(neo4jDriver, aircraft);
+      console.log(`[Neo4j] Synced ${aircraft.length} aircraft`);
+    }
+
+    // Sync vessels from AIS
+    const vessels = Array.from(aisStreamService.vessels.values()).slice(0, 500);
+    await upsertVessels(neo4jDriver, vessels as Parameters<typeof upsertVessels>[1]);
+    console.log(`[Neo4j] Synced ${vessels.length} vessels`);
+
+  } catch (err) {
+    console.error('[Neo4j] Sync error:', err);
+    neo4jDriver = null; // reset so it reconnects next cycle
+  }
+}
+
 export function initializeDefaultJobs() {
   // GPS Jamming: Check for new data every 6 hours
-  registerJob(
-    'GPS Jamming Daily Update',
-    6 * 60 * 60 * 1000, // 6 hours
-    gpsJammingDailyUpdate,
-  );
+  registerJob('GPS Jamming Daily Update', 6 * 60 * 60 * 1000, gpsJammingDailyUpdate);
 
-  // Add other scheduled jobs here as needed
+  // Neo4j entity sync every 5 minutes
+  registerJob('Neo4j Entity Sync', 5 * 60 * 1000, neo4jEntitySync);
 }
 
 /**

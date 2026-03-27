@@ -93,6 +93,16 @@ export const TopNav: React.FC = () => {
             IP Trace
           </button>
           <button
+            onClick={() => setActiveModule('osint')}
+            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
+              activeModule === 'osint'
+                ? 'border-purple-400 text-purple-400 drop-shadow-[0_0_8px_rgba(192,132,252,0.8)] bg-gradient-to-t from-purple-400/10 to-transparent'
+                : 'border-transparent text-intel-text hover:text-purple-300 hover:border-purple-400/50 opacity-70 hover:opacity-100'
+            }`}
+          >
+            🕷 OSINT
+          </button>
+          <button
             onClick={() => setActiveModule('globe')}
             className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
               activeModule === 'globe'

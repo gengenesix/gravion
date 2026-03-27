@@ -10,6 +10,7 @@ import cyberRouter from './routes/cyber';
 import ipTraceRouter from './routes/ip-trace';
 import intelRouter from './routes/intel';
 import fusionRouter from './routes/fusion';
+import osintRouter from './routes/osint';
 import graphRouter from './routes/graph';
 import traccarRouter from './routes/traccar';
 import { aircraftDb } from './core/aircraft_db';
@@ -29,6 +30,7 @@ app.use('/api/cyber', cyberRouter);
 app.use('/api/ip-trace', ipTraceRouter);
 app.use('/api/intel', intelRouter);
 app.use('/api/fusion', fusionRouter);
+app.use('/api/osint', osintRouter);
 app.use('/api/graph', graphRouter);
 app.use('/api/traccar', traccarRouter);
 

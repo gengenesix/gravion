@@ -7,6 +7,16 @@ const CESIUM_VERSION = '1.120.0';
 const CESIUM_CDN = `https://cesium.com/downloads/cesiumjs/releases/${CESIUM_VERSION}/Build/Cesium`;
 const ION_TOKEN = import.meta.env.VITE_CESIUM_ION_TOKEN as string || '';
 const API_BASE = import.meta.env.VITE_API_URL as string || '';
+const MILSYMBOL_CDN = 'https://cdn.jsdelivr.net/npm/milsymbol@2.2.0/dist/milsymbol.js';
+
+// MIL-STD-2525E SIDC codes for entity types
+const SIDC = {
+  aircraft_friendly: 'SFAPC----------', // Surface/Air/Friendly/Fixed-wing
+  aircraft_unknown:  'SUAPC----------', // Unknown
+  vessel_friendly:   'SFSPXM---------', // Sea/Surface/Friendly/Military
+  vessel_unknown:    'SUSPXM---------', // Unknown
+  device:            'SFGPUC---------', // Ground/Unit
+};
 
 // Yesterday for GIBS tiles
 function yesterday() {
@@ -54,6 +64,17 @@ export function GlobePage() {
           script.src = `${CESIUM_CDN}/Cesium.js`;
           script.onload = () => resolve();
           script.onerror = () => reject(new Error('Failed to load CesiumJS from CDN'));
+          document.head.appendChild(script);
+        });
+      }
+
+      // Load milsymbol for MIL-STD-2525E symbology
+      if (!(window as Window & { ms?: unknown }).ms) {
+        await new Promise<void>((resolve) => {
+          const script = document.createElement('script');
+          script.src = MILSYMBOL_CDN;
+          script.onload = () => resolve();
+          script.onerror = () => resolve(); // non-fatal
           document.head.appendChild(script);
         });
       }
@@ -140,6 +161,16 @@ export function GlobePage() {
         flightIds.clear();
 
         const states = data.states.slice(0, 3000);
+        // Generate mil symbol image using milsymbol if available
+        const ms = (window as Window & { ms?: { Symbol: new (sidc: string, opts: object) => { asCanvas: () => HTMLCanvasElement } } }).ms;
+        const getMilSymbol = (sidc: string, size = 24): string => {
+          if (!ms) return '/aircraft.svg';
+          try {
+            const sym = new ms.Symbol(sidc, { size, colorMode: 'Light' });
+            return sym.asCanvas().toDataURL();
+          } catch { return '/aircraft.svg'; }
+        };
+
         states.forEach((s: unknown[]) => {
           const lon = Number(s[5]);
           const lat = Number(s[6]);
@@ -149,13 +180,13 @@ export function GlobePage() {
           const alt = Math.max(Number(s[7] || 1000), 100);
           const hdg = Number(s[10] || 0);
           const id = `ac-${icao}`;
+          const symImage = getMilSymbol(SIDC.aircraft_unknown, 28);
           v.entities.add({
             id,
             position: C.Cartesian3.fromDegrees(lon, lat, alt),
             billboard: {
-              image: '/aircraft.svg',
-              width: 18, height: 18,
-              color: C.Color.fromCssColorString('#00e5ff'),
+              image: symImage,
+              width: 28, height: 28,
               rotation: C.Math.toRadians(hdg),
               scaleByDistance: new C.NearFarScalar(1e4, 1.5, 2e7, 0.3),
               disableDepthTestDistance: Number.POSITIVE_INFINITY,
@@ -202,6 +233,14 @@ export function GlobePage() {
         });
         shipIds.clear();
 
+        const msw = (window as Window & { ms?: { Symbol: new (sidc: string, opts: object) => { asCanvas: () => HTMLCanvasElement } } }).ms;
+        const getVesselSymbol = (size = 24): string => {
+          if (!msw) return '/flight.svg';
+          try { return new msw.Symbol(SIDC.vessel_unknown, { size, colorMode: 'Light' }).asCanvas().toDataURL(); }
+          catch { return '/flight.svg'; }
+        };
+        const vesselImg = getVesselSymbol(24);
+
         ships.slice(0, 2000).forEach((s) => {
           if (!s.lat || !s.lon) return;
           const id = `ship-${s.mmsi}`;
@@ -209,15 +248,14 @@ export function GlobePage() {
             id,
             position: C.Cartesian3.fromDegrees(s.lon, s.lat, 10),
             billboard: {
-              image: '/flight.svg',
-              width: 16, height: 16,
-              color: C.Color.fromCssColorString('#fbbf24'),
+              image: vesselImg,
+              width: 24, height: 24,
               rotation: C.Math.toRadians(s.heading || s.cog || 0),
               scaleByDistance: new C.NearFarScalar(1e4, 1.5, 2e7, 0.3),
               disableDepthTestDistance: Number.POSITIVE_INFINITY,
             },
             label: {
-              text: s.name || String(s.mmsi),
+              text: (s.name || String(s.mmsi)).slice(0, 20),
               font: '9px monospace',
               fillColor: C.Color.fromCssColorString('#fbbf24'),
               outlineColor: C.Color.BLACK,

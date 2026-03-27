@@ -24,6 +24,9 @@ const TrackingPage = lazy(() =>
 const GlobePage = lazy(() =>
   import('../modules/globe/GlobePage').then((m) => ({ default: m.GlobePage })),
 );
+const OSINTPage = lazy(() =>
+  import('../modules/osinttools/OSINTPage').then((m) => ({ default: m.OSINTPage })),
+);
 
 /** Minimal fallback shown while the chunk is loading (<200 ms on fast connections). */
 const PageLoader: React.FC = () => (
@@ -53,6 +56,8 @@ export const AppRoutes: React.FC = () => {
         <CyberPage />
       ) : activeModule === 'globe' ? (
         <GlobePage />
+      ) : activeModule === 'osint' ? (
+        <OSINTPage />
       ) : (
         <FlightsPage />
       )}
