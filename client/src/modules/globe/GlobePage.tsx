@@ -145,7 +145,10 @@ export function GlobePage() {
     (async () => {
       try {
         const Cesium = await import('cesium') as unknown as CesiumModule;
-        await import('cesium/Build/Cesium/Widgets/widgets.css');
+        // Cesium widgets CSS — import path varies by version, try both
+        try { await import('cesium/Build/Cesium/Widgets/widgets.css'); } catch {
+          try { await import('cesium/Source/Widgets/widgets.css'); } catch { /* css not critical */ }
+        }
 
         if (destroyed) return;
         cesiumRef.current = Cesium;

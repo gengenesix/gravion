@@ -23,8 +23,8 @@
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
     "zustand": "^5.0.11",
-    "cesium": "^1.120.0",
-    "vite-plugin-static-copy": "^1.0.0"
+    "cesium": "^1.139.0",
+    "vite-plugin-static-copy": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

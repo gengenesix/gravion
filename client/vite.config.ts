@@ -2,24 +2,34 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // Copy Cesium static assets to dist
     viteStaticCopy({
       targets: [
-        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Workers'), dest: 'cesium' },
-        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/ThirdParty'), dest: 'cesium' },
-        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Assets'), dest: 'cesium' },
-        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Widgets'), dest: 'cesium' },
+        {
+          src: 'node_modules/cesium/Build/Cesium/Workers',
+          dest: 'cesium',
+        },
+        {
+          src: 'node_modules/cesium/Build/Cesium/ThirdParty',
+          dest: 'cesium',
+        },
+        {
+          src: 'node_modules/cesium/Build/Cesium/Assets',
+          dest: 'cesium',
+        },
+        {
+          src: 'node_modules/cesium/Build/Cesium/Widgets',
+          dest: 'cesium',
+        },
       ],
     }),
   ],
   define: {
+    // Tell Cesium where to find its static assets at runtime
     CESIUM_BASE_URL: JSON.stringify('/cesium'),
   },
   server: {
@@ -32,7 +42,7 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 4000,
+    chunkSizeWarningLimit: 8000,
     rollupOptions: {
       output: {
         manualChunks: {
