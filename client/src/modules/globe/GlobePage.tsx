@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 // This guarantees the globe works regardless of npm package structure
 
 const CESIUM_VERSION = '1.125.0';
-// Use jsdelivr (reliable CDN, works offline-ish via browser cache)
-const CESIUM_CDN = `https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VERSION}/Build/Cesium`;
+// Primary: served locally from Docker container (no CDN needed, works offline)
+const CESIUM_LOCAL = '/cesium';
+// Fallback: jsdelivr CDN if local not available
+const CESIUM_CDN_FALLBACK = `https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VERSION}/Build/Cesium`;
 const ION_TOKEN = import.meta.env.VITE_CESIUM_ION_TOKEN as string || '';
 const API_BASE = import.meta.env.VITE_API_URL as string || '';
 const MILSYMBOL_CDN = 'https://cdn.jsdelivr.net/npm/milsymbol@2.2.0/dist/milsymbol.js';
@@ -53,20 +55,28 @@ export function GlobePage() {
         const link = document.createElement('link');
         link.id = 'cesium-css';
         link.rel = 'stylesheet';
-        link.href = `https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VERSION}/Build/Cesium/Widgets/widgets.css`;
+        // Local first (Docker-bundled), CDN fallback
+        link.href = `${CESIUM_LOCAL}/widgets.css`;
         document.head.appendChild(link);
       }
 
-      // 2. Load Cesium JS from CDN if not already loaded
+      // 2. Load Cesium JS — local Docker bundle first, CDN fallback
       if (!window.Cesium) {
-        setStatus('Downloading CesiumJS (~8MB)...');
-        await new Promise<void>((resolve, reject) => {
-          const script = document.createElement('script');
-          script.src = `${CESIUM_CDN}/Cesium.js`;
-          script.onload = () => resolve();
-          script.onerror = () => reject(new Error('Failed to load CesiumJS from CDN'));
-          document.head.appendChild(script);
+        const tryLoad = (src: string) => new Promise<void>((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = src;
+          s.onload = () => resolve();
+          s.onerror = () => { s.remove(); reject(new Error(`Failed: ${src}`)); };
+          document.head.appendChild(s);
         });
+
+        setStatus('Loading CesiumJS...');
+        try {
+          await tryLoad(`${CESIUM_LOCAL}/Cesium.js`);
+        } catch {
+          setStatus('Loading CesiumJS from CDN...');
+          await tryLoad(`${CESIUM_CDN_FALLBACK}/Cesium.js`);
+        }
       }
 
       // Load milsymbol for MIL-STD-2525E symbology

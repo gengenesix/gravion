@@ -20,6 +20,14 @@ RUN npm ci
 COPY client/ ./client/
 COPY server/ ./server/
 
+# Download Cesium into public dir so it's served locally (no CDN needed)
+RUN mkdir -p /app/client/public/cesium && \
+    CESIUM_VER=1.125.0 && \
+    BASE="https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VER}/Build/Cesium" && \
+    curl -fsSL "${BASE}/Cesium.js" -o /app/client/public/cesium/Cesium.js && \
+    curl -fsSL "https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VER}/Build/Cesium/Widgets/widgets.css" -o /app/client/public/cesium/widgets.css && \
+    echo "Cesium ${CESIUM_VER} downloaded OK"
+
 # Build client
 RUN npm run build:client
 
@@ -44,6 +52,9 @@ COPY --from=builder /app/server/dist ./dist
 
 # Copy built client from builder (to be served by Express)
 COPY --from=builder /app/client/dist ./public
+
+# Copy locally-bundled Cesium into public (served at /cesium/*)
+COPY --from=builder /app/client/public/cesium ./public/cesium
 
 # Copy server source files that might be needed at runtime
 COPY --from=builder /app/server/src/news_feeds.json ./
