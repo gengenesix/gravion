@@ -44,14 +44,20 @@ router.post('/spiderfoot/scan', async (req: Request, res: Response) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: form.toString(),
+      redirect: 'manual', // capture 303 redirect
       signal: AbortSignal.timeout(15000),
     });
 
-    const text = await r.text();
-    // v3 redirects to /scaninfo?id=XXXX after starting
-    const scanIdMatch = text.match(/[A-F0-9]{8}/);
-    const scanId = scanIdMatch?.[0] || '';
-    res.json({ started: r.ok, target, scanId, url: `${SPIDERFOOT_URL()}/scaninfo?id=${scanId}`, raw: text.slice(0, 200) });
+    // SpiderFoot returns 303 redirect to /scaninfo?id=XXXX
+    const location = r.headers.get('location') || '';
+    const scanIdMatch = location.match(/id=([A-F0-9]{8})/i);
+    const scanId = scanIdMatch?.[1] || '';
+    res.json({
+      started: r.status === 303 || r.ok,
+      target,
+      scanId,
+      url: scanId ? `${SPIDERFOOT_URL()}/scaninfo?id=${scanId}` : SPIDERFOOT_URL(),
+    });
   } catch (err: unknown) {
     res.status(502).json({ error: 'SpiderFoot unavailable', detail: String(err) });
   }
