@@ -1,10 +1,27 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    // Copy Cesium static assets to dist
+    viteStaticCopy({
+      targets: [
+        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Workers'), dest: 'cesium' },
+        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/ThirdParty'), dest: 'cesium' },
+        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Assets'), dest: 'cesium' },
+        { src: path.resolve(__dirname, 'node_modules/cesium/Build/Cesium/Widgets'), dest: 'cesium' },
+      ],
+    }),
+  ],
+  define: {
+    CESIUM_BASE_URL: JSON.stringify('/cesium'),
+  },
   server: {
     port: 5173,
     proxy: {
@@ -15,17 +32,16 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 1100, // maplibre is intentionally large; suppress false-positive warning
+    chunkSizeWarningLimit: 4000,
     rollupOptions: {
       output: {
         manualChunks: {
-          // Vendor: cached independently from app code
           maplibre: ['maplibre-gl'],
-          // Page-level splits: each lazy route ships as its own chunk so users
-          // only download the JS for the module they're actually using.
+          cesium: ['cesium'],
           'page-flights': ['./src/modules/flights/FlightsPage'],
           'page-maritime': ['./src/modules/maritime/MaritimePage'],
           'page-cyber': ['./src/modules/cyber/CyberPage'],
+          'page-globe': ['./src/modules/globe/GlobePage'],
         },
       },
     },

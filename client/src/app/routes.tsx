@@ -21,6 +21,9 @@ const IntelPage = lazy(() =>
 const TrackingPage = lazy(() =>
   import('../modules/tracking/TrackingPage').then((m) => ({ default: m.TrackingPage })),
 );
+const GlobePage = lazy(() =>
+  import('../modules/globe/GlobePage').then((m) => ({ default: m.GlobePage })),
+);
 
 /** Minimal fallback shown while the chunk is loading (<200 ms on fast connections). */
 const PageLoader: React.FC = () => (
@@ -48,6 +51,8 @@ export const AppRoutes: React.FC = () => {
         <TrackingPage />
       ) : activeModule === 'ip-trace' ? (
         <CyberPage />
+      ) : activeModule === 'globe' ? (
+        <GlobePage />
       ) : (
         <FlightsPage />
       )}

@@ -92,6 +92,16 @@ export const TopNav: React.FC = () => {
           >
             IP Trace
           </button>
+          <button
+            onClick={() => setActiveModule('globe')}
+            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
+              activeModule === 'globe'
+                ? 'border-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] bg-gradient-to-t from-yellow-400/10 to-transparent'
+                : 'border-transparent text-intel-text hover:text-yellow-300 hover:border-yellow-400/50 opacity-70 hover:opacity-100'
+            }`}
+          >
+            🌍 3D Globe
+          </button>
         </nav>
       </div>
 

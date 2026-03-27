@@ -1,4 +1,4 @@
-# Multi-stage build for Radar
+# Multi-stage build for GRAVION
 
 # Stage 1: Build everything (using monorepo structure)
 FROM node:20-slim AS builder
@@ -13,8 +13,8 @@ COPY package*.json ./
 COPY client/package*.json ./client/
 COPY server/package*.json ./server/
 
-# Install all dependencies (respects workspace structure)
-RUN npm ci
+# Install all dependencies (use install not ci so new packages like cesium are picked up)
+RUN npm install --legacy-peer-deps
 
 # Copy source code for both client and server
 COPY client/ ./client/
