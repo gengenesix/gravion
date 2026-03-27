@@ -15,6 +15,12 @@ const MonitorPage = lazy(() =>
 const CyberPage = lazy(() =>
   import('../modules/cyber/CyberPage').then((m) => ({ default: m.CyberPage })),
 );
+const IntelPage = lazy(() =>
+  import('../modules/intel/IntelPage').then((m) => ({ default: m.IntelPage })),
+);
+const TrackingPage = lazy(() =>
+  import('../modules/tracking/TrackingPage').then((m) => ({ default: m.TrackingPage })),
+);
 
 /** Minimal fallback shown while the chunk is loading (<200 ms on fast connections). */
 const PageLoader: React.FC = () => (
@@ -35,6 +41,12 @@ export const AppRoutes: React.FC = () => {
       ) : activeModule === 'maritime' ? (
         <MaritimePage />
       ) : activeModule === 'cyber' ? (
+        <CyberPage />
+      ) : activeModule === 'intel' ? (
+        <IntelPage />
+      ) : activeModule === 'tracking' ? (
+        <TrackingPage />
+      ) : activeModule === 'ip-trace' ? (
         <CyberPage />
       ) : (
         <FlightsPage />
