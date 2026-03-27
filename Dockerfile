@@ -14,7 +14,7 @@ COPY client/package*.json ./client/
 COPY server/package*.json ./server/
 
 # Install all dependencies (use install not ci so new packages like cesium are picked up)
-RUN npm install --legacy-peer-deps
+RUN npm ci
 
 # Copy source code for both client and server
 COPY client/ ./client/
