@@ -83,7 +83,7 @@ services:
   # ─── OSINT & Intelligence Tools ─────────────────────────────────────────────
 
   spiderfoot:
-    image: smicallef/spiderfoot:latest
+    image: dtagdevsec/spiderfoot:23.03
     container_name: gravion-spiderfoot
     ports:
       - "5001:5001"
