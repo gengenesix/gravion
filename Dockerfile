@@ -20,13 +20,15 @@ RUN npm ci
 COPY client/ ./client/
 COPY server/ ./server/
 
-# Download Cesium into public dir so it's served locally (no CDN needed)
-RUN mkdir -p /app/client/public/cesium && \
+# Download Cesium into public dir so it's served locally (no CDN needed, works offline)
+RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends wget ca-certificates && \
+    rm -rf /var/lib/apt/lists/* && \
     CESIUM_VER=1.125.0 && \
     BASE="https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VER}/Build/Cesium" && \
-    curl -fsSL "${BASE}/Cesium.js" -o /app/client/public/cesium/Cesium.js && \
-    curl -fsSL "https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VER}/Build/Cesium/Widgets/widgets.css" -o /app/client/public/cesium/widgets.css && \
-    echo "Cesium ${CESIUM_VER} downloaded OK"
+    mkdir -p /app/client/public/cesium && \
+    wget -q "${BASE}/Cesium.js" -O /app/client/public/cesium/Cesium.js && \
+    wget -q "${BASE}/Widgets/widgets.css" -O /app/client/public/cesium/widgets.css && \
+    echo "Cesium ${CESIUM_VER} bundled OK — $(wc -c < /app/client/public/cesium/Cesium.js) bytes"
 
 # Build client
 RUN npm run build:client
