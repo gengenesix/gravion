@@ -12,6 +12,10 @@ export async function fetchCloudflareRadar(endpoint: string, params: Record<stri
 
   const searchParams = new URLSearchParams(params);
   searchParams.set('format', 'json');
+  // Cloudflare Radar requires either dateRange or start+end
+  if (!searchParams.has('dateRange') && !searchParams.has('start')) {
+    searchParams.set('dateRange', '7d');
+  }
   const cacheKey = `${endpoint}?${searchParams.toString()}`;
 
   const cached = queryCache.get(cacheKey);
