@@ -83,14 +83,12 @@ services:
   # ─── OSINT & Intelligence Tools ─────────────────────────────────────────────
 
   spiderfoot:
-    build:
-      context: .
-      dockerfile: Dockerfile.spiderfoot
+    image: ctdc/spiderfoot
     container_name: gravion-spiderfoot
     ports:
       - "5001:5001"
     volumes:
-      - spiderfoot_data:/home/spiderfoot/.spiderfoot
+      - spiderfoot_data:/var/lib/spiderfoot
     restart: unless-stopped
 
   opencti:
