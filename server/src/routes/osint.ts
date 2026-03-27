@@ -16,7 +16,8 @@ const OPENCTI_TOKEN = () => process.env.OPENCTI_TOKEN || 'gravion-opencti-token-
 // GET /api/osint/spiderfoot/status
 router.get('/spiderfoot/status', async (_req: Request, res: Response) => {
   try {
-    const r = await fetch(`${SPIDERFOOT_URL()}/ping`, { signal: AbortSignal.timeout(3000) });
+    // SpiderFoot v3 doesn't have /ping — use /scanlist as health check
+    const r = await fetch(`${SPIDERFOOT_URL()}/scanlist`, { signal: AbortSignal.timeout(3000) });
     res.json({ online: r.ok, url: SPIDERFOOT_URL() });
   } catch {
     res.json({ online: false, url: SPIDERFOOT_URL() });
@@ -30,25 +31,27 @@ router.post('/spiderfoot/scan', async (req: Request, res: Response) => {
   if (!target) return res.status(400).json({ error: 'target required' });
 
   try {
+    // SpiderFoot v3 API uses form-encoded POST to /startscan
     const form = new URLSearchParams();
-    form.append('scanname', `GRAVION-${target}-${Date.now()}`);
+    form.append('scanname', `GRAVION-${target.replace(/[^a-zA-Z0-9._-]/g, '_')}`);
     form.append('scantarget', target);
-    form.append('usecase', 'Investigate'); // All modules
-    if (modules?.length) {
-      modules.forEach((m) => form.append('modulelist', m));
-    }
+    form.append('typelist', ''); // empty = use usecase
+    form.append('usecase', 'Investigate');
+    form.append('modulelist', '');
+    if (modules?.length) form.set('modulelist', modules.join(','));
 
     const r = await fetch(`${SPIDERFOOT_URL()}/startscan`, {
       method: 'POST',
-      body: form,
-      signal: AbortSignal.timeout(10000),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: form.toString(),
+      signal: AbortSignal.timeout(15000),
     });
 
     const text = await r.text();
-    // SpiderFoot returns scan ID in response
-    const scanIdMatch = text.match(/"scanId":\s*"([^"]+)"/);
-    const scanId = scanIdMatch?.[1] || text.slice(0, 50);
-    res.json({ started: true, target, scanId, url: `${SPIDERFOOT_URL()}/scaninfo?id=${scanId}` });
+    // v3 redirects to /scaninfo?id=XXXX after starting
+    const scanIdMatch = text.match(/[A-F0-9]{8}/);
+    const scanId = scanIdMatch?.[0] || '';
+    res.json({ started: r.ok, target, scanId, url: `${SPIDERFOOT_URL()}/scaninfo?id=${scanId}`, raw: text.slice(0, 200) });
   } catch (err: unknown) {
     res.status(502).json({ error: 'SpiderFoot unavailable', detail: String(err) });
   }
@@ -136,7 +139,7 @@ router.post('/opencti/search', async (req: Request, res: Response) => {
 // ─── Combined OSINT status ─────────────────────────────────────────────────────
 router.get('/status', async (_req: Request, res: Response) => {
   const [sfRes, ocRes] = await Promise.allSettled([
-    fetch(`${SPIDERFOOT_URL()}/ping`, { signal: AbortSignal.timeout(3000) }),
+    fetch(`${SPIDERFOOT_URL()}/scanlist`, { signal: AbortSignal.timeout(3000) }),
     fetch(`${OPENCTI_URL()}/graphql`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${OPENCTI_TOKEN()}` },

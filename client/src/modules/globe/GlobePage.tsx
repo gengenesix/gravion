@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 // GRAVION 3D Globe — CesiumJS loaded via CDN at runtime to avoid build complexity
 // This guarantees the globe works regardless of npm package structure
 
-const CESIUM_VERSION = '1.120.0';
-const CESIUM_CDN = `https://cesium.com/downloads/cesiumjs/releases/${CESIUM_VERSION}/Build/Cesium`;
+const CESIUM_VERSION = '1.125.0';
+// Use jsdelivr (reliable CDN, works offline-ish via browser cache)
+const CESIUM_CDN = `https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VERSION}/Build/Cesium`;
 const ION_TOKEN = import.meta.env.VITE_CESIUM_ION_TOKEN as string || '';
 const API_BASE = import.meta.env.VITE_API_URL as string || '';
 const MILSYMBOL_CDN = 'https://cdn.jsdelivr.net/npm/milsymbol@2.2.0/dist/milsymbol.js';
@@ -52,7 +53,7 @@ export function GlobePage() {
         const link = document.createElement('link');
         link.id = 'cesium-css';
         link.rel = 'stylesheet';
-        link.href = `${CESIUM_CDN}/Widgets/widgets.css`;
+        link.href = `https://cdn.jsdelivr.net/npm/cesium@${CESIUM_VERSION}/Build/Cesium/Widgets/widgets.css`;
         document.head.appendChild(link);
       }
 

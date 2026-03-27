@@ -3,58 +3,50 @@ import 'dotenv/config';
 const CLOUDFLARE_API_URL = 'https://api.cloudflare.com/client/v4';
 const CACHE_TTL = 15 * 60 * 1000; // 15 mins
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const queryCache = new Map<string, { data: any; expiresAt: number }>();
 
-export async function fetchCloudflareRadar(
-  endpoint: string,
-  params: Record<string, string> = {},
-): Promise<any> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function fetchCloudflareRadar(endpoint: string, params: Record<string, string> = {}): Promise<any> {
   const token = process.env.CLOUDFLARE_RADAR_TOKEN;
-  if (!token) {
-    console.warn('CLOUDFLARE_RADAR_TOKEN is not set.');
-    throw new Error('CLOUDFLARE_RADAR_TOKEN is missing');
-  }
 
   const searchParams = new URLSearchParams(params);
   searchParams.set('format', 'json');
   const cacheKey = `${endpoint}?${searchParams.toString()}`;
 
   const cached = queryCache.get(cacheKey);
-  if (cached && Date.now() < cached.expiresAt) {
-    return cached.data;
+  if (cached && Date.now() < cached.expiresAt) return cached.data;
+
+  // No token — return graceful empty response instead of throwing
+  if (!token || token === 'your_cloudflare_token_here') {
+    console.warn('[Cloudflare] No API token set — returning empty data. Get a free token at https://dash.cloudflare.com');
+    return { top_0: [], summary_0: { total: 0 }, meta: { dateRange: [] }, noToken: true };
   }
 
   try {
     const resp = await fetch(`${CLOUDFLARE_API_URL}${endpoint}?${searchParams.toString()}`, {
-      headers: {
-        Accept: 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { Accept: 'application/json', Authorization: `Bearer ${token}` },
+      signal: AbortSignal.timeout(10000),
     });
 
     if (!resp.ok) {
       const body = await resp.text();
-      throw new Error(`Cloudflare API error: ${resp.status} ${resp.statusText} - ${body}`);
+      console.warn(`[Cloudflare] API error ${resp.status}: ${body.slice(0, 200)}`);
+      // Return empty rather than throw — so the UI shows empty state not error
+      return { top_0: [], summary_0: { total: 0 }, meta: { dateRange: [] }, apiError: resp.status };
     }
 
-    const data = await resp.json();
-
+    const data = await resp.json() as { success: boolean; result: unknown; errors: unknown };
     if (!data.success) {
-      throw new Error(`Cloudflare API returned failure: ${JSON.stringify(data.errors)}`);
+      console.warn('[Cloudflare] API returned failure:', data.errors);
+      return { top_0: [], apiError: 'failure' };
     }
 
-    queryCache.set(cacheKey, {
-      data: data.result,
-      expiresAt: Date.now() + CACHE_TTL,
-    });
-
+    queryCache.set(cacheKey, { data: data.result, expiresAt: Date.now() + CACHE_TTL });
     return data.result;
-  } catch (err: any) {
-    console.error(`Cloudflare fetch error for ${endpoint}:`, err.message);
-    if (cached?.data) {
-      console.log('Returning stale cached data as fallback.');
-      return cached.data;
-    }
-    throw err;
+  } catch (err: unknown) {
+    console.error(`[Cloudflare] fetch error for ${endpoint}:`, err);
+    if (cached?.data) return cached.data; // stale fallback
+    return { top_0: [], summary_0: { total: 0 }, meta: { dateRange: [] }, fetchError: String(err) };
   }
 }

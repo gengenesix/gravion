@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useThemeStore } from '../theme/theme.store';
+import type { ActiveModule } from '../theme/theme.store';
+
+// UTC clock
+function UTCClock() {
+  const [time, setTime] = useState('');
+  useEffect(() => {
+    const tick = () => setTime(new Date().toUTCString().slice(17, 25) + ' UTC');
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <span className="text-green-400/70 font-mono text-xs tabular-nums">{time}</span>;
+}
+
+interface NavTab {
+  id: ActiveModule;
+  label: string;
+  icon?: string;
+  color?: string;
+}
+
+const NAV_TABS: NavTab[] = [
+  { id: 'flights',  label: 'AIR',      icon: '✈', color: 'cyan' },
+  { id: 'maritime', label: 'SEA',      icon: '⛵', color: 'cyan' },
+  { id: 'monitor',  label: 'MONITOR',  icon: '⚠', color: 'cyan' },
+  { id: 'cyber',    label: 'CYBER',    icon: '⚡', color: 'cyan' },
+  { id: 'intel',    label: 'INTEL AI', icon: '🤖', color: 'green' },
+  { id: 'tracking', label: 'TRACK',    icon: '📡', color: 'green' },
+  { id: 'ip-trace', label: 'IP TRACE', icon: '🌐', color: 'green' },
+  { id: 'osint',    label: 'OSINT',    icon: '🕷', color: 'purple' },
+  { id: 'globe',    label: '3D GLOBE', icon: '🌍', color: 'yellow' },
+];
+
+const COLOR_MAP = {
+  cyan:   { active: 'border-cyan-400 text-cyan-300 bg-cyan-400/5 drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]', hover: 'hover:text-cyan-300 hover:border-cyan-600' },
+  green:  { active: 'border-green-400 text-green-300 bg-green-400/5 drop-shadow-[0_0_6px_rgba(74,222,128,0.6)]', hover: 'hover:text-green-300 hover:border-green-600' },
+  purple: { active: 'border-purple-400 text-purple-300 bg-purple-400/5 drop-shadow-[0_0_6px_rgba(192,132,252,0.6)]', hover: 'hover:text-purple-300 hover:border-purple-600' },
+  yellow: { active: 'border-yellow-400 text-yellow-300 bg-yellow-400/5 drop-shadow-[0_0_6px_rgba(250,204,21,0.6)]', hover: 'hover:text-yellow-300 hover:border-yellow-600' },
+};
 
 export const TopNav: React.FC = () => {
-  // Fine-grained selectors — each only re-renders TopNav when its own slice changes.
   const mode = useThemeStore((s) => s.mode);
   const setMode = useThemeStore((s) => s.setMode);
   const mapProjection = useThemeStore((s) => s.mapProjection);
@@ -11,137 +49,88 @@ export const TopNav: React.FC = () => {
   const setActiveModule = useThemeStore((s) => s.setActiveModule);
 
   return (
-    <header className="h-14 bg-intel-bg border-b border-intel-accent/40 shadow-[0_4px_20px_rgba(0,229,255,0.1)] flex items-center px-6 justify-between z-10 relative box-border">
-      {/* Left side: Logo & Module Nav */}
-      <div className="flex items-center gap-8 h-full">
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 bg-intel-accent animate-pulse shadow-[0_0_8px_var(--color-intel-accent)]"></div>
-          <h1 className="text-intel-text-light font-mono font-bold text-2xl tracking-[0.2em] shrink-0 drop-shadow-[0_0_8px_rgba(224,242,254,0.5)]">
-            GRAVION
-          </h1>
-        </div>
+    <header className="h-12 bg-black border-b border-cyan-900/60 flex items-stretch z-10 relative select-none"
+      style={{ boxShadow: '0 1px 20px rgba(0,229,255,0.07), inset 0 -1px 0 rgba(0,229,255,0.15)' }}>
 
-        <nav className="flex gap-4 h-full pt-4">
-          <button
-            onClick={() => setActiveModule('flights')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'flights'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Flights
-          </button>
-          <button
-            onClick={() => setActiveModule('maritime')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'maritime'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Maritime
-          </button>
-          <button
-            onClick={() => setActiveModule('monitor')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'monitor'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Monitor
-          </button>
-          <button
-            onClick={() => setActiveModule('cyber')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'cyber'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Cyber
-          </button>
-          <button
-            onClick={() => setActiveModule('intel')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'intel'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Intel
-          </button>
-          <button
-            onClick={() => setActiveModule('tracking')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'tracking'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            Tracking
-          </button>
-          <button
-            onClick={() => setActiveModule('ip-trace')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'ip-trace'
-                ? 'border-intel-accent text-intel-accent drop-shadow-[0_0_8px_var(--color-intel-accent)] bg-gradient-to-t from-intel-accent/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-intel-text-light hover:border-intel-text/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            IP Trace
-          </button>
-          <button
-            onClick={() => setActiveModule('osint')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'osint'
-                ? 'border-purple-400 text-purple-400 drop-shadow-[0_0_8px_rgba(192,132,252,0.8)] bg-gradient-to-t from-purple-400/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-purple-300 hover:border-purple-400/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            🕷 OSINT
-          </button>
-          <button
-            onClick={() => setActiveModule('globe')}
-            className={`px-4 h-full border-b-2 font-mono text-sm tracking-widest uppercase transition-all ${
-              activeModule === 'globe'
-                ? 'border-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.8)] bg-gradient-to-t from-yellow-400/10 to-transparent'
-                : 'border-transparent text-intel-text hover:text-yellow-300 hover:border-yellow-400/50 opacity-70 hover:opacity-100'
-            }`}
-          >
-            🌍 3D Globe
-          </button>
-        </nav>
+      {/* Logo */}
+      <div className="flex items-center gap-2.5 px-4 border-r border-cyan-900/40 shrink-0">
+        <div className="flex gap-0.5">
+          <div className="w-1 h-5 bg-cyan-400" style={{ boxShadow: '0 0 6px rgba(0,229,255,0.8)' }} />
+          <div className="w-1 h-5 bg-cyan-600/60" />
+        </div>
+        <div>
+          <div className="text-cyan-300 font-mono font-black text-sm tracking-[0.25em] leading-none"
+            style={{ textShadow: '0 0 10px rgba(0,229,255,0.5)' }}>
+            GRAVION
+          </div>
+          <div className="text-cyan-600 font-mono text-[9px] tracking-[0.15em] leading-none mt-0.5">
+            INTEL FUSION
+          </div>
+        </div>
       </div>
 
-      {/* Right side: View toggles */}
-      <div className="flex gap-4 items-center h-full text-intel-text font-mono text-xs tracking-wider">
-        <div className="flex items-center gap-2 border-r border-intel-accent/30 pr-4 h-8">
-          <span className="opacity-50">PROJECTION:</span>
+      {/* Nav tabs */}
+      <nav className="flex items-stretch flex-1 overflow-x-auto scrollbar-none">
+        {NAV_TABS.map((tab) => {
+          const isActive = activeModule === tab.id;
+          const colors = COLOR_MAP[tab.color as keyof typeof COLOR_MAP] || COLOR_MAP.cyan;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveModule(tab.id)}
+              className={`
+                flex items-center gap-1.5 px-3 h-full border-b-2 font-mono text-[11px] tracking-[0.12em] uppercase transition-all whitespace-nowrap shrink-0
+                ${isActive
+                  ? `${colors.active} border-b-2`
+                  : `border-transparent text-gray-500 ${colors.hover} hover:bg-white/3`
+                }
+              `}
+            >
+              <span className={`text-xs ${isActive ? '' : 'opacity-60'}`}>{tab.icon}</span>
+              <span>{tab.label}</span>
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Right controls */}
+      <div className="flex items-center gap-3 px-4 border-l border-cyan-900/40 shrink-0">
+        {/* UTC Clock */}
+        <UTCClock />
+
+        {/* Projection */}
+        <div className="flex items-center gap-1.5 border-l border-cyan-900/30 pl-3">
+          <span className="text-gray-600 font-mono text-[10px] tracking-wider">PROJ</span>
           <button
             onClick={() => setMapProjection(mapProjection === 'mercator' ? 'globe' : 'mercator')}
-            className={`px-3 py-1 bg-intel-bg border border-intel-accent/50 text-intel-accent hover:bg-intel-accent/10 hover:shadow-[0_0_8px_var(--color-intel-accent)] transition-all uppercase`}
+            className="px-2 py-0.5 font-mono text-[10px] border border-cyan-800/60 text-cyan-500 hover:border-cyan-500 hover:text-cyan-300 transition-all tracking-wider"
           >
-            {mapProjection}
+            {mapProjection.toUpperCase()}
           </button>
         </div>
 
-        <div className="flex items-center gap-2 h-8">
-          <span className="opacity-50">SENSOR:</span>
+        {/* Sensor mode */}
+        <div className="flex items-center gap-1 border-l border-cyan-900/30 pl-3">
+          <span className="text-gray-600 font-mono text-[10px] tracking-wider mr-1">SENSOR</span>
           {(['eo', 'flir', 'crt'] as const).map((m) => (
             <button
               key={m}
               onClick={() => setMode(m)}
-              className={`px-3 py-1 transition-all uppercase border ${
+              className={`px-2 py-0.5 font-mono text-[10px] border transition-all tracking-wider ${
                 mode === m
-                  ? 'border-intel-accent bg-intel-accent/10 text-intel-accent shadow-[0_0_8px_rgba(0,229,255,0.4)]'
-                  : 'border-intel-panel bg-intel-bg hover:border-intel-accent/50 text-intel-text'
+                  ? 'border-cyan-400 bg-cyan-400/10 text-cyan-300'
+                  : 'border-gray-700 text-gray-500 hover:border-gray-500 hover:text-gray-300'
               }`}
             >
-              {m}
+              {m.toUpperCase()}
             </button>
           ))}
+        </div>
+
+        {/* Status dot */}
+        <div className="flex items-center gap-1.5 border-l border-cyan-900/30 pl-3">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" style={{ boxShadow: '0 0 4px rgba(74,222,128,0.8)' }} />
+          <span className="text-green-500/70 font-mono text-[10px] tracking-wider">LIVE</span>
         </div>
       </div>
     </header>
